@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Camilo Zapata · Abogado en Medellín</title>
+<meta name="description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Contratos comerciales e internacionales, inmobiliario, proyectos de energía y consumidor financiero.">
+<meta property="og:title" content="Camilo Zapata · Abogado">
+<meta property="og:description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Contratos comerciales e internacionales, inmobiliario, proyectos de energía y consumidor financiero.">
+<meta property="og:image" content="img/c05.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1A2238">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: the El Jurisconsultor carousel brought to the web — navy night, cream gold, spaced Cormorant caps; sections separated by tone, never by rules */
+:root{
+  --night:#1A2238; --night-2:#212A42; --night-3:#29334E; --ink:#F3EEE2; --muted:#B7B9C4;
+  --gold:#D5B679; --cream:#EAD9AF; --cream-ink:#1A2238; --ok:#8FD1A6; --bad:#F0A097;
+  --f-display:"Cormorant Garamond",Georgia,serif;
+  --f-body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--night);color:var(--ink);font:16px/1.7 var(--f-body);margin:0}
+.w{max-width:1080px;margin:0 auto;padding-inline:20px}
+p{margin:0}
+a{color:var(--gold)}
+img{max-width:100%;display:block}
+.band{padding-block:84px}
+.band.alt{background:var(--night-2)}
+.kicker{font:500 15px/1 var(--f-display);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+h2{font:700 clamp(28px,4.4vw,40px)/1.15 var(--f-body);color:var(--cream);margin:12px 0 0;text-wrap:balance}
+.sub{font:italic 400 21px/1.4 var(--f-display);color:var(--muted);margin-top:10px;max-width:60ch}
+.head{margin-bottom:40px}
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(26,34,56,.92);backdrop-filter:blur(8px)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{height:36px;width:auto}
+.brand span{font:500 16px/1 var(--f-display);letter-spacing:.24em;text-transform:uppercase}
+.links{display:flex;gap:22px;font-size:13.5px;font-weight:500}
+.links a{color:var(--muted);text-decoration:none}
+.links a:hover{color:var(--gold)}
+@media (max-width:780px){.links{display:none}}
+/* hero */
+.hero{padding-block:80px 96px;background:radial-gradient(1200px 500px at 50% -10%,#2A3556 0%,var(--night) 70%)}
+.hero .w{display:grid;justify-items:center;text-align:center;gap:22px}
+.mark{width:150px;height:auto}
+.hname{font:500 clamp(22px,4vw,30px)/1 var(--f-display);letter-spacing:.34em;text-transform:uppercase;padding-left:.34em}
+.area-tag{font:500 13px/1 var(--f-display);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+h1{font:700 clamp(32px,6vw,58px)/1.08 var(--f-body);color:var(--cream);margin:8px 0 0;max-width:20ch;text-wrap:balance}
+.lede{font:italic 400 clamp(19px,2.4vw,24px)/1.45 var(--f-display);color:var(--muted);max-width:52ch}
+.gold-dash{width:120px;height:2px;background:var(--gold);border:0;margin:4px 0}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 14.5px/1 var(--f-body);padding:15px 22px;border-radius:2px;color:var(--cream-ink);background:var(--cream)}
+.btn:hover{background:var(--gold)}
+.btn.ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.btn.ghost:hover{background:var(--night-3)}
+.btn:focus-visible,.chip:focus-visible,.tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn svg{width:18px;height:18px;flex:none}
+.social{display:flex;gap:10px;justify-content:center}
+.social a{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--night-3);color:var(--cream)}
+.social a:hover{background:var(--gold);color:var(--cream-ink)}
+.social svg{width:19px;height:19px}
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.num{background:var(--night-3);padding:24px;border-radius:3px;display:grid;gap:6px}
+.num b{font:700 40px/1 var(--f-body);color:var(--gold);font-variant-numeric:tabular-nums}
+.num span{color:var(--muted);font-size:14.5px}
+/* areas */
+.areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
+.area{background:var(--night-3);border-radius:3px;padding:28px;display:grid;gap:10px;align-content:start;min-width:0}
+.area .t{font:500 13px/1 var(--f-display);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.area h3{font:700 21px/1.25 var(--f-body);color:var(--cream);margin:0}
+.area p{color:var(--muted);font-size:15px}
+.area ul{margin:4px 0 0;padding-left:18px;color:var(--ink);font-size:14.5px;display:grid;gap:3px}
+.area ul li::marker{color:var(--gold)}
+/* tools */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{font:600 14px/1 var(--f-body);padding:13px 18px;border-radius:999px;border:0;background:var(--night-3);color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--cream);color:var(--cream-ink)}
+.tool{background:var(--night-3);border-radius:3px;padding:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+@media (max-width:760px){.tool{grid-template-columns:1fr;padding:22px}}
+.tool h3{font:700 22px/1.25 var(--f-body);color:var(--cream);margin:0 0 6px}
+.tool .law{font:italic 400 18px/1.3 var(--f-display);color:var(--gold)}
+.tool .desc{color:var(--muted);font-size:15px;margin-top:10px}
+.form{display:grid;gap:14px;align-content:start}
+label{font-size:13px;font-weight:600;color:var(--muted);display:grid;gap:6px}
+input,select{font:500 16px/1.2 var(--f-body);padding:12px 14px;background:var(--night);color:var(--ink);border:1.5px solid #3A4566;border-radius:3px;width:100%}
+input:focus,select:focus{outline:none;border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.seg{display:flex;gap:6px}
+.seg button{flex:1;font:600 14px/1 var(--f-body);padding:12px;border:1.5px solid #3A4566;background:transparent;color:var(--muted);border-radius:3px;cursor:pointer}
+.seg button[aria-pressed="true"]{border-color:var(--gold);color:var(--cream);background:var(--night)}
+.result{background:var(--night);border-radius:3px;padding:22px;display:grid;gap:10px;align-content:start}
+.result .big{font:700 30px/1.15 var(--f-body);color:var(--cream);font-variant-numeric:tabular-nums}
+.result .big.ok{color:var(--ok)} .result .big.bad{color:var(--bad)}
+.result .line{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.result .line b{color:var(--ink);font-weight:600}
+.result .note{font-size:13px;color:var(--muted)}
+.result .talk{margin-top:6px}
+/* timeline */
+.tl{display:grid;gap:14px}
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;background:var(--night-3);padding:26px 28px;border-radius:3px}
+@media (max-width:640px){.job{grid-template-columns:1fr;gap:8px}}
+.job .when{font:italic 500 20px/1.3 var(--f-display);color:var(--gold)}
+.job .co{font-size:13px;color:var(--muted);margin-top:4px;font-style:normal}
+.job h3{font:700 18px/1.3 var(--f-body);color:var(--cream);margin:0 0 8px}
+.job ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:4px}
+.job ul li::marker{color:var(--gold)}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+.edu div{padding:20px;border-radius:3px;background:var(--night)}
+.edu b{display:block;color:var(--cream);font-size:15.5px}
+.edu span{color:var(--muted);font-size:14px}
+/* legal tech */
+.tech{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:760px){.tech{grid-template-columns:1fr}}
+.flow{display:grid;gap:10px;counter-reset:f}
+.flow div{counter-increment:f;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:var(--night-3);padding:14px 18px;border-radius:3px}
+.flow div::before{content:counter(f);font:700 18px/44px var(--f-body);text-align:center;width:44px;height:44px;border-radius:50%;background:var(--night);color:var(--gold)}
+.flow span{font-size:15px}
+/* library */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{font:600 13px/1 var(--f-body);padding:10px 15px;border-radius:999px;border:0;background:var(--night-3);color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--gold);color:var(--cream-ink)}
+.lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.post{display:grid;gap:10px;text-decoration:none;color:var(--ink)}
+.post img{aspect-ratio:4/5;object-fit:cover;border-radius:3px;width:100%;transition:transform .25s}
+.post:hover img{transform:translateY(-3px)}
+@media (prefers-reduced-motion:reduce){.post img{transition:none}}
+.post span{font-size:13px;color:var(--muted)}
+.post b{font-size:14.5px;font-weight:600;line-height:1.35}
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+@media (max-width:760px){.contact{grid-template-columns:1fr}}
+.ch{display:grid;gap:10px}
+.ch a{display:grid;grid-template-columns:46px 1fr auto;gap:14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--night-3);padding:14px 18px;border-radius:3px}
+.ch a:hover{background:#323D5C}
+.ch svg{width:22px;height:22px;color:var(--gold);justify-self:center}
+.ch b{display:block;font-weight:600}
+.ch small{color:var(--muted);font-size:13.5px}
+.ch i{font-style:normal;color:var(--gold)}
+.steps{display:grid;gap:18px;counter-reset:s}
+.step{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:16px}
+.step::before{content:counter(s,upper-roman);font:italic 500 30px/1 var(--f-display);color:var(--gold);min-width:34px}
+.step b{display:block;color:var(--cream)}
+.step span{color:var(--muted);font-size:15px}
+footer{background:var(--cream);color:var(--cream-ink);padding-block:26px}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;align-items:center;font-size:13px}
+footer .legal{max-width:62ch;opacity:.85}
+footer b{font-weight:700}
+</style>
+</head>
+<body>
+
+<link rel="icon" href="img/cz-mark.png">
+<nav class="nav" aria-label="Principal"><div class="w">
+  <a class="brand" href="#inicio"><img src="img/cz-mark.png" alt=""><span data-t="perfil.nombre">Camilo Zapata</span></a>
+  <div class="links"><a href="#areas">Áreas</a><a href="#herramientas">Herramientas</a><a href="#trayectoria">Trayectoria</a><a href="#biblioteca">Biblioteca</a><a href="#contacto">Contacto</a></div>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="w">
+  <img class="mark" src="img/cz-mark.png" alt="Logo C/Z de Camilo Zapata">
+  <div class="hname" data-t="perfil.nombre">Camilo Zapata</div>
+  <div class="area-tag" data-t="perfil.cargo">Abogado · Especialista en Derecho Empresarial</div>
+  <h1 data-t="perfil.titular">Seis años del lado de la empresa, negociando los contratos que la sostienen.</h1>
+  <hr class="gold-dash">
+  <p class="lede" data-t="perfil.presentacion"></p>
+  <div class="cta">
+    <a class="btn" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>Escribir por WhatsApp</a>
+    <a class="btn ghost" href="#herramientas">Usar las herramientas</a>
+  </div>
+  <div class="social" aria-label="Redes">
+    <a data-href="redes.instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></svg></a>
+    <a data-href="redes.linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.5h.1a4.2 4.2 0 0 1 3.7-2c4 0 4.7 2.6 4.7 6v5.5h-4v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5H10z"/></svg></a>
+    <a data-href="redes.facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a>
+  </div>
+</div></header>
+
+<section class="band alt" aria-label="En cifras"><div class="w"><div class="nums" id="cifras"></div></div></section>
+
+<section class="band" id="areas"><div class="w">
+  <div class="head"><span class="kicker">Asuntos que atiendo</span><h2>Áreas de práctica</h2><p class="sub">Lo que aprendí dentro de las empresas, puesto al servicio de quien firma, compra o reclama.</p></div>
+  <div class="areas" id="areas-list"></div>
+</div></section>
+
+<section class="band alt" id="herramientas"><div class="w">
+  <div class="head"><span class="kicker">Gratis · sin registro</span><h2>Herramientas jurídicas</h2><p class="sub">Haz las cuentas antes de firmar o de reclamar. Son orientativas: tu caso concreto puede tener detalles que cambian el resultado.</p></div>
+  <div class="tabs" role="tablist" aria-label="Herramientas">
+    <button class="tab" role="tab" id="t-gross" aria-selected="true" aria-controls="p-gross">Gross-up</button>
+    <button class="tab" role="tab" id="t-rep" aria-selected="false" aria-controls="p-rep">Reporte en centrales</button>
+    <button class="tab" role="tab" id="t-cob" aria-selected="false" aria-controls="p-cob">¿Me pueden cobrar ahora?</button>
+    <button class="tab" role="tab" id="t-pres" aria-selected="false" aria-controls="p-pres">Prescripción de letra o pagaré</button>
+  </div>
+  <div class="tool" role="tabpanel" id="p-gross" aria-labelledby="t-gross">
+    <div><h3>¿Cuánto te cuesta pagar "neto de impuestos"?</h3><p class="law">Retención en la fuente · art. 408 del Estatuto Tributario</p><p class="desc">Si pactaste pagarle al proveedor extranjero el valor completo, la retención la asumes tú y se calcula sobre una base mayor.</p>
+      <div class="form" style="margin-top:20px">
+        <label for="g-monto">Valor que debe recibir el proveedor<input id="g-monto" type="number" min="0" step="100" value="10000"></label>
+        <div class="row">
+          <label for="g-mon">Moneda<select id="g-mon"><option>USD</option><option>EUR</option><option>COP</option></select></label>
+          <label for="g-tar">Tarifa de retención (%)<input id="g-tar" type="number" min="0" max="60" step="0.5" value="20"></label>
+        </div>
+      </div></div>
+    <div class="result" id="g-out" aria-live="polite"></div>
+  </div>
+  <div class="tool" role="tabpanel" id="p-rep" aria-labelledby="t-rep" hidden>
+    <div><h3>¿Cuándo debe salir tu reporte negativo?</h3><p class="law">Habeas data financiero · Ley 1266 de 2008, modificada por la Ley 2157 de 2021</p><p class="desc">Si pagaste, el dato negativo dura el doble del tiempo en mora, con un máximo de cuatro años desde el pago. Si no pagaste, caduca a los ocho años desde que la obligación se hizo exigible.</p>
+      <div class="form" style="margin-top:20px">
+        <div class="seg" role="group" aria-label="¿Pagaste?"><button type="button" id="r-si" aria-pressed="true">Ya pagué</button><button type="button" id="r-no" aria-pressed="false">No he pagado</button></div>
+        <div id="r-paid" class="row">
+          <label for="r-meses">Meses en mora<input id="r-meses" type="number" min="0" max="240" value="6"></label>
+          <label for="r-fecha">Fecha del pago<input id="r-fecha" type="date"></label>
+        </div>
+        <label for="r-exig" id="r-unpaid" hidden>Fecha en que la deuda se hizo exigible<input id="r-exig" type="date"></label>
+      </div></div>
+    <div class="result" id="r-out" aria-live="polite"></div>
+  </div>
+  <div class="tool" role="tabpanel" id="p-cob" aria-labelledby="t-cob" hidden>
+    <div><h3>¿Te pueden llamar a esta hora?</h3><p class="law">Ley 2300 de 2023 · arts. 3 y 6</p><p class="desc">De lunes a viernes de 7:00 a. m. a 7:00 p. m. y sábados de 8:00 a. m. a 3:00 p. m. Domingos y festivos, nada. Además, no más de una vez al día ni por varios canales en la misma semana.</p>
+      <div class="form" style="margin-top:20px">
+        <div class="row">
+          <label for="c-dia">Día<input id="c-dia" type="date"></label>
+          <label for="c-hora">Hora<input id="c-hora" type="time"></label>
+        </div>
+        <button type="button" class="btn ghost" id="c-now" style="justify-self:start">Usar la hora de ahora</button>
+      </div></div>
+    <div class="result" id="c-out" aria-live="polite"></div>
+  </div>
+  <div class="tool" role="tabpanel" id="p-pres" aria-labelledby="t-pres" hidden>
+    <div><h3>¿Todavía puedes cobrar tu letra o pagaré?</h3><p class="law">Acción cambiaria directa · art. 789 del Código de Comercio</p><p class="desc">La acción cambiaria directa prescribe en tres años contados desde el vencimiento. Presentar la demanda a tiempo interrumpe ese plazo.</p>
+      <div class="form" style="margin-top:20px">
+        <label for="p-venc">Fecha de vencimiento del título<input id="p-venc" type="date"></label>
+      </div></div>
+    <div class="result" id="p-out" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<section class="band" id="trayectoria"><div class="w">
+  <div class="head"><span class="kicker">Cargos desempeñados</span><h2>Trayectoria</h2></div>
+  <div class="tl" id="tl"></div>
+  <div class="edu" id="edu"></div>
+</div></section>
+
+<section class="band alt" id="tecnologia"><div class="w tech">
+  <div><span class="kicker">Abogado que programa</span><h2>Automatizo la revisión de contratos con inteligencia artificial</h2><p class="sub">Escribo mis propias automatizaciones en JavaScript. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área.</p></div>
+  <div class="flow" aria-label="Flujo de revisión">
+    <div><span>Llega el contrato por correo y se clasifica solo</span></div>
+    <div><span>La IA lo revisa contra el playbook y la normativa vigente</span></div>
+    <div><span>Sale un documento con control de cambios y comentarios</span></div>
+    <div><span>El abogado decide, y todo queda archivado y trazable</span></div>
+  </div>
+</div></section>
+
+<section class="band" id="biblioteca"><div class="w">
+  <div class="head"><span class="kicker" data-t="redes.instagram_usuario">@eljurisconsultor</span><h2>Biblioteca</h2><p class="sub">Temas jurídicos explicados en cinco diapositivas.</p></div>
+  <div class="chips" role="group" aria-label="Filtrar por serie" id="chips"></div>
+  <div class="lib" id="lib"></div>
+</div></section>
+
+<section class="band alt" id="contacto"><div class="w contact">
+  <div>
+    <div class="head"><span class="kicker">Contacto</span><h2>Hablemos de tu caso</h2><p class="sub" data-t="perfil.cobertura"></p></div>
+    <div class="steps">
+      <div class="step"><div><b>Me escribes</b><span>Un resumen corto y los documentos que tengas: contrato, escritura, letra, extracto.</span></div></div>
+      <div class="step"><div><b>Reviso tu caso</b><span>Te digo qué opciones hay y qué riesgos tiene cada una.</span></div></div>
+      <div class="step"><div><b>Propuesta por escrito</b><span>Alcance y honorarios claros antes de empezar.</span></div></div>
+    </div>
+  </div>
+  <div class="ch">
+    <a data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg><div><b>WhatsApp</b><small data-t="redes.whatsapp_visible"></small></div><i>→</i></a>
+    <a data-href="redes.instagram" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></svg><div><b>Instagram</b><small data-t="redes.instagram_usuario"></small></div><i>→</i></a>
+    <a data-href="redes.linkedin" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.5h.1a4.2 4.2 0 0 1 3.7-2c4 0 4.7 2.6 4.7 6v5.5h-4v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5H10z"/></svg><div><b>LinkedIn</b><small data-t="perfil.nombre_completo"></small></div><i>→</i></a>
+    <a data-href="redes.facebook" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg><div><b>Facebook</b><small data-t="redes.facebook_nombre"></small></div><i>→</i></a>
+  </div>
+</div></section>
+
+<footer><div class="w">
+  <div><b data-t="perfil.nombre_completo">Camilo Salazar Zapata</b> · Abogado · T.P. <span data-t="perfil.tarjeta_profesional"></span> · <span data-t="perfil.ciudad"></span></div>
+  <div class="legal">Las herramientas y publicaciones de este sitio son informativas y no constituyen asesoría jurídica para un caso concreto.</div>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var get=function(o,p){return p.split('.').reduce(function(a,k){return a&&a[k]},o)};
+  var WA='https://wa.me/573046660777';
+
+  function render(D){
+    WA='https://wa.me/'+(get(D,'redes.whatsapp')||'573046660777');
+    [].forEach.call(document.querySelectorAll('[data-t]'),function(el){var v=get(D,el.dataset.t);if(v!=null)el.textContent=v});
+    [].forEach.call(document.querySelectorAll('[data-href]'),function(el){var v=get(D,el.dataset.href);if(v)el.href=v});
+    [].forEach.call(document.querySelectorAll('[data-wa]'),function(el){el.href=WA});
+    $('cifras').innerHTML=(D.cifras||[]).map(function(c){return '<div class="num"><b>'+esc(c.valor)+'</b><span>'+esc(c.texto)+'</span></div>'}).join('');
+    $('areas-list').innerHTML=(D.areas||[]).map(function(a){return '<div class="area"><span class="t">'+esc(a.etiqueta)+'</span><h3>'+esc(a.titulo)+'</h3><p>'+esc(a.descripcion)+'</p><ul>'+(a.puntos||[]).map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></div>'}).join('');
+    $('tl').innerHTML=(D.trayectoria||[]).map(function(j){return '<div class="job"><div class="when">'+esc(j.anio)+'<div class="co">'+esc(j.periodo)+'</div></div><div><h3>'+esc(j.cargo)+'</h3><ul>'+(j.logros||[]).map(function(l){return '<li>'+esc(l)+'</li>'}).join('')+'</ul></div></div>'}).join('');
+    $('edu').innerHTML=(D.formacion||[]).map(function(f){return '<div><b>'+esc(f.titulo)+'</b><span>'+esc(f.detalle)+'</span></div>'}).join('');
+    var POSTS=D.publicaciones||[],cur='Todas';
+    var series=['Todas'].concat(POSTS.map(function(p){return p.serie}).filter(function(s,i,a){return s&&a.indexOf(s)===i}));
+    function lib(){
+      $('lib').innerHTML=POSTS.filter(function(p){return cur==='Todas'||p.serie===cur}).map(function(p){
+        return '<a class="post" href="'+esc(p.enlace||get(D,'redes.instagram'))+'" target="_blank" rel="noopener"><img src="'+esc(String(p.imagen||'').replace(/^\//,''))+'" alt="Portada: '+esc(p.titulo)+'" loading="lazy"><span>'+esc(p.serie)+'</span><b>'+esc(p.titulo)+'</b></a>'}).join('');
+      [].forEach.call(document.querySelectorAll('.chip'),function(c){c.setAttribute('aria-pressed',c.dataset.s===cur)});
+    }
+    $('chips').innerHTML=series.map(function(s){return '<button type="button" class="chip" data-s="'+esc(s)+'" aria-pressed="false">'+esc(s)+'</button>'}).join('');
+    $('chips').onclick=function(e){var b=e.target.closest('.chip');if(b){cur=b.dataset.s;lib()}};
+    lib();
+    tools();
+  }
+
+  function tools(){
+  var fmt=function(n,cur){try{return new Intl.NumberFormat('es-CO',{style:'currency',currency:cur,maximumFractionDigits:cur==='COP'?0:2}).format(n)}catch(e){return cur+' '+n.toFixed(2)}};
+  var fd=function(d){return d.toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'})};
+  var iso=function(d){return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+  var parse=function(v){if(!v)return null;var p=v.split('-');return new Date(+p[0],+p[1]-1,+p[2])};
+  var addM=function(d,m){var r=new Date(d);r.setMonth(r.getMonth()+m);return r};
+  var addY=function(d,y){var r=new Date(d);r.setFullYear(r.getFullYear()+y);return r};
+  var days=function(a,b){return Math.round((b-a)/864e5)};
+  var today=new Date();today.setHours(0,0,0,0);
+  var talk=function(t){return '<a class="btn talk" href="'+WA+'" target="_blank" rel="noopener">'+t+'</a>'};
+
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  tabs.forEach(function(t){t.onclick=function(){tabs.forEach(function(o){var on=o===t;o.setAttribute('aria-selected',on);$(o.getAttribute('aria-controls')).hidden=!on})}});
+
+  function gross(){
+    var n=+$('g-monto').value||0,t=(+$('g-tar').value||0)/100,c=$('g-mon').value;
+    if(t>=1){$('g-out').innerHTML='<p class="note">La tarifa debe ser menor a 100 %.</p>';return}
+    var base=n/(1-t),ret=base-n,pct=n?ret/n*100:0;
+    $('g-out').innerHTML='<span class="kicker">Te cuesta de más</span><div class="big bad">'+fmt(ret,c)+'</div>'+
+      '<div class="line"><span>Recibe el proveedor</span><b>'+fmt(n,c)+'</b></div>'+
+      '<div class="line"><span>Base con gross-up</span><b>'+fmt(base,c)+'</b></div>'+
+      '<div class="line"><span>Retención que asumes</span><b>'+fmt(ret,c)+'</b></div>'+
+      '<div class="line"><span>Sobrecosto sobre el contrato</span><b>'+pct.toFixed(1).replace('.',',')+' %</b></div>'+
+      '<p class="note">Sin contar el IVA que en muchos servicios del exterior también te toca liquidar. Verifica la tarifa según el tipo de pago y si hay convenio de doble imposición.</p>'+talk('Revisar mi contrato');
+  }
+  ['g-monto','g-tar','g-mon'].forEach(function(i){$(i).oninput=gross});gross();
+
+  var paid=true;
+  $('r-fecha').value=iso(addM(today,-3));$('r-exig').value=iso(addY(today,-5));
+  function rep(){
+    var out,end,ok;
+    if(paid){var m=+$('r-meses').value||0,f=parse($('r-fecha').value);if(!f){$('r-out').innerHTML='<p class="note">Indica la fecha del pago.</p>';return}
+      var perm=Math.min(m*2,48);end=addM(f,perm);
+      out='<div class="line"><span>Permanencia</span><b>'+perm+' meses'+(m*2>48?' (tope de 4 años)':'')+'</b></div>';
+    }else{var e=parse($('r-exig').value);if(!e){$('r-out').innerHTML='<p class="note">Indica la fecha de exigibilidad.</p>';return}
+      end=addY(e,8);out='<div class="line"><span>Caducidad</span><b>8 años desde que se hizo exigible</b></div>';}
+    ok=end<=today;var d=days(today,end);
+    $('r-out').innerHTML='<span class="kicker">'+(ok?'Ya debió salir':'Debe salir el')+'</span><div class="big '+(ok?'ok':'')+'">'+fd(end)+'</div>'+out+
+      '<div class="line"><span>'+(ok?'Días de más en tu historial':'Días que faltan')+'</span><b>'+Math.abs(d).toLocaleString('es-CO')+'</b></div>'+
+      '<p class="note">'+(ok?'Si todavía apareces reportado, puedes pedir la eliminación a la entidad y a la central de riesgo.':'Pasada esta fecha, el dato negativo debe desaparecer sin que tengas que pedirlo.')+'</p>'+(ok?talk('Pedir que me eliminen el reporte'):'');
+  }
+  $('r-si').onclick=function(){paid=true;this.setAttribute('aria-pressed','true');$('r-no').setAttribute('aria-pressed','false');$('r-paid').hidden=false;$('r-unpaid').hidden=true;rep()};
+  $('r-no').onclick=function(){paid=false;this.setAttribute('aria-pressed','true');$('r-si').setAttribute('aria-pressed','false');$('r-paid').hidden=true;$('r-unpaid').hidden=false;rep()};
+  ['r-meses','r-fecha','r-exig'].forEach(function(i){$(i).oninput=rep});rep();
+
+  var FEST={'2026-01-01':'Año Nuevo','2026-01-12':'Reyes Magos','2026-03-23':'San José','2026-04-02':'Jueves Santo','2026-04-03':'Viernes Santo','2026-05-01':'Día del Trabajo','2026-05-18':'Ascensión','2026-06-08':'Corpus Christi','2026-06-15':'Sagrado Corazón','2026-06-29':'San Pedro y San Pablo','2026-07-20':'Independencia','2026-08-07':'Batalla de Boyacá','2026-08-17':'Asunción de la Virgen','2026-10-12':'Día de la Raza','2026-11-02':'Todos los Santos','2026-11-16':'Independencia de Cartagena','2026-12-08':'Inmaculada Concepción','2026-12-25':'Navidad'};
+  function now(){var n=new Date();$('c-dia').value=iso(n);$('c-hora').value=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');cob()}
+  function cob(){
+    var d=parse($('c-dia').value),h=$('c-hora').value;if(!d||!h){$('c-out').innerHTML='<p class="note">Indica día y hora.</p>';return}
+    var p=h.split(':'),mins=+p[0]*60+ +p[1],wd=d.getDay(),key=$('c-dia').value,why,ok;
+    if(FEST[key]){ok=false;why='Es festivo: '+FEST[key]+'.'}
+    else if(wd===0){ok=false;why='Los domingos no pueden cobrarte.'}
+    else if(wd===6){ok=mins>=480&&mins<=900;why=ok?'Sábado dentro de 8:00 a. m. a 3:00 p. m.':'Los sábados solo de 8:00 a. m. a 3:00 p. m.'}
+    else{ok=mins>=420&&mins<=1140;why=ok?'Entre semana dentro de 7:00 a. m. a 7:00 p. m.':'Entre semana solo de 7:00 a. m. a 7:00 p. m.'}
+    var note=d.getFullYear()!==2026?'<p class="note">Los festivos solo están cargados para 2026.</p>':'';
+    $('c-out').innerHTML='<span class="kicker">'+fd(d)+' · '+h+'</span><div class="big '+(ok?'ok':'bad')+'">'+(ok?'Sí pueden, dentro del horario':'No pueden cobrarte a esta hora')+'</div><p>'+why+'</p>'+
+      '<p class="note">Aunque sea en horario, no pueden contactarte más de una vez al día, ni por varios canales en la misma semana, ni por canales que no autorizaste.</p>'+note+(ok?'':talk('Me están acosando por una deuda'));
+  }
+  $('c-now').onclick=now;['c-dia','c-hora'].forEach(function(i){$(i).oninput=cob});now();
+
+  $('p-venc').value=iso(addY(today,-2));
+  function pres(){
+    var v=parse($('p-venc').value);if(!v){$('p-out').innerHTML='<p class="note">Indica la fecha de vencimiento.</p>';return}
+    var lim=addY(v,3),d=days(today,lim),ok=d>=0,warn=ok&&d<=90;
+    $('p-out').innerHTML='<span class="kicker">'+(ok?'Todavía puedes cobrar':'Plazo vencido')+'</span><div class="big '+(ok?(warn?'bad':'ok'):'bad')+'">'+(ok?d.toLocaleString('es-CO')+' días':'Prescrita desde '+fd(lim))+'</div>'+
+      '<div class="line"><span>Vencimiento del título</span><b>'+fd(v)+'</b></div><div class="line"><span>Prescribe el</span><b>'+fd(lim)+'</b></div>'+
+      '<p class="note">'+(ok?(warn?'Queda poco tiempo. La demanda debe presentarse antes de esa fecha para interrumpir la prescripción.':'Presentar la demanda a tiempo interrumpe la prescripción.'):'Aún pueden existir otras vías, como la acción causal o un reconocimiento de la deuda por parte del deudor.')+'</p>'+talk(ok?'Cobrar mi título':'Revisar otras opciones');
+  }
+  $('p-venc').oninput=pres;pres();
+  }
+
+  fetch('content/site.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(render).catch(function(){render({})});
+})();
+</script>
+
+</body>
+</html>

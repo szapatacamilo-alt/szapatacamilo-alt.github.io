@@ -1,0 +1,75 @@
+media:
+  input: img
+  output: img
+
+content:
+  - name: sitio
+    label: Contenido de la web
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: perfil
+        label: Perfil
+        type: object
+        fields:
+          - { name: nombre, label: Nombre de marca, type: string }
+          - { name: nombre_completo, label: Nombre completo, type: string }
+          - { name: cargo, label: Cargo bajo el nombre, type: string }
+          - { name: titular, label: Frase principal, type: text }
+          - { name: presentacion, label: Presentación, type: text }
+          - { name: tarjeta_profesional, label: Tarjeta profesional, type: string }
+          - { name: ciudad, label: Ciudad, type: string }
+          - { name: cobertura, label: Dónde atiendes, type: string }
+      - name: redes
+        label: Redes y contacto
+        type: object
+        fields:
+          - { name: whatsapp, label: "WhatsApp (con 57, sin espacios)", type: string }
+          - { name: whatsapp_visible, label: WhatsApp como se muestra, type: string }
+          - { name: instagram, label: Enlace de Instagram, type: string }
+          - { name: instagram_usuario, label: Usuario de Instagram, type: string }
+          - { name: linkedin, label: Enlace de LinkedIn, type: string }
+          - { name: facebook, label: Enlace de Facebook, type: string }
+          - { name: facebook_nombre, label: Nombre de la página de Facebook, type: string }
+      - name: cifras
+        label: Cifras
+        type: object
+        list: true
+        fields:
+          - { name: valor, label: Número, type: string }
+          - { name: texto, label: Texto, type: string }
+      - name: areas
+        label: Áreas de práctica
+        type: object
+        list: true
+        fields:
+          - { name: etiqueta, label: Etiqueta, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: descripcion, label: Descripción, type: text }
+          - { name: puntos, label: Puntos, type: string, list: true }
+      - name: trayectoria
+        label: Trayectoria
+        type: object
+        list: true
+        fields:
+          - { name: anio, label: Año, type: string }
+          - { name: periodo, label: Periodo, type: string }
+          - { name: cargo, label: "Cargo · Empresa", type: string }
+          - { name: logros, label: Logros, type: text, list: true }
+      - name: formacion
+        label: Formación
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: detalle, label: "Institución · año", type: string }
+      - name: publicaciones
+        label: Publicaciones (biblioteca)
+        type: object
+        list: true
+        fields:
+          - { name: imagen, label: Portada, type: image }
+          - { name: serie, label: Serie, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: enlace, label: Enlace a la publicación, type: string }
