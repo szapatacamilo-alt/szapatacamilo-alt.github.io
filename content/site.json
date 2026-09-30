@@ -19,42 +19,247 @@
     "facebook_nombre": "Camilo Zapata Abogado"
   },
   "cifras": [
-    { "valor": "6", "texto": "años como abogado in-house" },
-    { "valor": "15+", "texto": "proveedores internacionales con los que negocié contratos" },
-    { "valor": "4", "texto": "sectores: juego en línea, energía solar, construcción e inmobiliario" },
-    { "valor": "2", "texto": "idiomas de negociación: español e inglés" }
+    {
+      "valor": "6",
+      "texto": "años como abogado in-house"
+    },
+    {
+      "valor": "15+",
+      "texto": "proveedores internacionales con los que negocié contratos"
+    },
+    {
+      "valor": "4",
+      "texto": "sectores: juego en línea, energía solar, construcción e inmobiliario"
+    },
+    {
+      "valor": "2",
+      "texto": "idiomas de negociación: español e inglés"
+    }
   ],
   "areas": [
-    { "etiqueta": "Empresas", "titulo": "Contratos comerciales e internacionales", "descripcion": "Revisión, redacción y negociación de contratos con proveedores nacionales y del exterior.", "puntos": ["Licencias de software y servicios", "Retenciones, gross-up y pagos al exterior", "Agencia comercial, corretaje y distribución", "Ley aplicable, arbitraje y responsabilidad"] },
-    { "etiqueta": "Inmuebles", "titulo": "Inmobiliario y fiducia", "descripcion": "Compra de lotes y vivienda, estudio de títulos y negocios fiduciarios.", "puntos": ["Estudio de títulos y saneamiento", "Lotes en proindiviso en el Oriente", "Vivienda sobre planos y encargo fiduciario", "Promesas de compraventa"] },
-    { "etiqueta": "Proyectos", "titulo": "Energía y minería", "descripcion": "La parte legal de un proyecto, desde el predio hasta la ejecución.", "puntos": ["Arrendamientos de largo plazo y servidumbres", "Permisos ante CREG, UPME y ANLA", "Suelo, subsuelo y títulos mineros", "Trámites ante la Agencia Nacional de Minería"] },
-    { "etiqueta": "Personas", "titulo": "Consumidor financiero", "descripcion": "Tus derechos frente a bancos, tiendas y empresas de cobranza.", "puntos": ["Reportes en centrales de riesgo", "Cobranza abusiva (Ley 2300 de 2023)", "Seguros de los créditos y abonos a capital", "Cobro de letras de cambio y pagarés"] },
-    { "etiqueta": "Cumplimiento", "titulo": "Regulación y datos", "descripcion": "Lo que debe cuidar una empresa regulada o que trata datos personales.", "puntos": ["Juego en línea: Coljuegos y MinTIC", "SAGRILAFT y anticorrupción", "Transferencia internacional de datos"] }
+    {
+      "etiqueta": "Empresas",
+      "titulo": "Contratos comerciales e internacionales",
+      "descripcion": "Revisión, redacción y negociación de contratos con proveedores nacionales y del exterior.",
+      "puntos": [
+        "Licencias de software y servicios",
+        "Retenciones, gross-up y pagos al exterior",
+        "Agencia comercial, corretaje y distribución",
+        "Ley aplicable, arbitraje y responsabilidad"
+      ]
+    },
+    {
+      "etiqueta": "Inmuebles",
+      "titulo": "Inmobiliario y fiducia",
+      "descripcion": "Compra de lotes y vivienda, estudio de títulos y negocios fiduciarios.",
+      "puntos": [
+        "Estudio de títulos y saneamiento",
+        "Lotes en proindiviso en el Oriente",
+        "Vivienda sobre planos y encargo fiduciario",
+        "Promesas de compraventa"
+      ]
+    },
+    {
+      "etiqueta": "Proyectos",
+      "titulo": "Energía y minería",
+      "descripcion": "La parte legal de un proyecto, desde el predio hasta la ejecución.",
+      "puntos": [
+        "Arrendamientos de largo plazo y servidumbres",
+        "Permisos ante CREG, UPME y ANLA",
+        "Suelo, subsuelo y títulos mineros",
+        "Trámites ante la Agencia Nacional de Minería"
+      ]
+    },
+    {
+      "etiqueta": "Personas",
+      "titulo": "Consumidor financiero",
+      "descripcion": "Tus derechos frente a bancos, tiendas y empresas de cobranza.",
+      "puntos": [
+        "Reportes en centrales de riesgo",
+        "Cobranza abusiva (Ley 2300 de 2023)",
+        "Seguros de los créditos y abonos a capital",
+        "Cobro de letras de cambio y pagarés"
+      ]
+    },
+    {
+      "etiqueta": "Cumplimiento",
+      "titulo": "Regulación y datos",
+      "descripcion": "Lo que debe cuidar una empresa regulada o que trata datos personales.",
+      "puntos": [
+        "Juego en línea: Coljuegos y MinTIC",
+        "SAGRILAFT y anticorrupción",
+        "Transferencia internacional de datos"
+      ]
+    }
   ],
   "trayectoria": [
-    { "anio": "2026", "periodo": "Feb – Sep", "cargo": "Abogado Senior II · Aquila Global Group S.A.S. (Wplay.co)", "logros": ["Negocié contratos de licencia de software y servicios con más de 15 proveedores internacionales de juego, en inglés y español.", "Armé el playbook para negociar con proveedores extranjeros: GGR, tasa de cambio, retención en la fuente y gross-up, responsabilidad e indemnidades.", "Revisé cumplimiento frente a Coljuegos, MinTIC y DIAN, con cláusulas de SAGRILAFT, anticorrupción, datos personales y arbitraje."] },
-    { "anio": "2025", "periodo": "Abr 2025 – Ene 2026", "cargo": "Coordinador Jurídico · Acema Ingeniería S.A.S.", "logros": ["Llevé la parte legal de proyectos solares desde la consecución de predios hasta la ejecución (CREG, UPME, ANLA).", "Negocié arrendamientos a 25 años y servidumbres, e hice estudios de títulos y saneamiento de predios.", "Coordiné un equipo que pasó de dos a cuatro abogados e implementé firma electrónica y SAGRILAFT."] },
-    { "anio": "2023", "periodo": "Nov 2023 – Ene 2025", "cargo": "Abogado · Constructora Conconcreto S.A.", "logros": ["Atendí reclamaciones y procesos judiciales y extrajudiciales de proyectos de construcción y vivienda.", "Estructuré negocios fiduciarios y esquemas contractuales para Vivienda Conconcreto."] },
-    { "anio": "2021", "periodo": "Abr 2021 – Oct 2023", "cargo": "Gestor Contractual Jurídico · Fondo Inmobiliario Pactia S.A.S.", "logros": ["Redacté y negocié contratos de obra, suministro, arrendamiento, concesión y servicios para Gran Plaza, Logikas y Buró.", "Apoyé compras y ventas de inmuebles comerciales y elaboré matrices de riesgo jurídico."] }
+    {
+      "anio": "2026",
+      "periodo": "Feb – Sep",
+      "cargo": "Abogado Senior II · Aquila Global Group S.A.S. (Wplay.co)",
+      "logros": [
+        "Negocié contratos de licencia de software y servicios con más de 15 proveedores internacionales de juego, en inglés y español.",
+        "Armé el playbook para negociar con proveedores extranjeros: GGR, tasa de cambio, retención en la fuente y gross-up, responsabilidad e indemnidades.",
+        "Revisé cumplimiento frente a Coljuegos, MinTIC y DIAN, con cláusulas de SAGRILAFT, anticorrupción, datos personales y arbitraje."
+      ]
+    },
+    {
+      "anio": "2025",
+      "periodo": "Abr 2025 – Ene 2026",
+      "cargo": "Coordinador Jurídico · Acema Ingeniería S.A.S.",
+      "logros": [
+        "Llevé la parte legal de proyectos solares desde la consecución de predios hasta la ejecución (CREG, UPME, ANLA).",
+        "Negocié arrendamientos a 25 años y servidumbres, e hice estudios de títulos y saneamiento de predios.",
+        "Coordiné un equipo que pasó de dos a cuatro abogados e implementé firma electrónica y SAGRILAFT."
+      ]
+    },
+    {
+      "anio": "2023",
+      "periodo": "Nov 2023 – Ene 2025",
+      "cargo": "Abogado · Constructora Conconcreto S.A.",
+      "logros": [
+        "Atendí reclamaciones y procesos judiciales y extrajudiciales de proyectos de construcción y vivienda.",
+        "Estructuré negocios fiduciarios y esquemas contractuales para Vivienda Conconcreto."
+      ]
+    },
+    {
+      "anio": "2021",
+      "periodo": "Abr 2021 – Oct 2023",
+      "cargo": "Gestor Contractual Jurídico · Fondo Inmobiliario Pactia S.A.S.",
+      "logros": [
+        "Redacté y negocié contratos de obra, suministro, arrendamiento, concesión y servicios para Gran Plaza, Logikas y Buró.",
+        "Apoyé compras y ventas de inmuebles comerciales y elaboré matrices de riesgo jurídico."
+      ]
+    }
   ],
   "formacion": [
-    { "titulo": "Especialización en Derecho Empresarial", "detalle": "Universidad de Medellín · 2025" },
-    { "titulo": "Abogado · T.P. 412537", "detalle": "Universidad de Medellín · 2021" },
-    { "titulo": "Estudio de Títulos Inmobiliarios", "detalle": "La Lonja de Bogotá · 2024" },
-    { "titulo": "Investigación publicada", "detalle": "Costumbre mercantil del contrato de distribución · Cámara de Comercio de Medellín" }
+    {
+      "titulo": "Especialización en Derecho Empresarial",
+      "detalle": "Universidad de Medellín · 2025"
+    },
+    {
+      "titulo": "Abogado · T.P. 412537",
+      "detalle": "Universidad de Medellín · 2021"
+    },
+    {
+      "titulo": "Estudio de Títulos Inmobiliarios",
+      "detalle": "La Lonja de Bogotá · 2024"
+    },
+    {
+      "titulo": "Investigación publicada",
+      "detalle": "Costumbre mercantil del contrato de distribución · Cámara de Comercio de Medellín"
+    }
   ],
   "publicaciones": [
-    { "imagen": "img/c01.jpg", "serie": "Contratos comerciales", "titulo": "¿Agente comercial o corredor?", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c05.jpg", "serie": "Contratos internacionales", "titulo": "Pagar \"neto de impuestos\" te puede salir 25 % más caro", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c13.jpg", "serie": "Datos y tecnología", "titulo": "Transferencia internacional de datos", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c06.jpg", "serie": "Inmuebles", "titulo": "Lotes en proindiviso en el Oriente", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c07.jpg", "serie": "Inmuebles", "titulo": "Encargo fiduciario y vivienda sobre planos", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c12.jpg", "serie": "Inmuebles", "titulo": "Cuánto debe medir un lote en el Oriente", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c03.jpg", "serie": "Derecho minero", "titulo": "Suelo, subsuelo y estudio de título minero", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c02.jpg", "serie": "Herencias", "titulo": "Heredaste un contrato con pago pendiente", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c04.jpg", "serie": "Consumidor financiero", "titulo": "El seguro de desempleo de tu crédito", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c08.jpg", "serie": "Consumidor financiero", "titulo": "Pagaste y sigues reportado", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c09.jpg", "serie": "Consumidor financiero", "titulo": "La ley \"dejen de fregar\"", "enlace": "https://www.instagram.com/eljurisconsultor/" },
-    { "imagen": "img/c10.jpg", "serie": "Consumidor financiero", "titulo": "Abonos a capital sin multa", "enlace": "https://www.instagram.com/eljurisconsultor/" }
+    {
+      "imagen": "img/c01.jpg",
+      "serie": "Contratos comerciales",
+      "titulo": "¿Agente comercial o corredor?",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c05.jpg",
+      "serie": "Contratos internacionales",
+      "titulo": "Pagar \"neto de impuestos\" te puede salir 25 % más caro",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c13.jpg",
+      "serie": "Datos y tecnología",
+      "titulo": "Transferencia internacional de datos",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c06.jpg",
+      "serie": "Inmuebles",
+      "titulo": "Lotes en proindiviso en el Oriente",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c07.jpg",
+      "serie": "Inmuebles",
+      "titulo": "Encargo fiduciario y vivienda sobre planos",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c12.jpg",
+      "serie": "Inmuebles",
+      "titulo": "Cuánto debe medir un lote en el Oriente",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c03.jpg",
+      "serie": "Derecho minero",
+      "titulo": "Suelo, subsuelo y estudio de título minero",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c02.jpg",
+      "serie": "Herencias",
+      "titulo": "Heredaste un contrato con pago pendiente",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c04.jpg",
+      "serie": "Consumidor financiero",
+      "titulo": "El seguro de desempleo de tu crédito",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c08.jpg",
+      "serie": "Consumidor financiero",
+      "titulo": "Pagaste y sigues reportado",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c09.jpg",
+      "serie": "Consumidor financiero",
+      "titulo": "La ley \"dejen de fregar\"",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    },
+    {
+      "imagen": "img/c10.jpg",
+      "serie": "Consumidor financiero",
+      "titulo": "Abonos a capital sin multa",
+      "enlace": "https://www.instagram.com/eljurisconsultor/"
+    }
+  ],
+  "soluciones": [
+    {
+      "etiqueta": "Suscripción",
+      "nombre": "Revisor de contratos con IA",
+      "para": "Empresas que reciben contratos de proveedores cada semana.",
+      "descripcion": "El contrato llega por correo, la IA lo revisa contra tu propio playbook y te devuelve un Word con control de cambios y comentarios listos para negociar.",
+      "incluye": [
+        "Playbook configurado con las reglas de tu empresa",
+        "Conexión con Gmail y Google Drive",
+        "Control de cambios y comentarios en español e inglés",
+        "Archivo ordenado y trazable por proveedor"
+      ]
+    },
+    {
+      "etiqueta": "Suscripción",
+      "nombre": "Control de negociación",
+      "para": "Áreas jurídicas y de compras que negocian varias rondas.",
+      "descripcion": "Cada nueva versión del contrato se compara sola con la anterior y queda en un cuadro: qué cambió, qué pidió el proveedor y qué se decidió.",
+      "incluye": [
+        "Cuadro de cambios en Excel por cláusula",
+        "Redacción anterior y nueva lado a lado",
+        "Veredicto y respuesta sugerida",
+        "Soporte listo para auditoría o comité"
+      ]
+    },
+    {
+      "etiqueta": "Proyecto",
+      "nombre": "Automatización jurídica a la medida",
+      "para": "Empresas que quieren sacar el trabajo repetitivo del área legal.",
+      "descripcion": "Diseño y programo el flujo que tu equipo hace a mano: solicitudes, minutas, vencimientos, firmas y archivo, sobre las herramientas que ya usas.",
+      "incluye": [
+        "Diagnóstico del proceso actual",
+        "Flujos en Google Workspace y Microsoft 365",
+        "Alertas de vencimientos y renovaciones",
+        "Capacitación al equipo"
+      ]
+    }
   ]
 }

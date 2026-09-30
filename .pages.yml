@@ -73,3 +73,13 @@ content:
           - { name: serie, label: Serie, type: string }
           - { name: titulo, label: Título, type: string }
           - { name: enlace, label: Enlace a la publicación, type: string }
+      - name: soluciones
+        label: Soluciones legal tech (SaaS)
+        type: object
+        list: true
+        fields:
+          - { name: etiqueta, label: "Etiqueta (Suscripción, Proyecto…)", type: string }
+          - { name: nombre, label: Nombre, type: string }
+          - { name: para, label: Para quién, type: string }
+          - { name: descripcion, label: Descripción, type: text }
+          - { name: incluye, label: Qué incluye, type: string, list: true }

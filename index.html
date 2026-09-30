@@ -7,8 +7,16 @@
 <meta name="description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Contratos comerciales e internacionales, inmobiliario, proyectos de energía y consumidor financiero.">
 <meta property="og:title" content="Camilo Zapata · Abogado">
 <meta property="og:description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Contratos comerciales e internacionales, inmobiliario, proyectos de energía y consumidor financiero.">
-<meta property="og:image" content="img/c05.jpg">
+<meta property="og:image" content="https://szapatacamilo-alt.github.io/img/c05.jpg">
+<meta property="og:url" content="https://szapatacamilo-alt.github.io/">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://szapatacamilo-alt.github.io/">
+<link rel="icon" href="img/cz-mark.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"Camilo Zapata · Abogado","alternateName":"El Jurisconsultor","url":"https://szapatacamilo-alt.github.io/","image":"https://szapatacamilo-alt.github.io/img/cz-mark.png","telephone":"+57 304 666 0777","areaServed":["Medellín","Oriente antioqueño","Colombia"],"address":{"@type":"PostalAddress","addressLocality":"Medellín","addressRegion":"Antioquia","addressCountry":"CO"},"founder":{"@type":"Person","name":"Camilo Salazar Zapata","jobTitle":"Abogado especialista en Derecho Empresarial"},"knowsAbout":["Contratos comerciales","Contratos internacionales","Derecho inmobiliario","Fiducia","Derecho minero","Consumidor financiero","Protección de datos personales"],"sameAs":["https://www.instagram.com/eljurisconsultor/","https://www.linkedin.com/in/camilo-salazar-zapata","https://www.facebook.com/profile.php?id=100067649628579"]}
+</script>
 <meta name="theme-color" content="#1A2238">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +31,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{background:var(--night);color:var(--ink);font:16px/1.7 var(--f-body);margin:0}
@@ -45,7 +54,25 @@ h2{font:700 clamp(28px,4.4vw,40px)/1.15 var(--f-body);color:var(--cream);margin:
 .links{display:flex;gap:22px;font-size:13.5px;font-weight:500}
 .links a{color:var(--muted);text-decoration:none}
 .links a:hover{color:var(--gold)}
-@media (max-width:780px){.links{display:none}}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;color:var(--cream);cursor:pointer;place-items:center}
+.burger svg{width:24px;height:24px}
+.burger:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:780px){
+  .burger{display:grid}
+  .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--night);padding:6px 20px 16px;box-shadow:0 12px 24px rgba(0,0,0,.35)}
+  .nav.open .links{display:flex}
+  .links a{padding:14px 0;font-size:16px;color:var(--ink)}
+}
+/* solutions */
+.sols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:48px}
+.sol{background:var(--night);border-radius:3px;padding:28px;display:grid;gap:12px;align-content:start;min-width:0}
+.sol .t{justify-self:start;font:600 11.5px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--cream-ink);background:var(--gold);padding:6px 10px;border-radius:999px}
+.sol h3{font:700 21px/1.25 var(--f-body);color:var(--cream);margin:0}
+.sol .para{font:italic 400 18px/1.35 var(--f-display);color:var(--gold)}
+.sol p{color:var(--muted);font-size:15px}
+.sol ul{margin:0;padding-left:18px;font-size:14.5px;display:grid;gap:3px}
+.sol ul li::marker{color:var(--gold)}
+.sol .btn{justify-self:start;margin-top:6px}
 /* hero */
 .hero{padding-block:80px 96px;background:radial-gradient(1200px 500px at 50% -10%,#2A3556 0%,var(--night) 70%)}
 .hero .w{display:grid;justify-items:center;text-align:center;gap:22px}
@@ -157,10 +184,10 @@ footer b{font-weight:700}
 </head>
 <body>
 
-<link rel="icon" href="img/cz-mark.png">
 <nav class="nav" aria-label="Principal"><div class="w">
   <a class="brand" href="#inicio"><img src="img/cz-mark.png" alt=""><span data-t="perfil.nombre">Camilo Zapata</span></a>
-  <div class="links"><a href="#areas">Áreas</a><a href="#herramientas">Herramientas</a><a href="#trayectoria">Trayectoria</a><a href="#biblioteca">Biblioteca</a><a href="#contacto">Contacto</a></div>
+  <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <div class="links" id="links"><a href="#areas">Áreas</a><a href="#herramientas">Herramientas</a><a href="#soluciones">Soluciones</a><a href="#trayectoria">Trayectoria</a><a href="#biblioteca">Biblioteca</a><a href="#contacto">Contacto</a></div>
 </div></nav>
 
 <header class="hero" id="inicio"><div class="w">
@@ -245,14 +272,16 @@ footer b{font-weight:700}
   <div class="edu" id="edu"></div>
 </div></section>
 
-<section class="band alt" id="tecnologia"><div class="w tech">
-  <div><span class="kicker">Abogado que programa</span><h2>Automatizo la revisión de contratos con inteligencia artificial</h2><p class="sub">Escribo mis propias automatizaciones en JavaScript. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área.</p></div>
+<section class="band alt" id="soluciones"><div class="w"><div class="tech">
+  <div><span class="kicker">Legal tech · Soluciones para empresas</span><h2>Automatizo la revisión de contratos con inteligencia artificial</h2><p class="sub">Escribo mis propias automatizaciones. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área. Hoy lo ofrezco como servicio para tu empresa.</p></div>
   <div class="flow" aria-label="Flujo de revisión">
     <div><span>Llega el contrato por correo y se clasifica solo</span></div>
     <div><span>La IA lo revisa contra el playbook y la normativa vigente</span></div>
     <div><span>Sale un documento con control de cambios y comentarios</span></div>
     <div><span>El abogado decide, y todo queda archivado y trazable</span></div>
   </div>
+  </div>
+  <div class="sols" id="sols"></div>
 </div></section>
 
 <section class="band" id="biblioteca"><div class="w">
@@ -289,12 +318,17 @@ footer b{font-weight:700}
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
   var get=function(o,p){return p.split('.').reduce(function(a,k){return a&&a[k]},o)};
   var WA='https://wa.me/573046660777';
+  var wa=function(m){return WA+'?text='+encodeURIComponent(m)};
+  var nav=document.querySelector('.nav'),bg=$('burger');
+  bg.onclick=function(){var o=nav.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')};
+  $('links').onclick=function(e){if(e.target.closest('a')){nav.classList.remove('open');bg.setAttribute('aria-expanded','false');bg.setAttribute('aria-label','Abrir menú')}};
 
   function render(D){
     WA='https://wa.me/'+(get(D,'redes.whatsapp')||'573046660777');
     [].forEach.call(document.querySelectorAll('[data-t]'),function(el){var v=get(D,el.dataset.t);if(v!=null)el.textContent=v});
     [].forEach.call(document.querySelectorAll('[data-href]'),function(el){var v=get(D,el.dataset.href);if(v)el.href=v});
-    [].forEach.call(document.querySelectorAll('[data-wa]'),function(el){el.href=WA});
+    [].forEach.call(document.querySelectorAll('[data-wa]'),function(el){el.href=wa('Hola Camilo, vi tu página web y quiero consultarte sobre ')});
+    $('sols').innerHTML=(D.soluciones||[]).map(function(x){return '<div class="sol"><span class="t">'+esc(x.etiqueta)+'</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span><p>'+esc(x.descripcion)+'</p><ul>'+(x.incluye||[]).map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul><a class="btn" href="'+esc(wa('Hola Camilo, quiero una demo de '+x.nombre+' para mi empresa.'))+'" target="_blank" rel="noopener">Pedir una demo</a></div>'}).join('');
     $('cifras').innerHTML=(D.cifras||[]).map(function(c){return '<div class="num"><b>'+esc(c.valor)+'</b><span>'+esc(c.texto)+'</span></div>'}).join('');
     $('areas-list').innerHTML=(D.areas||[]).map(function(a){return '<div class="area"><span class="t">'+esc(a.etiqueta)+'</span><h3>'+esc(a.titulo)+'</h3><p>'+esc(a.descripcion)+'</p><ul>'+(a.puntos||[]).map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></div>'}).join('');
     $('tl').innerHTML=(D.trayectoria||[]).map(function(j){return '<div class="job"><div class="when">'+esc(j.anio)+'<div class="co">'+esc(j.periodo)+'</div></div><div><h3>'+esc(j.cargo)+'</h3><ul>'+(j.logros||[]).map(function(l){return '<li>'+esc(l)+'</li>'}).join('')+'</ul></div></div>'}).join('');
@@ -321,7 +355,7 @@ footer b{font-weight:700}
   var addY=function(d,y){var r=new Date(d);r.setFullYear(r.getFullYear()+y);return r};
   var days=function(a,b){return Math.round((b-a)/864e5)};
   var today=new Date();today.setHours(0,0,0,0);
-  var talk=function(t){return '<a class="btn talk" href="'+WA+'" target="_blank" rel="noopener">'+t+'</a>'};
+  var talk=function(t){return '<a class="btn talk" href="'+esc(wa('Hola Camilo, usé la herramienta de tu página. '+t+'.'))+'" target="_blank" rel="noopener">'+t+'</a>'};
 
   var tabs=[].slice.call(document.querySelectorAll('.tab'));
   tabs.forEach(function(t){t.onclick=function(){tabs.forEach(function(o){var on=o===t;o.setAttribute('aria-selected',on);$(o.getAttribute('aria-controls')).hidden=!on})}});
