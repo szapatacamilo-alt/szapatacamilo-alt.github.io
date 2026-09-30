@@ -226,6 +226,42 @@
   ],
   "soluciones": [
     {
+      "etiqueta": "Precio fijo",
+      "nombre": "Marca protegida",
+      "para": "Emprendedores y pymes que ya tienen nombre y logo.",
+      "descripcion": "Te acompaño de principio a fin para que la marca quede a tu nombre ante la SIC, sin sorpresas en el camino.",
+      "incluye": [
+        "Búsqueda de antecedentes y concepto de viabilidad",
+        "Solicitud en las clases correctas",
+        "Respuesta a requerimientos y oposiciones",
+        "Vigilancia de marcas parecidas durante un año"
+      ]
+    },
+    {
+      "etiqueta": "Precio fijo",
+      "nombre": "SAS lista para operar",
+      "para": "Socios que van a montar empresa.",
+      "descripcion": "Constitución de la SAS con estatutos a la medida y el acuerdo de accionistas que evita peleas futuras.",
+      "incluye": [
+        "Estatutos a la medida",
+        "Acuerdo de accionistas",
+        "Registro en Cámara de Comercio y RUT",
+        "Guía de obligaciones del primer año"
+      ]
+    },
+    {
+      "etiqueta": "Precio fijo",
+      "nombre": "Revisión antes de firmar",
+      "para": "Quien va a comprar vivienda sobre planos, un lote o firmar una promesa.",
+      "descripcion": "Reviso la promesa, el encargo fiduciario o el estudio de títulos y te digo qué riesgos tiene antes de que consignes.",
+      "incluye": [
+        "Revisión del documento y del proyecto",
+        "Informe escrito de riesgos",
+        "Cláusulas a pedir o cambiar",
+        "Llamada de 30 minutos para explicarte"
+      ]
+    },
+    {
       "etiqueta": "Suscripción",
       "nombre": "Revisor de contratos con IA",
       "para": "Empresas que reciben contratos de proveedores cada semana.",
