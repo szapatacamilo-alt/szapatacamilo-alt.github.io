@@ -274,7 +274,7 @@ footer b{font-weight:700}
 </div></section>
 
 <section class="band alt" id="soluciones"><div class="w"><div class="tech">
-  <div><span class="kicker">Legal tech · Soluciones para empresas</span><h2>Paquetes a precio fijo y legal tech para empresas</h2><p class="sub">Escribo mis propias automatizaciones. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área. Hoy lo ofrezco como servicio para tu empresa.</p></div>
+  <div><span class="kicker">Legal tech · Soluciones para empresas</span><h2>Paquetes y legal tech para empresas</h2><p class="sub">Escribo mis propias automatizaciones. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área. Hoy lo ofrezco como servicio para tu empresa.</p></div>
   <div class="flow" aria-label="Flujo de revisión">
     <div><span>Llega el contrato por correo y se clasifica solo</span></div>
     <div><span>La IA lo revisa contra el playbook y la normativa vigente</span></div>
@@ -331,7 +331,7 @@ footer b{font-weight:700}
     [].forEach.call(document.querySelectorAll('[data-href]'),function(el){var v=get(D,el.dataset.href);if(v)el.href=v});
     [].forEach.call(document.querySelectorAll('[data-wa-msg]'),function(el){el.href=wa(el.dataset.waMsg)});
     [].forEach.call(document.querySelectorAll('[data-wa]'),function(el){el.href=wa('Hola Camilo, vi tu página web y quiero consultarte sobre ')});
-    $('sols').innerHTML=(D.soluciones||[]).map(function(x){return '<div class="sol"><span class="t">'+esc(x.etiqueta)+'</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span><p>'+esc(x.descripcion)+'</p><ul>'+(x.incluye||[]).map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul><a class="btn" href="'+esc(wa('Hola Camilo, quiero una demo de '+x.nombre+' para mi empresa.'))+'" target="_blank" rel="noopener">Pedir una demo</a></div>'}).join('');
+    $('sols').innerHTML=(D.soluciones||[]).map(function(x){return '<div class="sol"><span class="t">'+esc(x.etiqueta)+'</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span><p>'+esc(x.descripcion)+'</p><ul>'+(x.incluye||[]).map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul>'+(x.etiqueta==='Paquete'?'<a class="btn" href="'+esc(wa('Hola Camilo, quiero cotizar el paquete '+x.nombre+'.'))+'" target="_blank" rel="noopener">Cotizar por WhatsApp</a>':'<a class="btn" href="'+esc(wa('Hola Camilo, quiero una demo de '+x.nombre+' para mi empresa.'))+'" target="_blank" rel="noopener">Pedir una demo</a>')+'</div>'}).join('');
     $('cifras').innerHTML=(D.cifras||[]).map(function(c){return '<div class="num"><b>'+esc(c.valor)+'</b><span>'+esc(c.texto)+'</span></div>'}).join('');
     $('areas-list').innerHTML=(D.areas||[]).map(function(a){return '<div class="area"><span class="t">'+esc(a.etiqueta)+'</span><h3>'+esc(a.titulo)+'</h3><p>'+esc(a.descripcion)+'</p><ul>'+(a.puntos||[]).map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></div>'}).join('');
     $('tl').innerHTML=(D.trayectoria||[]).map(function(j){return '<div class="job"><div class="when">'+esc(j.anio)+'<div class="co">'+esc(j.periodo)+'</div></div><div><h3>'+esc(j.cargo)+'</h3><ul>'+(j.logros||[]).map(function(l){return '<li>'+esc(l)+'</li>'}).join('')+'</ul></div></div>'}).join('');

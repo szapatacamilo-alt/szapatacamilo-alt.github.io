@@ -226,7 +226,7 @@
   ],
   "soluciones": [
     {
-      "etiqueta": "Precio fijo",
+      "etiqueta": "Paquete",
       "nombre": "Marca protegida",
       "para": "Emprendedores y pymes que ya tienen nombre y logo.",
       "descripcion": "Te acompaño de principio a fin para que la marca quede a tu nombre ante la SIC, sin sorpresas en el camino.",
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "etiqueta": "Precio fijo",
+      "etiqueta": "Paquete",
       "nombre": "SAS lista para operar",
       "para": "Socios que van a montar empresa.",
       "descripcion": "Constitución de la SAS con estatutos a la medida y el acuerdo de accionistas que evita peleas futuras.",
@@ -250,7 +250,7 @@
       ]
     },
     {
-      "etiqueta": "Precio fijo",
+      "etiqueta": "Paquete",
       "nombre": "Revisión antes de firmar",
       "para": "Quien va a comprar vivienda sobre planos, un lote o firmar una promesa.",
       "descripcion": "Reviso la promesa, el encargo fiduciario o el estudio de títulos y te digo qué riesgos tiene antes de que consignes.",
