@@ -226,6 +226,20 @@
   ],
   "soluciones": [
     {
+      "etiqueta": "Precio fijo",
+      "nombre": "Diagnóstico de automatización jurídica",
+      "para": "Áreas jurídicas y empresas que pierden horas en trabajo repetitivo.",
+      "descripcion": "Una sesión para ver cómo trabaja tu equipo hoy y un informe con qué automatizar primero y cuánto tiempo puede ahorrarte.",
+      "incluye": [
+        "Sesión de 60 minutos con quien lleva el proceso",
+        "Mapa del flujo actual: dónde se pierde el tiempo",
+        "Informe con las 3 automatizaciones que más valen la pena",
+        "Si contratas el proyecto en 30 días, este valor se descuenta"
+      ],
+      "precio": "$300.000",
+      "unidad": "diagnóstico"
+    },
+    {
       "etiqueta": "Paquete",
       "nombre": "Marca protegida",
       "para": "Emprendedores y pymes que ya tienen nombre y logo.",
@@ -297,5 +311,138 @@
         "Capacitación al equipo"
       ]
     }
-  ]
+  ],
+  "servicios": [
+    {
+      "id": "titulos",
+      "nombre": "Estudio de títulos exprés",
+      "para": "Quien va a comprar un inmueble y quiere saber si el vendedor puede vender.",
+      "descripcion": "Reviso el certificado de tradición y libertad y las escrituras, y te digo qué riesgos tiene el inmueble antes de que pagues.",
+      "incluye": [
+        "Revisión de la cadena de tradición del inmueble",
+        "Gravámenes, embargos, afectaciones y medidas cautelares",
+        "Informe escrito con riesgos y qué pedir al vendedor",
+        "Llamada corta para explicártelo"
+      ],
+      "precio": "$450.000",
+      "unidad": "por inmueble",
+      "plazo": "3 días hábiles desde que recibo los documentos"
+    },
+    {
+      "id": "arriendo",
+      "nombre": "Revisión de contrato de arrendamiento comercial",
+      "para": "Dueños de local u oficina y comerciantes que van a firmar un arriendo.",
+      "descripcion": "Leo el contrato completo y te digo qué cláusulas te perjudican y cómo cambiarlas antes de firmar.",
+      "incluye": [
+        "Canon, incrementos, destinación y garantías",
+        "Terminación, mejoras, cláusula penal y restitución",
+        "Informe escrito con las cláusulas a pedir o cambiar",
+        "Redacción de alternativas para las más importantes"
+      ],
+      "precio": "$350.000",
+      "unidad": "por contrato",
+      "plazo": "2 días hábiles"
+    },
+    {
+      "id": "datos",
+      "nombre": "Política de datos personales para tu pyme",
+      "para": "Negocios que guardan datos de clientes, empleados o proveedores.",
+      "descripcion": "Los documentos que exige la Ley 1581 de 2012, redactados para cómo trabaja tu empresa, y los pasos para ponerlos en práctica.",
+      "incluye": [
+        "Política de tratamiento de datos personales",
+        "Aviso de privacidad y formato de autorización",
+        "Pasos para atender consultas y reclamos de los titulares",
+        "Te digo si tu empresa debe inscribir sus bases de datos"
+      ],
+      "precio": "$400.000",
+      "unidad": "por empresa",
+      "plazo": "5 días hábiles"
+    },
+    {
+      "id": "acta",
+      "nombre": "Acta de asamblea de accionistas",
+      "para": "SAS que necesitan dejar por escrito sus decisiones.",
+      "descripcion": "Acta de asamblea ordinaria o extraordinaria, con convocatoria y soportes para que quede en regla.",
+      "incluye": [
+        "Acta redactada con el orden del día",
+        "Modelo de convocatoria y de poder",
+        "Lista de soportes que debes archivar",
+        "Orientación para registrar lo que lo requiera"
+      ],
+      "precio": "$250.000",
+      "unidad": "por acta",
+      "plazo": "2 días hábiles"
+    },
+    {
+      "id": "reforma",
+      "nombre": "Reforma de estatutos de una SAS",
+      "para": "Socios que cambian objeto, capital, administradores o domicilio.",
+      "descripcion": "Redacto la reforma, el acta que la aprueba y te guío para registrarla en la Cámara de Comercio.",
+      "incluye": [
+        "Texto de la reforma de estatutos",
+        "Acta de asamblea que la aprueba",
+        "Guía de documentos y pasos ante la Cámara de Comercio",
+        "Revisión de lo que devuelva la Cámara"
+      ],
+      "precio": "$550.000",
+      "unidad": "por reforma",
+      "plazo": "5 días hábiles"
+    },
+    {
+      "id": "peticion",
+      "nombre": "Derecho de petición",
+      "para": "Quien necesita una respuesta formal de un banco, una empresa o una entidad.",
+      "descripcion": "Lo redacto con los fundamentos y los anexos que conviene aportar, y te explico cómo radicarlo y cuándo exigir respuesta.",
+      "incluye": [
+        "Redacción del derecho de petición",
+        "Fundamentos y anexos sugeridos",
+        "Guía de radicación y de plazos de respuesta"
+      ],
+      "precio": "$150.000",
+      "unidad": "por petición",
+      "plazo": "1 día hábil"
+    },
+    {
+      "id": "tutela",
+      "nombre": "Acción de tutela",
+      "para": "Quien siente que le vulneran un derecho fundamental y necesita acudir al juez.",
+      "descripcion": "Redacto la tutela, te explico qué soportes aportar y cómo presentarla. El resultado lo decide el juez.",
+      "incluye": [
+        "Redacción de la acción de tutela",
+        "Revisión de tus soportes y de la entidad accionada",
+        "Instrucciones para presentarla y para hacerle seguimiento"
+      ],
+      "precio": "$350.000",
+      "unidad": "por tutela",
+      "plazo": "2 días hábiles"
+    }
+  ],
+  "servicios_nota": "Los valores son honorarios por el servicio descrito. No incluyen derechos notariales, de registro, de Cámara de Comercio ni certificados, ni la representación en procesos. Si tu caso es más complejo, te lo digo y te cotizo por escrito antes de empezar. No prometo resultados: la decisión final es de la autoridad.",
+  "talleres": [
+    {
+      "nombre": "Datos personales para pymes",
+      "para": "Dueños y equipos administrativos de pequeñas empresas.",
+      "descripcion": "Qué exige la Ley 1581 de 2012, qué documentos tener y cómo atender a un cliente que pide sus datos.",
+      "formato": "2 horas · presencial en Medellín o virtual · grupos hasta 25 personas"
+    },
+    {
+      "nombre": "Contratos para emprendedores: qué firmar y qué no",
+      "para": "Quienes están empezando un negocio.",
+      "descripcion": "Las cláusulas que más dinero cuestan: pago, plazo, responsabilidad, terminación y qué pasa si el otro incumple.",
+      "formato": "2 horas · presencial o virtual · con ejemplos reales anonimizados"
+    },
+    {
+      "nombre": "Arrendamiento comercial: cláusulas que te cuestan plata",
+      "para": "Comerciantes y propietarios de locales y oficinas.",
+      "descripcion": "Canon, incrementos, mejoras, garantías y entrega del inmueble, revisados cláusula por cláusula.",
+      "formato": "90 minutos · presencial o virtual"
+    },
+    {
+      "nombre": "IA y automatización para áreas jurídicas",
+      "para": "Abogados in-house, firmas pequeñas y equipos de compras o contratos.",
+      "descripcion": "Cómo recibir, revisar y archivar contratos con herramientas que ya usas (Gmail, Drive, Word), con una demostración en vivo.",
+      "formato": "3 horas · práctico · virtual o presencial"
+    }
+  ],
+  "talleres_nota": "Cotización por duración y número de asistentes. También estoy disponible para cátedra y conferencias invitadas en programas de derecho y posgrados, sobre contratos comerciales y legal tech."
 }

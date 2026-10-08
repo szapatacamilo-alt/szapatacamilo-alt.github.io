@@ -83,3 +83,29 @@ content:
           - { name: para, label: Para quién, type: string }
           - { name: descripcion, label: Descripción, type: text }
           - { name: incluye, label: Qué incluye, type: string, list: true }
+          - { name: precio, label: "Precio (opcional)", type: string }
+          - { name: unidad, label: "Unidad del precio (opcional)", type: string }
+      - name: servicios
+        label: Servicios a precio fijo
+        type: object
+        list: true
+        fields:
+          - { name: id, label: "Identificador corto (sin espacios)", type: string }
+          - { name: nombre, label: Nombre, type: string }
+          - { name: para, label: Para quién, type: string }
+          - { name: descripcion, label: Descripción, type: text }
+          - { name: incluye, label: Qué incluye, type: string, list: true }
+          - { name: precio, label: "Precio (ej. $450.000)", type: string }
+          - { name: unidad, label: "Unidad (por inmueble, por contrato…)", type: string }
+          - { name: plazo, label: Plazo de entrega, type: string }
+      - { name: servicios_nota, label: Nota debajo de los servicios, type: text }
+      - name: talleres
+        label: Talleres y cátedra
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: Nombre del taller, type: string }
+          - { name: para, label: Para quién, type: string }
+          - { name: descripcion, label: Descripción, type: text }
+          - { name: formato, label: "Duración y formato", type: string }
+      - { name: talleres_nota, label: Nota debajo de los talleres, type: text }
