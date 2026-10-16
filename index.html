@@ -57,7 +57,7 @@ h2{font:700 clamp(28px,4.4vw,40px)/1.15 var(--f-body);color:var(--cream);margin:
 .burger{display:none;width:44px;height:44px;border:0;background:transparent;color:var(--cream);cursor:pointer;place-items:center}
 .burger svg{width:24px;height:24px}
 .burger:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-@media (max-width:780px){
+@media (max-width:1180px){
   .burger{display:grid}
   .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--night);padding:6px 20px 16px;box-shadow:0 12px 24px rgba(0,0,0,.35)}
   .nav.open .links{display:flex}
@@ -204,6 +204,51 @@ input:focus,select:focus{outline:none;border-color:var(--gold)}
 .step::before{content:counter(s,upper-roman);font:italic 500 30px/1 var(--f-display);color:var(--gold);min-width:34px}
 .step b{display:block;color:var(--cream)}
 .step span{color:var(--muted);font-size:15px}
+/* conversion y fluidez · 16-oct-2026 */
+.hero{padding-block:44px 56px}
+.hero .w{gap:16px}
+.mark{width:84px}
+.hname{display:none}
+.gold-dash{display:none}
+.btn.primary{background:var(--gold);padding:17px 26px;font-size:15.5px;box-shadow:0 10px 28px rgba(213,182,121,.28)}
+.btn.primary:hover{background:var(--cream);transform:translateY(-1px)}
+.btn{transition:transform .15s,background .15s}
+.freelink{font-size:14px;color:var(--muted);text-underline-offset:4px}
+.freelink:hover{color:var(--gold)}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;margin-top:4px}
+.trust span{font:600 12.5px/1 var(--f-body);color:var(--cream);background:rgba(255,255,255,.05);border:1px solid rgba(213,182,121,.35);padding:9px 13px;border-radius:999px}
+.trust b{color:var(--gold)}
+.doors{padding-block:64px}
+.door-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px}
+.door{display:grid;gap:8px;align-content:start;text-decoration:none;color:var(--ink);background:var(--night-2);padding:26px;border-radius:4px;border:1px solid transparent;transition:transform .18s,border-color .18s,background .18s}
+.door:hover,.door:focus-visible{transform:translateY(-3px);border-color:var(--gold);background:var(--night-3);outline:none}
+.door .n{font:italic 500 28px/1 var(--f-display);color:var(--gold)}
+.door b{font:700 19px/1.25 var(--f-body);color:var(--cream)}
+.door span:not(.n){color:var(--muted);font-size:14.5px}
+.door i{font-style:normal;font-weight:600;font-size:14px;color:var(--gold);margin-top:6px}
+.door-tool{margin-top:22px;color:var(--muted);font-size:15px}
+.pubchips{margin-bottom:22px}
+details.inc{margin-top:2px}
+details.inc>summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--gold);list-style:none;padding:4px 0}
+details.inc>summary::-webkit-details-marker{display:none}
+details.inc>summary::after{content:" +"}
+details.inc[open]>summary::after{content:" −"}
+details.inc>ul{margin-top:8px}
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{background:var(--night-2);border-radius:4px;padding:0}
+.faq summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:600;color:var(--cream);display:flex;justify-content:space-between;gap:16px;min-height:48px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1;flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 20px 18px;color:var(--muted);font-size:15.5px}
+.navcta{display:none;background:var(--gold);color:var(--cream-ink);text-decoration:none;font:700 13px/1 var(--f-body);padding:11px 16px;border-radius:999px}
+@media (min-width:1181px){.navcta{display:inline-block}}
+.brand span{white-space:nowrap}
+.links a.act{color:var(--gold)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.door,.btn{transition:none}}
+@media (max-width:780px){.hero{padding-block:32px 44px}.band{padding-block:60px}.doors{padding-block:48px}.btn.primary{width:100%;justify-content:center}.cta{width:100%}.cta .btn{justify-content:center;flex:1 1 100%}}
 footer{background:var(--cream);color:var(--cream-ink);padding-block:26px}
 footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;align-items:center;font-size:13px}
 footer .legal{max-width:62ch;opacity:.85}
@@ -215,7 +260,8 @@ footer b{font-weight:700}
 <nav class="nav" aria-label="Principal"><div class="w">
   <a class="brand" href="#inicio"><img src="img/cz-mark.png" alt=""><span data-t="perfil.nombre">Camilo Zapata</span></a>
   <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  <div class="links" id="links"><a href="#areas">Áreas</a><a href="#servicios">Servicios</a><a href="#herramientas">Herramientas</a><a href="#trayectoria">Trayectoria</a><a href="#soluciones">Empresas</a><a href="#talleres">Talleres</a><a href="#biblioteca">Biblioteca</a><a href="#contacto">Contacto</a></div>
+  <div class="links" id="links"><a href="#areas">Áreas</a><a href="#servicios">Servicios</a><a href="#herramientas">Herramientas</a><a href="#trayectoria">Trayectoria</a><a href="#soluciones">Empresas</a><a href="#talleres">Talleres</a><a href="#biblioteca">Biblioteca</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a></div>
+  <a class="navcta" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener">Escríbeme</a>
 </div></nav>
 
 <header class="hero" id="inicio"><div class="w">
@@ -226,10 +272,13 @@ footer b{font-weight:700}
   <hr class="gold-dash">
   <p class="lede" data-t="perfil.presentacion"></p>
   <div class="cta">
-    <a class="btn" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>Escribir por WhatsApp</a>
-    <a class="btn ghost" href="#servicios">Servicios y precios</a>
-    <a class="btn ghost" href="#herramientas">Usar las herramientas</a>
-    <a class="btn ghost" data-wa-msg="Hola Camilo, quiero agendar la consulta gratuita de 15 minutos." href="https://wa.me/573046660777" target="_blank" rel="noopener">Consulta gratis de 15 min</a>
+    <a class="btn primary" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>Cuéntame tu caso por WhatsApp</a>
+    <a class="btn ghost" href="#herramientas">Probar las herramientas gratis</a>
+    <a class="btn ghost" href="#servicios">Ver servicios y precios</a>
+  </div>
+  <a class="freelink" data-wa-msg="Hola Camilo, quiero agendar la consulta gratuita de 15 minutos." href="https://wa.me/573046660777" target="_blank" rel="noopener">o agenda la consulta gratuita de 15 minutos</a>
+  <div class="trust" aria-label="Credenciales">
+    <span>T.P. <b data-t="perfil.tarjeta_profesional">412537</b></span><span>Especialista en Derecho Empresarial</span><span>6 años in-house</span><span>Medellín y todo Colombia, virtual</span>
   </div>
   <div class="social" aria-label="Redes">
     <a data-href="redes.instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></svg></a>
@@ -237,6 +286,16 @@ footer b{font-weight:700}
     <a data-href="redes.facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a>
   </div>
 </div></header>
+
+<section class="band doors" id="necesito" aria-label="¿Qué necesitas hoy?"><div class="w">
+  <div class="head"><span class="kicker">Empieza por aquí</span><h2>¿Qué necesitas hoy?</h2><p class="sub">Elige lo que más se parece a tu situación y te llevo a lo que te sirve.</p></div>
+  <div class="door-grid">
+    <a class="door" href="#servicios" data-pub="personas"><span class="n">01</span><b>Tengo un problema personal</b><span>Derecho de petición, tutela, reportes en centrales, deudas y compras con riesgo.</span><i>Ver servicios para personas →</i></a>
+    <a class="door" href="#servicios" data-pub="empresas"><span class="n">02</span><b>Tengo una empresa o un emprendimiento</b><span>Arriendos comerciales, datos personales, actas, estatutos y estudio de títulos.</span><i>Ver servicios para empresas →</i></a>
+    <a class="door" href="#soluciones"><span class="n">03</span><b>Soy abogado o llevo un área legal</b><span>Vigía de procesos, revisor de contratos con IA y automatización a la medida.</span><i>Ver soluciones legal tech →</i></a>
+  </div>
+  <p class="door-tool">¿Solo quieres revisar un proceso? <a href="vigia.html">Abre el Panel Vigía</a>: guarda tus radicados en tu celular y te muestra qué cambió.</p>
+</div></section>
 
 <section class="band alt" aria-label="En cifras"><div class="w"><div class="nums" id="cifras"></div></div></section>
 
@@ -247,6 +306,7 @@ footer b{font-weight:700}
 
 <section class="band alt" id="servicios"><div class="w">
   <div class="head"><span class="kicker">Precio fijo · sin sorpresas</span><h2>Servicios con precio claro</h2><p class="sub">Trabajos concretos, con alcance, plazo y valor definidos antes de empezar. Si tu caso necesita más, te lo digo y te cotizo antes de avanzar.</p></div>
+  <div class="chips pubchips" role="group" aria-label="Filtrar servicios" id="pubchips"><button type="button" class="chip" data-p="todos" aria-pressed="true">Todos</button><button type="button" class="chip" data-p="personas" aria-pressed="false">Para personas</button><button type="button" class="chip" data-p="empresas" aria-pressed="false">Para empresas y emprendedores</button></div>
   <div class="sols t2" id="servs"></div>
   <p class="fine" id="servs-nota"></p>
 </div></section>
@@ -303,7 +363,7 @@ footer b{font-weight:700}
     <div class="result" id="p-out" aria-live="polite"></div>
   </div>
   <div class="tool" role="tabpanel" id="p-proc" aria-labelledby="t-proc" hidden>
-    <div><h3>¿En qué va tu proceso?</h3><p class="law">Consulta Nacional Unificada · Rama Judicial</p><p class="desc">Pega el radicado de 23 dígitos y mira el despacho, quiénes son las partes y las últimas actuaciones. La consulta se hace desde tu celular directamente a la página pública de la Rama Judicial; esta página no guarda el radicado.</p>
+    <div><h3>¿En qué va tu proceso?</h3><p class="law">Consulta Nacional Unificada · Rama Judicial</p><p class="desc">Pega el radicado de 23 dígitos y mira el despacho, quiénes son las partes y las últimas actuaciones. La consulta se hace desde tu celular directamente a la página pública de la Rama Judicial; esta página no guarda el radicado. ¿Manejas varios procesos? Guárdalos en el <a href="vigia.html">Panel Vigía</a> y mira qué cambió cada vez que entres.</p>
       <form class="form" id="rj-form" style="margin-top:20px" autocomplete="off">
         <label for="rj-rad">Radicado (23 dígitos)<input id="rj-rad" inputmode="numeric" placeholder="05001400300120200012300" maxlength="40"></label>
         <button type="submit" class="btn" style="justify-self:start">Consultar</button>
@@ -348,6 +408,18 @@ footer b{font-weight:700}
   <div class="head"><span class="kicker" data-t="redes.instagram_usuario">@eljurisconsultor</span><h2>Biblioteca</h2><p class="sub">Temas jurídicos explicados en cinco diapositivas.</p></div>
   <div class="chips" role="group" aria-label="Filtrar por serie" id="chips"></div>
   <div class="lib" id="lib"></div>
+</div></section>
+
+<section class="band" id="preguntas"><div class="w">
+  <div class="head"><span class="kicker">Antes de escribirme</span><h2>Preguntas frecuentes</h2></div>
+  <div class="faq">
+    <details><summary>¿Cómo funciona un servicio de precio fijo?</summary><p>Eliges el servicio, me escribes por WhatsApp, confirmamos qué documentos necesito y el valor es el que ves publicado. Si tu caso resulta más complejo, te lo digo y te cotizo por escrito antes de empezar.</p></details>
+    <details><summary>¿Qué no incluye el precio?</summary><p>No incluye derechos notariales, de registro, de Cámara de Comercio ni certificados, ni la representación en procesos. Tampoco prometo resultados: la decisión final es de la autoridad.</p></details>
+    <details><summary>¿Mi información es confidencial?</summary><p>Sí. Como abogado tengo deber de reserva profesional y trato tus datos personales conforme a la Ley 1581 de 2012. Las herramientas gratuitas de esta página no guardan lo que escribes.</p></details>
+    <details><summary>¿Atiendes fuera de Medellín?</summary><p>Atiendo presencial en Medellín y el Oriente antioqueño, y virtual en todo Colombia. Si tu trámite es en otra ciudad, escríbeme y miramos cómo se resuelve.</p></details>
+    <details><summary>¿Mi caso no aparece en la lista de servicios?</summary><p>Escríbeme igual. La consulta inicial de 15 minutos es gratis y en ella te digo si puedo ayudarte, cómo y cuánto costaría.</p></details>
+    <details><summary>¿Las herramientas gratis reemplazan una asesoría?</summary><p>No. Son orientativas: te dan una primera respuesta y las fechas importantes. Tu caso concreto puede tener detalles que cambian el resultado.</p></details>
+  </div>
 </div></section>
 
 <section class="band alt" id="contacto"><div class="w contact">
@@ -415,6 +487,34 @@ footer b{font-weight:700}
     $('chips').onclick=function(e){var b=e.target.closest('.chip');if(b){cur=b.dataset.s;lib()}};
     lib();
     tools();
+    mejoras();
+  }
+
+  /* Servicios: filtro por público, "qué incluye" plegable en celular, entrada suave al hacer scroll y menú activo */
+  var PUB={titulos:['personas','empresas'],arriendo:['empresas'],datos:['empresas'],acta:['empresas'],reforma:['empresas'],peticion:['personas'],tutela:['personas']};
+  var pubSel='todos';
+  function filtroServ(p){
+    pubSel=p||'todos';
+    [].forEach.call(document.querySelectorAll('#servs .sol'),function(c){var id=String(c.id).replace(/^s-/,''),m=PUB[id]||['personas','empresas'];c.hidden=!(pubSel==='todos'||m.indexOf(pubSel)>=0)});
+    [].forEach.call(document.querySelectorAll('#pubchips .chip'),function(b){b.setAttribute('aria-pressed',b.dataset.p===pubSel)});
+  }
+  $('pubchips').onclick=function(e){var b=e.target.closest('.chip');if(b)filtroServ(b.dataset.p)};
+  [].forEach.call(document.querySelectorAll('.door[data-pub]'),function(a){a.addEventListener('click',function(){filtroServ(a.dataset.pub)})});
+  var revealed=false;
+  function mejoras(){
+    var ancho=window.matchMedia('(min-width:781px)').matches;
+    [].forEach.call(document.querySelectorAll('#servs .sol,#sols .sol'),function(c){
+      var ul=c.querySelector('ul');if(!ul||ul.parentNode.tagName==='DETAILS')return;
+      var d=document.createElement('details');d.className='inc';d.innerHTML='<summary>Qué incluye</summary>';ul.parentNode.replaceChild(d,ul);d.appendChild(ul);if(ancho)d.open=true});
+    filtroServ(pubSel);
+    document.documentElement.classList.add('js');
+    var els=[].slice.call(document.querySelectorAll('.door,.sol,.area,.num,.job,.post,.tool,.faq details'));
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    els.forEach(function(e){if(!e.classList.contains('rv')){e.classList.add('rv');io.observe(e)}});
+    if(!revealed){revealed=true;var links=[].slice.call(document.querySelectorAll('.links a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+      var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var i=secs.indexOf(x.target);links.forEach(function(l,k){l.classList.toggle('act',k===i)})}})},{rootMargin:'-45% 0px -50% 0px'});
+      secs.forEach(function(s){if(s)so.observe(s)})}
   }
 
   function tools(){

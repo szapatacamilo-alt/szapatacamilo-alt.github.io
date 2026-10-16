@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panel Vigía · Camilo Zapata</title>
+<meta name="description" content="Guarda tus radicados en tu celular y mira qué cambió en la Rama Judicial. Gratis, sin registro. Tus datos no salen de tu navegador.">
+<meta name="theme-color" content="#1A2238">
+<meta property="og:title" content="Panel Vigía · revisa tus procesos judiciales">
+<meta property="og:description" content="Guarda tus radicados en tu celular y mira qué cambió en la Rama Judicial. Gratis, sin registro.">
+<meta property="og:url" content="https://szapatacamilo-alt.github.io/vigia.html">
+<meta property="og:image" content="https://szapatacamilo-alt.github.io/img/c05.jpg">
+<link rel="icon" href="img/cz-mark.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+:root{--night:#1A2238;--night-2:#212A42;--night-3:#29334E;--ink:#F3EEE2;--muted:#B7B9C4;--gold:#D5B679;--cream:#EAD9AF;--cream-ink:#1A2238;--ok:#8FD1A6;--bad:#F0A097;--f-display:"Cormorant Garamond",Georgia,serif;--f-body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);font:16px/1.6 var(--f-body);margin:0;min-height:100vh}
+a{color:var(--gold)}
+.w{max-width:860px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:5;background:rgba(26,34,56,.94);backdrop-filter:blur(8px)}
+header.top .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:500 15px/1 var(--f-display);letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.brand img{height:32px;width:auto}
+.back{font-size:13px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--gold)}
+.hero{padding:34px 0 18px}
+.kicker{font:500 14px/1 var(--f-display);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+h1{font:700 clamp(28px,6vw,42px)/1.1 var(--f-body);color:var(--cream);margin:12px 0 10px;text-wrap:balance}
+.lede{font:italic 400 clamp(18px,2.6vw,22px)/1.4 var(--f-display);color:var(--muted);max-width:56ch}
+.priv{display:flex;gap:10px;align-items:flex-start;background:var(--night-2);border-radius:4px;padding:12px 14px;margin-top:16px;font-size:13.5px;color:var(--muted)}
+.priv b{color:var(--cream)}
+.card{background:var(--night-2);border-radius:6px;padding:20px;margin-top:16px}
+form.add{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:640px){form.add{grid-template-columns:2fr 1fr auto;align-items:end}}
+label{font-size:12.5px;font-weight:600;color:var(--muted);display:grid;gap:6px}
+input{font:500 16px/1.2 var(--f-body);padding:14px;background:var(--night);color:var(--ink);border:1.5px solid #3A4566;border-radius:4px;width:100%;min-height:48px}
+input:focus{outline:none;border-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 14.5px/1 var(--f-body);padding:15px 20px;min-height:48px;border-radius:4px;border:0;cursor:pointer;color:var(--cream-ink);background:var(--gold);text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{background:var(--cream);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1.5px #4a557a}
+.btn.ghost:hover{background:var(--night-3)}
+.btn.sm{padding:10px 14px;min-height:40px;font-size:13px}
+.btn:disabled{opacity:.55;cursor:default;transform:none}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.bar .grow{flex:1;color:var(--muted);font-size:13.5px}
+.prog{height:4px;background:var(--night-3);border-radius:2px;overflow:hidden;margin-top:12px}
+.prog i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.msg{font-size:14px;color:var(--muted);margin-top:10px;min-height:20px}
+.list{display:grid;gap:12px;margin-top:14px}
+.p{background:var(--night-2);border-radius:6px;padding:18px;display:grid;gap:10px;border:1px solid transparent}
+.p.nuevo{border-color:var(--gold);box-shadow:0 0 0 3px rgba(213,182,121,.12)}
+.p .top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.p h3{font:700 17px/1.25 var(--f-body);color:var(--cream);margin:0;overflow-wrap:anywhere}
+.p .rad{font:500 13px/1.3 ui-monospace,Consolas,monospace;color:var(--muted);overflow-wrap:anywhere}
+.p .des{font-size:14.5px;color:var(--ink)}
+.p .ult{display:grid;gap:2px;background:var(--night);border-radius:4px;padding:10px 12px;font-size:14px}
+.p .ult span{font-size:12.5px;color:var(--muted)}
+.pill{display:inline-block;padding:5px 10px;border-radius:999px;font:700 11.5px/1 var(--f-body);background:#3A4566;color:var(--cream);white-space:nowrap}
+.pill.nuevo{background:var(--gold);color:var(--cream-ink)}
+.pill.bad{background:#8a3b3b}
+.pill.ok{background:#2f6b4f}
+.acts{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.acts li{background:var(--night);border-radius:4px;padding:9px 12px;font-size:13.5px;display:grid;gap:2px}
+.acts li span{color:var(--muted);font-size:12px}
+.acts .att{color:var(--gold);font-weight:700}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+.empty{text-align:center;color:var(--muted);padding:34px 12px;border:1.5px dashed #3A4566;border-radius:6px}
+.cta{background:linear-gradient(135deg,var(--night-3),var(--night-2));border:1px solid rgba(213,182,121,.35);border-radius:6px;padding:22px;margin-top:26px;display:grid;gap:10px}
+.cta h2{font:700 20px/1.25 var(--f-body);color:var(--cream);margin:0}
+.cta p{color:var(--muted);font-size:15px}
+.fine{font-size:12.5px;color:var(--muted);margin:22px 0 40px}
+.tabs{display:flex;gap:8px;margin-top:22px}
+.tab{font:600 14px/1 var(--f-body);padding:13px 18px;border-radius:999px;border:0;background:var(--night-3);color:var(--muted);cursor:pointer;min-height:44px}
+.tab[aria-selected="true"]{background:var(--cream);color:var(--cream-ink)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w">
+  <a class="brand" href="./"><img src="img/cz-mark.png" alt="">Camilo Zapata</a>
+  <a class="back" href="./#herramientas">← Volver a la página</a>
+</div></header>
+
+<main class="w">
+  <section class="hero">
+    <span class="kicker">Gratis · sin registro</span>
+    <h1>Tus procesos, en tu celular.</h1>
+    <p class="lede">Guarda los radicados que te importan y mira qué cambió en la Rama Judicial desde la última vez que entraste.</p>
+    <div class="priv"><span aria-hidden="true">🔒</span><span><b>Tus radicados se guardan solo en este navegador.</b> No pasan por mi servidor ni los veo. La consulta se hace directo a la página pública de la Rama Judicial.</span></div>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Herramientas del panel">
+    <button class="tab" role="tab" id="t-proc" aria-selected="true" aria-controls="v-proc">Mis procesos</button>
+    <button class="tab" role="tab" id="t-emp" aria-selected="false" aria-controls="v-emp">Revisar una empresa</button>
+  </div>
+
+  <section id="v-proc" role="tabpanel" aria-labelledby="t-proc">
+    <div class="card">
+      <form class="add" id="add" autocomplete="off">
+        <label for="rad">Radicado (23 dígitos)<input id="rad" inputmode="numeric" placeholder="05001400300120200012300" maxlength="40" required></label>
+        <label for="ali">Nombre para reconocerlo<input id="ali" placeholder="Caso de Juan" maxlength="60"></label>
+        <button class="btn" type="submit" id="addbtn">Agregar</button>
+      </form>
+      <div class="msg" id="addmsg" aria-live="polite"></div>
+    </div>
+    <div class="bar">
+      <button class="btn ghost sm" id="all" type="button">Revisar todos</button>
+      <button class="btn ghost sm" id="seen" type="button">Marcar todo como visto</button>
+      <button class="btn ghost sm" id="csv" type="button">Exportar CSV</button>
+      <span class="grow" id="count"></span>
+    </div>
+    <div class="prog" id="prog" hidden><i id="progi"></i></div>
+    <div class="list" id="list" aria-live="polite"></div>
+
+    <div class="cta">
+      <h2>¿Quieres que te avise por correo cada día?</h2>
+      <p>El Panel muestra los cambios cuando lo abres. Si manejas varios procesos o clientes, te configuro la vigilancia automática: alerta diaria por correo, historial de actuaciones y carpeta por radicado con las notificaciones de los despachos.</p>
+      <a class="btn" id="wa" target="_blank" rel="noopener" href="#">Quiero la vigilancia automática</a>
+    </div>
+  </section>
+
+  <section id="v-emp" role="tabpanel" aria-labelledby="t-emp" hidden>
+    <div class="card">
+      <form class="add" id="emf" autocomplete="off" style="grid-template-columns:1fr auto;align-items:end">
+        <label for="emq">NIT, cédula o nombre<input id="emq" placeholder="890908901 o Industrial Conconcreto" maxlength="80" required></label>
+        <button class="btn" type="submit">Buscar</button>
+      </form>
+      <div class="msg" id="emmsg" aria-live="polite"></div>
+    </div>
+    <div class="list" id="emlist"></div>
+    <p class="fine">Fuente: datos abiertos de Confecámaras en datos.gov.co. Puede tener rezago y homonimia. No incluye listas restrictivas, antecedentes ni procesos judiciales. No reemplaza el certificado de existencia y representación legal.</p>
+  </section>
+
+  <p class="fine">Es información de consulta y una alerta temprana: no es una notificación. Los términos se cuentan con el Código General del Proceso y con el auto, no con esta pantalla. Los procesos reservados no aparecen. Este panel no es asesoría jurídica.</p>
+</main>
+
+<script>
+(function(){
+'use strict';
+var RJ='https://consultaprocesos.ramajudicial.gov.co:448/api/v2',RUES='https://www.datos.gov.co/resource/c82u-588k.json',KEY='vigia.v1',WA='https://wa.me/573046660777';
+var $=function(i){return document.getElementById(i)};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var fiso=function(s){var m=String(s||'').match(/^(\d{4})-?(\d{2})-?(\d{2})/);return m?m[3]+'/'+m[2]+'/'+m[1]:'—'};
+var pausa=function(ms){return new Promise(function(r){setTimeout(r,ms)})};
+var ATENCION=/traslado|requerimiento|audiencia|sentencia|fallo|admite|admisi|inadmite|rechaza|embargo|secuestro|desacato|apelaci|recurso|mandamiento|excepciones|remate|nulidad/i;
+var CERRADO=/archivo|terminaci|finaliza/i;
+var items=[],busy=false;
+
+function cargar(){try{var v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[]}catch(e){return []}}
+function guardar(){try{localStorage.setItem(KEY,JSON.stringify(items))}catch(e){$('addmsg').textContent='Tu navegador no permite guardar datos en este modo. Los radicados se perderán al cerrar la página.'}}
+function limpio(t){var d=String(t||'').replace(/\D/g,'');return d.length===23?d:''}
+function fmtRad(r){return r.replace(/^(\d{5})(\d{2})(\d{2})(\d{3})(\d{4})(\d{5})(\d{2})$/,'$1-$2-$3-$4-$5-$6-$7')}
+function jget(u){return fetch(u,{headers:{Accept:'application/json'}}).then(function(r){return r.text().then(function(t){try{return JSON.parse(t)}catch(e){throw new Error('respuesta')}})})}
+
+function consultar(rad){
+  return jget(RJ+'/Procesos/Consulta/NumeroRadicacion?numero='+rad+'&SoloActivos=false&pagina=1').then(function(d){
+    var p=(d.procesos||[])[0];if(!p)return null;
+    return jget(RJ+'/Proceso/Actuaciones/'+p.idProceso+'?pagina=1').catch(function(){return{actuaciones:[]}}).then(function(a){
+      return{id:p.idProceso,despacho:String(p.despacho||'').trim(),ultima:String(p.fechaUltimaActuacion||'').slice(0,10),partes:String(p.sujetosProcesales||''),acts:(a.actuaciones||[]).slice(0,6).map(function(x){return{f:String(x.fechaActuacion||'').slice(0,10),t:String(x.actuacion||'').trim(),n:String(x.anotacion||'').trim()}})}
+    })});
+}
+function aplicar(it,r){
+  if(!r){it.estado='sin';it.rev=new Date().toISOString();return}
+  it.id=r.id;it.despacho=r.despacho;it.ultima=r.ultima;it.partes=r.partes;it.acts=r.acts;it.ultimaTxt=r.acts[0]?r.acts[0].t:'';it.cerrado=!!(r.acts[0]&&CERRADO.test(r.acts[0].t));it.estado='ok';it.rev=new Date().toISOString();
+}
+function esNuevo(it){return it.estado==='ok'&&it.visto&&it.ultima>it.visto}
+
+function pintar(){
+  var n=items.filter(esNuevo).length;
+  $('count').textContent=items.length?items.length+(items.length===1?' proceso':' procesos')+(n?' · '+n+(n===1?' con novedad':' con novedades'):' · sin novedades'):'';
+  if(!items.length){$('list').innerHTML='<div class="empty"><b>Aún no tienes procesos guardados.</b><br>Agrega tu primer radicado arriba. Si quieres probar, usa 05001400300120200012300.</div>';return}
+  var orden=items.slice().sort(function(a,b){return (esNuevo(b)?1:0)-(esNuevo(a)?1:0)||String(b.ultima||'').localeCompare(String(a.ultima||''))});
+  $('list').innerHTML=orden.map(function(it){
+    var nuevo=esNuevo(it),badge=it.estado==='sin'?'<span class="pill bad">Sin respuesta</span>':(nuevo?'<span class="pill nuevo">Novedad</span>':(it.cerrado?'<span class="pill">Archivado</span>':'<span class="pill ok">Sin novedad</span>'));
+    var acts=it.abierto&&it.acts?'<ul class="acts">'+it.acts.map(function(x,i){return '<li><b>'+(i<2&&!it.cerrado&&ATENCION.test(x.t+' '+x.n)?'<span class="att">Revisa términos · </span>':'')+esc(x.t)+'</b><span>'+esc(fiso(x.f))+(x.n?' · '+esc(x.n):'')+'</span></li>'}).join('')+'</ul>':'';
+    return '<article class="p'+(nuevo?' nuevo':'')+'" data-r="'+esc(it.rad)+'"><div class="top"><div><h3>'+esc(it.alias||'Proceso sin nombre')+'</h3><div class="rad">'+esc(fmtRad(it.rad))+'</div></div>'+badge+'</div>'+
+      (it.despacho?'<div class="des">'+esc(it.despacho)+'</div>':'')+
+      (it.estado==='ok'?'<div class="ult"><b>'+esc(it.ultimaTxt||'Sin actuaciones')+'</b><span>Última actuación: '+esc(fiso(it.ultima))+(it.rev?' · revisado '+esc(new Date(it.rev).toLocaleString('es-CO',{dateStyle:'short',timeStyle:'short'})):'')+'</span></div>':'<div class="ult"><span>No se pudo consultar. Puede ser un proceso reservado o una caída de la Rama Judicial. Intenta de nuevo más tarde.</span></div>')+acts+
+      '<div class="row"><button class="btn ghost sm" data-a="ver">'+(it.abierto?'Ocultar actuaciones':'Ver actuaciones')+'</button><button class="btn ghost sm" data-a="re">Revisar</button>'+(nuevo?'<button class="btn sm" data-a="visto">Marcar visto</button>':'')+'<button class="btn ghost sm" data-a="del" aria-label="Quitar este proceso">Quitar</button></div></article>'}).join('');
+}
+
+function agregar(rad,alias){
+  if(items.some(function(i){return i.rad===rad}))return Promise.resolve('Ya lo tenías guardado.');
+  var it={rad:rad,alias:alias,estado:'sin',visto:''};
+  return consultar(rad).then(function(r){aplicar(it,r);if(r)it.visto=it.ultima;items.push(it);guardar();pintar();return r?'Agregado: '+it.despacho:'Guardado, pero la consulta pública no lo encontró (puede ser reservado). Reintenta con «Revisar».'}).catch(function(){aplicar(it,null);items.push(it);guardar();pintar();return 'Guardado, pero la Rama Judicial no respondió. Reintenta con «Revisar».'});
+}
+$('add').onsubmit=function(e){
+  e.preventDefault();var rad=limpio($('rad').value);
+  if(!rad){$('addmsg').textContent='El radicado tiene 23 dígitos. Cópialo tal como aparece en el auto o la demanda.';return}
+  $('addbtn').disabled=true;$('addmsg').innerHTML='<span aria-hidden="true">⏳</span> Consultando la Rama Judicial…';
+  agregar(rad,$('ali').value.trim()).then(function(m){$('addmsg').textContent=m;$('rad').value='';$('ali').value=''}).then(function(){$('addbtn').disabled=false});
+};
+function revisarUno(it){return consultar(it.rad).then(function(r){aplicar(it,r)}).catch(function(){aplicar(it,null)})}
+function revisarTodos(){
+  if(busy||!items.length)return;busy=true;$('all').disabled=true;$('prog').hidden=false;var i=0;
+  (function paso(){
+    if(i>=items.length){busy=false;$('all').disabled=false;guardar();pintar();setTimeout(function(){$('prog').hidden=true;$('progi').style.width='0'},600);return}
+    $('progi').style.width=Math.round(i/items.length*100)+'%';
+    revisarUno(items[i]).then(function(){i++;pintar();return pausa(600)}).then(paso);
+  })();
+}
+$('all').onclick=revisarTodos;
+$('seen').onclick=function(){items.forEach(function(it){if(it.ultima)it.visto=it.ultima});guardar();pintar()};
+$('list').onclick=function(e){
+  var b=e.target.closest('button[data-a]');if(!b)return;var card=b.closest('.p'),it=items.filter(function(x){return x.rad===card.dataset.r})[0];if(!it)return;
+  var a=b.dataset.a;
+  if(a==='ver'){it.abierto=!it.abierto;guardar();pintar()}
+  else if(a==='visto'){it.visto=it.ultima;guardar();pintar()}
+  else if(a==='del'){if(b.dataset.c==='1'){items=items.filter(function(x){return x!==it});guardar();pintar()}else{b.dataset.c='1';b.textContent='¿Seguro? Toca otra vez';setTimeout(function(){b.dataset.c='';b.textContent='Quitar'},3500)}}
+  else if(a==='re'){b.disabled=true;b.textContent='Revisando…';revisarUno(it).then(function(){guardar();pintar()})}
+};
+$('csv').onclick=function(){
+  if(!items.length)return;
+  var q=function(s){return '"'+String(s==null?'':s).replace(/"/g,'""')+'"'};
+  var csv='﻿Radicado,Nombre,Despacho,Última actuación,Fecha,Estado\n'+items.map(function(i){return [q("'"+i.rad),q(i.alias),q(i.despacho),q(i.ultimaTxt),q(fiso(i.ultima)),q(esNuevo(i)?'Con novedad':(i.estado==='sin'?'Sin respuesta':'Sin novedad'))].join(',')}).join('\n');
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='mis-procesos.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+};
+$('wa').href=WA+'?text='+encodeURIComponent('Hola Camilo, usé el Panel Vigía y quiero la vigilancia automática de mis procesos.');
+
+/* Empresas (RUES) */
+var CRIT=/CANCEL|LIQUIDA|DISUELT|NO RENOV|SUSPEND|INACTIV/;
+$('emf').onsubmit=function(e){
+  e.preventDefault();var q=$('emq').value.trim();if(q.length<3){$('emmsg').textContent='Escribe al menos 3 caracteres.';return}
+  var dv=q.match(/^(\d[\d.\s]{4,}\d)\s*-\s*(\d)$/),dig=dv?dv[1].replace(/\D/g,''):q.replace(/\D/g,''),esId=!!dv||(dig.length>=6&&dig.length===q.replace(/[\s.\-]/g,'').length);
+  $('emmsg').innerHTML='<span aria-hidden="true">⏳</span> Buscando en el RUES…';$('emlist').innerHTML='';
+  jget(RUES+'?$limit=6&'+(esId?'$where='+encodeURIComponent("numero_identificacion='"+dig+"' OR nit='"+dig+"'"):'$q='+encodeURIComponent(q))).then(function(rs){
+    if(!Array.isArray(rs)||!rs.length){$('emmsg').textContent='Sin coincidencias. Prueba con el NIT sin dígito de verificación o con otra parte del nombre.';return}
+    $('emmsg').textContent=rs.length+(rs.length===1?' resultado':' resultados');var yr=new Date().getFullYear();
+    $('emlist').innerHTML=rs.map(function(r){var est=String(r.estado_matricula||'').toUpperCase(),mal=CRIT.test(est),ult=parseInt(r.ultimo_ano_renovado,10),atras=!mal&&ult&&ult<yr-1;
+      return '<article class="p"><div class="top"><h3>'+esc(r.razon_social)+'</h3><span class="pill '+(mal||atras?'bad':'ok')+'">'+esc(r.estado_matricula||'Sin estado')+'</span></div><div class="des">'+esc(r.organizacion_juridica||'')+' · '+esc(r.camara_comercio||'')+' · matrícula '+esc(r.matricula||'—')+'</div><div class="ult"><span>Última renovación: '+esc(r.fecha_renovacion?fiso(r.fecha_renovacion):(r.ultimo_ano_renovado||'—'))+(atras?' · renovación atrasada':'')+'</span></div></article>'}).join('');
+  }).catch(function(){$('emmsg').textContent='No se pudo consultar el RUES en este momento. Inténtalo de nuevo en unos minutos.'});
+};
+
+/* Pestañas */
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+tabs.forEach(function(t){t.onclick=function(){tabs.forEach(function(o){var on=o===t;o.setAttribute('aria-selected',on);$(o.getAttribute('aria-controls')).hidden=!on})}});
+
+items=cargar();pintar();
+/* Al abrir, revisa solo si hay procesos y la última revisión fue hace más de una hora */
+var viejo=items.some(function(i){return !i.rev||Date.now()-new Date(i.rev).getTime()>3600000});
+if(items.length&&viejo)revisarTodos();
+})();
+</script>
+</body>
+</html>
