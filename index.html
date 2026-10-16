@@ -512,7 +512,7 @@ footer b{font-weight:700}
   $('em-form').onsubmit=function(e){
     e.preventDefault();var q=$('em-q').value.trim();
     if(q.length<3){$('em-out').innerHTML='<p class="note">Escribe al menos 3 caracteres.</p>';return}
-    var dig=q.replace(/\D/g,''),esId=dig.length>=6&&dig.length===q.replace(/[\s.\-]/g,'').length;
+    var dv=q.match(/^(\d[\d.\s]{4,}\d)\s*-\s*(\d)$/),dig=dv?dv[1].replace(/\D/g,''):q.replace(/\D/g,''),esId=!!dv||(dig.length>=6&&dig.length===q.replace(/[\s.\-]/g,'').length);
     var url=RUES+'?$limit=6&'+(esId?'$where='+encodeURIComponent("numero_identificacion='"+dig+"' OR nit='"+dig+"'"):'$q='+encodeURIComponent(q));
     wait('em-out','Buscando en el RUES…');
     jget(url).then(function(rs){
