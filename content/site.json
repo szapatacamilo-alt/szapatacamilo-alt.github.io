@@ -300,6 +300,54 @@
       ]
     },
     {
+      "etiqueta": "Suscripción · piloto",
+      "nombre": "Vigía de procesos judiciales",
+      "para": "Abogados, áreas jurídicas y empresas con procesos en la Rama Judicial.",
+      "descripcion": "Cada día revisa tus radicados en la consulta pública de la Rama Judicial y te avisa por correo cuando hay una actuación nueva, marcando las que suelen abrir términos.",
+      "incluye": [
+        "Lista de radicados con alias por cliente o caso",
+        "Alerta diaria con la actuación nueva y el despacho",
+        "Historial de actuaciones en una hoja ordenada",
+        "Aviso: es alerta temprana, no reemplaza la notificación ni el conteo de términos"
+      ]
+    },
+    {
+      "etiqueta": "Suscripción · piloto",
+      "nombre": "Expediente de correos judiciales",
+      "para": "Quien recibe notificaciones, estados y traslados por correo de decenas de despachos.",
+      "descripcion": "Lee los correos de los despachos, saca el radicado, el tipo de actuación y los plazos que mencionan, guarda los adjuntos en una carpeta por proceso y etiqueta cada hilo.",
+      "incluye": [
+        "Carpeta de Drive por radicado con los adjuntos",
+        "Tabla con fecha, despacho, tipo de actuación y plazo mencionado",
+        "Etiquetas en Gmail por radicado",
+        "Los radicados nuevos pasan solos a la vigilancia de procesos"
+      ]
+    },
+    {
+      "etiqueta": "Por ficha · piloto",
+      "nombre": "Ficha de contraparte",
+      "para": "Quien va a contratar, vender a crédito o arrendar y quiere saber con quién negocia.",
+      "descripcion": "Cruza el registro mercantil (RUES, datos abiertos) con la consulta de procesos de la Rama Judicial y entrega una ficha con alertas objetivas.",
+      "incluye": [
+        "Estado de la matrícula, cámara y último año renovado",
+        "Procesos como demandado y como demandante en la ciudad consultada",
+        "Alertas claras: cancelada, renovación atrasada, muchos procesos",
+        "Alcance declarado: fuentes públicas, sin listas restrictivas ni antecedentes"
+      ]
+    },
+    {
+      "etiqueta": "Suscripción · piloto",
+      "nombre": "Radar de actualidad normativa",
+      "para": "Áreas jurídicas y de cumplimiento que necesitan enterarse a tiempo de lo que cambia.",
+      "descripcion": "Vigila los temas que elijas (laboral, datos, arrendamiento, SAGRILAFT, sociedades) y manda un resumen diario con enlaces. Todo queda marcado para verificar en la fuente oficial antes de citarlo.",
+      "incluye": [
+        "Temas y áreas a tu medida",
+        "Resumen diario por correo con enlaces",
+        "Registro de lo detectado y de su estado de verificación",
+        "Verificación del texto oficial antes de usarlo, a cargo de un abogado"
+      ]
+    },
+    {
       "etiqueta": "Proyecto",
       "nombre": "Automatización jurídica a la medida",
       "para": "Empresas que quieren sacar el trabajo repetitivo del área legal.",
