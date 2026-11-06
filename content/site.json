@@ -16,7 +16,11 @@
     "instagram_usuario": "@eljurisconsultor",
     "linkedin": "https://www.linkedin.com/in/camilo-salazar-zapata",
     "facebook": "https://www.facebook.com/profile.php?id=100067649628579",
-    "facebook_nombre": "Camilo Zapata Abogado"
+    "facebook_nombre": "Camilo Zapata Abogado",
+    "tiktok": "https://www.tiktok.com/@consultorjuris",
+    "tiktok_usuario": "@consultorjuris",
+    "youtube": "https://www.youtube.com/channel/UCK7lGxiEsW7B1BAF7Lo15Kg",
+    "youtube_nombre": "Shorts de derecho y reflexión"
   },
   "cifras": [
     {
@@ -139,7 +143,7 @@
     },
     {
       "titulo": "Abogado · T.P. 412537",
-      "detalle": "Universidad de Medellín · 2021"
+      "detalle": "Universidad de Medellín · 2023"
     },
     {
       "titulo": "Estudio de Títulos Inmobiliarios",
@@ -492,5 +496,39 @@
       "formato": "3 horas · práctico · virtual o presencial"
     }
   ],
-  "talleres_nota": "Cotización por duración y número de asistentes. También estoy disponible para cátedra y conferencias invitadas en programas de derecho y posgrados, sobre contratos comerciales y legal tech."
+  "talleres_nota": "Cotización por duración y número de asistentes. También estoy disponible para cátedra y conferencias invitadas en programas de derecho y posgrados, sobre contratos comerciales y legal tech.",
+  "actualidad": [
+    {
+      "fecha": "Noviembre 2026",
+      "tema": "Tributario",
+      "titulo": "Ley de Rescate Económico: todavía es proyecto",
+      "resumen": "El Gobierno radicó el 29 de octubre de 2026 el Proyecto de Ley 477 de 2026 en la Cámara. Propone recortes de gasto, bajar la renta de empresas del 35 % al 33 % en 2027 y al 31 % en 2028, ajustar rentas exentas de personas naturales y devolver IVA. No está vigente: debe pasar por el Congreso.",
+      "fuente": "Ministerio de Hacienda, INCP, La República",
+      "enlace": "https://www.facebook.com/profile.php?id=100067649628579"
+    },
+    {
+      "fecha": "Noviembre 2026",
+      "tema": "Medellín",
+      "titulo": "Menos turistas, menos gasto extranjero",
+      "resumen": "En el primer semestre de 2026 la ocupación hotelera de Medellín fue de 59,0 %, 6,6 puntos menos que un año atrás, y el gasto de visitantes extranjeros cayó 18,2 %, de $833.300 millones a $681.700 millones.",
+      "fuente": "Cifras de turismo del primer semestre de 2026",
+      "enlace": "https://www.facebook.com/profile.php?id=100067649628579"
+    },
+    {
+      "fecha": "Julio 2026",
+      "tema": "Laboral",
+      "titulo": "Jornada de 42 horas: cambia el valor de la hora",
+      "resumen": "Desde el 15 de julio de 2026 la jornada máxima es de 42 horas semanales (Ley 2101 de 2021). Con eso el divisor para calcular la hora ordinaria pasa a 210. Revisa tus recargos y horas extra.",
+      "fuente": "Ley 2101 de 2021",
+      "enlace": "https://www.facebook.com/profile.php?id=100067649628579"
+    },
+    {
+      "fecha": "2026",
+      "tema": "Laboral",
+      "titulo": "Cuota de trabajadores con discapacidad",
+      "resumen": "La reforma laboral (Ley 2466 de 2025) obliga a las empresas privadas a vincular personas con discapacidad en una proporción según su número de trabajadores. Si eres empleador, revisa tu planta.",
+      "fuente": "Ley 2466 de 2025, art. 15",
+      "enlace": "https://www.facebook.com/profile.php?id=100067649628579"
+    }
+  ]
 }
