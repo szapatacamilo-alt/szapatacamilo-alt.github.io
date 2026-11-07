@@ -252,6 +252,20 @@ footer{background:var(--cream);color:var(--cream-ink);padding-block:26px}
 footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;align-items:center;font-size:13px}
 footer .legal{max-width:62ch;opacity:.85}
 footer b{font-weight:700}
+
+.jur{background:var(--night-3);border-radius:3px;padding:30px;display:grid;gap:18px}
+.jur-row{display:flex;gap:10px;flex-wrap:wrap}
+.jur-row input{flex:1 1 280px;min-width:0}
+.jur .cts{display:flex;flex-wrap:wrap;gap:8px}
+.jur .cts button{font:600 13px/1 var(--f-body);padding:11px 15px;border-radius:999px;border:1.5px solid #3A4566;background:transparent;color:var(--muted);cursor:pointer}
+.jur .cts button[aria-pressed="true"]{border-color:var(--gold);background:var(--night);color:var(--cream)}
+.jur-out{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.jur-out a{display:grid;gap:4px;background:var(--night);border-radius:3px;padding:16px 18px;text-decoration:none;color:var(--ink);border:1px solid transparent}
+.jur-out a:hover,.jur-out a:focus-visible{border-color:var(--gold)}
+.jur-out b{color:var(--cream);font-size:15px}.jur-out span{color:var(--muted);font-size:13px}
+.jur-out a.direct{border-color:var(--gold)}
+.jur-ex{font-size:13px;color:var(--muted)}.jur-ex button{background:none;border:0;color:var(--gold);cursor:pointer;font:inherit;text-decoration:underline;padding:0 4px}
+@media (max-width:760px){.jur{padding:22px}}
 </style>
 </head>
 <body>
@@ -259,7 +273,7 @@ footer b{font-weight:700}
 <nav class="nav" aria-label="Principal"><div class="w">
   <a class="brand" href="#inicio"><img src="img/cz-mark.png" alt=""><span data-t="perfil.nombre">Camilo Zapata</span></a>
   <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  <div class="links" id="links"><a href="#areas">Áreas</a><a href="#servicios">Servicios</a><a href="#herramientas">Herramientas</a><a href="#trayectoria">Trayectoria</a><a href="#soluciones">Empresas</a><a href="#talleres">Talleres</a><a href="#actualidad">Actualidad</a><a href="#biblioteca">Biblioteca</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a></div>
+  <div class="links" id="links"><a href="#areas">Áreas</a><a href="#servicios">Servicios</a><a href="#jurisprudencia">Jurisprudencia</a><a href="#herramientas">Herramientas</a><a href="#trayectoria">Trayectoria</a><a href="#soluciones">Empresas</a><a href="#talleres">Talleres</a><a href="#actualidad">Actualidad</a><a href="#biblioteca">Biblioteca</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a></div>
   <a class="navcta" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener">Escríbeme</a>
 </div></nav>
 
@@ -310,6 +324,23 @@ footer b{font-weight:700}
   <div class="chips pubchips" role="group" aria-label="Filtrar servicios" id="pubchips"><button type="button" class="chip" data-p="todos" aria-pressed="true">Todos</button><button type="button" class="chip" data-p="personas" aria-pressed="false">Para personas</button><button type="button" class="chip" data-p="empresas" aria-pressed="false">Para empresas y emprendedores</button></div>
   <div class="sols t2" id="servs"></div>
   <p class="fine" id="servs-nota"></p>
+</div></section>
+
+<section class="band alt" id="jurisprudencia"><div class="w">
+  <div class="head"><span class="kicker">Gratis · sin registro</span><h2>Buscador de jurisprudencia</h2><p class="sub">Escribe el tema, el número de la sentencia o el radicado. Te llevo directo a las relatorías oficiales de las altas cortes, ya con la búsqueda hecha. No guardo lo que escribes.</p></div>
+  <form class="jur" id="jur-form" autocomplete="off">
+    <div class="cts" id="jur-cts" role="group" aria-label="Cortes">
+      <button type="button" data-c="cc" aria-pressed="true">Corte Constitucional</button>
+      <button type="button" data-c="csj" aria-pressed="true">Corte Suprema de Justicia</button>
+      <button type="button" data-c="ce" aria-pressed="true">Consejo de Estado</button>
+      <button type="button" data-c="cndj" aria-pressed="false">Disciplina Judicial</button>
+      <button type="button" data-c="todas" aria-pressed="false">Toda la Rama Judicial</button>
+    </div>
+    <div class="jur-row"><input id="jur-q" placeholder="despido en estabilidad laboral reforzada, C-081 de 2026, SL1234-2024" maxlength="140" aria-label="Qué buscar"><button class="btn" type="submit">Buscar</button></div>
+    <div class="jur-ex">Ejemplos:<button type="button" data-q="estabilidad laboral reforzada">estabilidad laboral reforzada</button><button type="button" data-q="SU-049 de 2017">SU-049 de 2017</button><button type="button" data-q="cláusula penal contrato">cláusula penal</button><button type="button" data-q="nulidad y restablecimiento del derecho">nulidad y restablecimiento</button></div>
+    <div class="jur-out" id="jur-out" aria-live="polite"></div>
+    <p class="note" style="font-size:13px;color:var(--muted)">Las relatorías son de las propias cortes; este buscador solo arma el enlace. Verifica siempre la vigencia y el texto completo de la providencia antes de citarla.</p>
+  </form>
 </div></section>
 
 <section class="band" id="herramientas"><div class="w">
@@ -652,5 +683,32 @@ var R={instagram:'Instagram',facebook:'Facebook',linkedin:'LinkedIn',tiktok:'Tik
 if(R[d]){var m='Hola Camilo, te encontré en '+R[d]+' y quiero consultarte.';document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){var b=a.href.split('?')[0];if(a.id==='fab'||!a.dataset.waMsg)a.href=b+'?text='+encodeURIComponent(m)})}})();
 </script>
 
+
+<script>
+(function(){
+var f=document.getElementById('jur-form'); if(!f) return;
+var out=document.getElementById('jur-out'), q=document.getElementById('jur-q');
+f.querySelectorAll('#jur-cts button').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true')})});
+f.querySelectorAll('.jur-ex button').forEach(function(b){b.addEventListener('click',function(){q.value=b.dataset.q;f.requestSubmit()})});
+var G=function(site,t){return 'https://www.google.com/search?q='+encodeURIComponent('site:'+site+' '+t)};
+function card(t,d,u,direct){var a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';if(direct)a.className='direct';a.innerHTML='<b></b><span></span>';a.firstChild.textContent=t;a.lastChild.textContent=d;out.appendChild(a)}
+f.addEventListener('submit',function(e){e.preventDefault();
+ var t=q.value.trim(); out.innerHTML=''; var on={};
+ f.querySelectorAll('#jur-cts button[aria-pressed="true"]').forEach(function(b){on[b.dataset.c]=1});
+ var m=t.match(/\b(C|T|SU|A)\s*-?\s*(\d{1,4})\s*(?:\/|-|de|DE)\s*(\d{2,4})\b/);
+ if(m){var y=m[3].length===4?m[3].slice(2):m[3], full=m[3].length===4?m[3]:(+y>50?'19':'20')+y, n=('000'+m[2]).slice(-3), k=m[1].toUpperCase();
+  card('Sentencia '+k+'-'+n+'/'+y+' (texto oficial)','Abre la providencia en la relatoría de la Corte Constitucional','https://www.corteconstitucional.gov.co/relatoria/'+full+'/'+k+'-'+n+'-'+y+'.htm',true);}
+ var sl=t.match(/\b(S[LCP]|STL|STC|STP|AL|AC|AP)\s*-?\s*(\d{1,5})\s*-\s*(\d{4})\b/i);
+ if(sl) card('Providencia '+sl[1].toUpperCase()+sl[2]+'-'+sl[3],'Búscala en la relatoría de la Corte Suprema','https://consultajurisprudencial.ramajudicial.gov.co/WebRelatoria/csj/index.xhtml',true);
+ var tt=t||'jurisprudencia';
+ if(on.cc){card('Corte Constitucional · relatoría','Buscador oficial de la relatoría','https://www.corteconstitucional.gov.co/relatoria/');card('Corte Constitucional · en Google','Resultados de la relatoría con tu búsqueda',G('corteconstitucional.gov.co/relatoria',tt))}
+ if(on.csj){card('Corte Suprema · relatoría','Consulta oficial de sentencias (Civil, Laboral, Penal)','https://consultajurisprudencial.ramajudicial.gov.co/WebRelatoria/csj/index.xhtml');card('Corte Suprema · en Google','Providencias con tu búsqueda',G('consultajurisprudencial.ramajudicial.gov.co',tt+' corte suprema'))}
+ if(on.ce){card('Consejo de Estado · relatoría','Buscador oficial de providencias','https://relatoria.consejodeestado.gov.co/');card('Consejo de Estado · en Google','Providencias con tu búsqueda',G('relatoria.consejodeestado.gov.co',tt))}
+ if(on.cndj){card('Disciplina Judicial · en Google','Providencias de la Comisión Nacional de Disciplina Judicial',G('ramajudicial.gov.co',tt+' comisión nacional de disciplina judicial'))}
+ if(on.todas){card('Rama Judicial · toda la jurisprudencia','Buscador conjunto de altas cortes','https://consultajurisprudencial.ramajudicial.gov.co/');card('Altas cortes · en Google','Busca en todas las relatorías a la vez',G('(corteconstitucional.gov.co OR ramajudicial.gov.co OR consejodeestado.gov.co OR cortesuprema.gov.co)',tt))}
+ if(!out.children.length) out.innerHTML='<p class="note">Elige al menos una corte.</p>';
+});
+})();
+</script>
 </body>
 </html>
