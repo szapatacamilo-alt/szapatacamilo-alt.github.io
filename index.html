@@ -337,6 +337,11 @@ input:focus,select:focus{box-shadow:0 0 0 3px rgba(213,182,121,.22)}
 footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px solid var(--gold)}
 @media (max-width:780px){.band{padding-block:68px}.hero{padding-block:44px 52px}.num b{font-size:44px}h2{font-size:clamp(32px,9vw,40px)}}
 @media (prefers-reduced-motion:reduce){.sol,.area,.ch a,.door,.social a,.jur-out a{transition:none}.sol:hover,.area:hover,.ch a:hover,.social a:hover,.jur-out a:hover{transform:none}}
+.divider{padding-block:56px 8px;border-top:1px solid rgba(201,162,75,.35)}
+.intake{display:grid;gap:12px;background:rgba(255,255,255,.04);border:1px solid rgba(201,162,75,.35);border-radius:14px;padding:22px;margin-bottom:22px}
+.intake h3{margin:0 0 4px}.intake label{display:grid;gap:6px;font-size:14px;color:var(--muted)}
+.intake select,.intake input,.intake textarea{font:inherit;font-size:16px;padding:11px 12px;border-radius:9px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:var(--ink);width:100%;box-sizing:border-box}
+.intake small{color:var(--muted);font-size:12.5px}
 </style>
 </head>
 <body>
@@ -344,21 +349,20 @@ footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px so
 <nav class="nav" aria-label="Principal"><div class="w">
   <a class="brand" href="#inicio"><img src="img/cz-mark.png" alt=""><span data-t="perfil.nombre">Camilo Zapata</span></a>
   <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  <div class="links" id="links"><a href="#areas">Áreas</a><a href="#servicios">Servicios</a><a href="#jurisprudencia">Jurisprudencia</a><a href="#herramientas">Herramientas</a><a href="#trayectoria">Trayectoria</a><a href="#soluciones">Empresas</a><a href="#talleres">Talleres</a><a href="#actualidad">Actualidad</a><a href="#biblioteca">Biblioteca</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a></div>
-  <a class="navcta" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener">Escríbeme</a>
+  <div class="links" id="links"><a href="#servicios" data-go="personas">Personas</a><a href="#servicios" data-go="empresas">Empresas</a><a href="#trayectoria">Quién soy</a><a href="#recursos">Herramientas gratis</a><a href="#contacto">Contacto</a></div>
+  <a class="navcta" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener">WhatsApp</a>
 </div></nav>
 
 <header class="hero" id="inicio"><div class="w">
   <img class="mark" src="img/cz-mark.png" alt="Logo C/Z de Camilo Zapata">
   <div class="hname" data-t="perfil.nombre">Camilo Zapata</div>
   <div class="area-tag" data-t="perfil.cargo">Abogado · Especialista en Derecho Empresarial</div>
-  <h1 data-t="perfil.titular">Seis años del lado de la empresa, negociando los contratos que la sostienen.</h1>
+  <h1 data-t="perfil.titular">Tu tema legal, claro y con precio fijo.</h1>
   <hr class="gold-dash">
   <p class="lede" data-t="perfil.presentacion"></p>
   <div class="cta">
     <a class="btn primary" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>Cuéntame tu caso por WhatsApp</a>
-    <a class="btn ghost" href="#herramientas">Probar las herramientas gratis</a>
-    <a class="btn ghost" href="#servicios">Ver servicios y precios</a>
+        <a class="btn ghost" href="#servicios">Ver servicios y precios</a>
   </div>
   <a class="freelink" data-wa-msg="Hola Camilo, quiero agendar la consulta gratuita de 15 minutos." href="https://wa.me/573046660777" target="_blank" rel="noopener">o agenda la consulta gratuita de 15 minutos</a>
   <div class="trust" aria-label="Credenciales">
@@ -385,10 +389,6 @@ footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px so
 
 <section class="band alt" aria-label="En cifras"><div class="w"><div class="nums" id="cifras"></div></div></section>
 
-<section class="band" id="areas"><div class="w">
-  <div class="head"><span class="kicker">Asuntos que atiendo</span><h2>Áreas de práctica</h2><p class="sub">Lo que aprendí dentro de las empresas, puesto al servicio de quien firma, compra o reclama.</p></div>
-  <div class="areas" id="areas-list"></div>
-</div></section>
 
 <section class="band alt" id="servicios"><div class="w">
   <div class="head"><span class="kicker">Precio fijo · sin sorpresas</span><h2>Servicios con precio claro</h2><p class="sub">Trabajos concretos, con alcance, plazo y valor definidos antes de empezar. Si tu caso necesita más, te lo digo y te cotizo antes de avanzar.</p></div>
@@ -397,6 +397,62 @@ footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px so
   <p class="fine" id="servs-nota"></p>
 </div></section>
 
+
+
+
+
+
+
+<section class="band alt" id="trayectoria"><div class="w">
+  <div class="head"><span class="kicker">Cargos desempeñados</span><h2>Quién te atiende</h2></div>
+  <div class="tl" id="tl"></div>
+  <div class="edu" id="edu"></div>
+</div></section>
+<section class="band" id="areas"><div class="w">
+  <div class="head"><span class="kicker">Asuntos que atiendo</span><h2>Áreas de práctica</h2><p class="sub">Lo que aprendí dentro de las empresas, puesto al servicio de quien firma, compra o reclama.</p></div>
+  <div class="areas" id="areas-list"></div>
+</div></section>
+<section class="band" id="preguntas"><div class="w">
+  <div class="head"><span class="kicker">Antes de escribirme</span><h2>Preguntas frecuentes</h2></div>
+  <div class="faq">
+    <details><summary>¿Cómo funciona un servicio de precio fijo?</summary><p>Eliges el servicio, me escribes por WhatsApp, confirmamos qué documentos necesito y el valor es el que ves publicado. Si tu caso resulta más complejo, te lo digo y te cotizo por escrito antes de empezar.</p></details>
+    <details><summary>¿Qué no incluye el precio?</summary><p>No incluye derechos notariales, de registro, de Cámara de Comercio ni certificados, ni la representación en procesos. Tampoco prometo resultados: la decisión final es de la autoridad.</p></details>
+    <details><summary>¿Mi información es confidencial?</summary><p>Sí. Como abogado tengo deber de reserva profesional y trato tus datos personales conforme a la Ley 1581 de 2012. Las herramientas gratuitas de esta página no guardan lo que escribes.</p></details>
+    <details><summary>¿Atiendes fuera de Medellín?</summary><p>Atiendo presencial en Medellín y el Oriente antioqueño, y virtual en todo Colombia. Si tu trámite es en otra ciudad, escríbeme y miramos cómo se resuelve.</p></details>
+    <details><summary>¿Mi caso no aparece en la lista de servicios?</summary><p>Escríbeme igual. La consulta inicial de 15 minutos es gratis y en ella te digo si puedo ayudarte, cómo y cuánto costaría.</p></details>
+    <details><summary>¿Las herramientas gratis reemplazan una asesoría?</summary><p>No. Son orientativas: te dan una primera respuesta y las fechas importantes. Tu caso concreto puede tener detalles que cambian el resultado.</p></details>
+  </div>
+</div></section>
+<section class="band alt" id="contacto"><div class="w contact">
+  <div>
+    <div class="head"><span class="kicker">Contacto</span><h2>Hablemos de tu caso</h2><p class="sub" data-t="perfil.cobertura"></p></div>
+    <div class="steps">
+      <div class="step"><div><b>Me escribes</b><span>Un resumen corto y los documentos que tengas: contrato, escritura, letra, extracto.</span></div></div>
+      <div class="step"><div><b>Reviso tu caso</b><span>Te digo qué opciones hay y qué riesgos tiene cada una.</span></div></div>
+      <div class="step"><div><b>Propuesta por escrito</b><span>Alcance y honorarios claros antes de empezar.</span></div></div>
+    </div>
+    <div class="sol" style="margin-top:28px"><span class="t">Gratis</span><h3>Kit legal del emprendedor</h3><p>Modelos de poder, derecho de petición, términos y condiciones y política de tratamiento de datos, con instrucciones para usarlos.</p><a class="btn" data-wa-msg="Hola Camilo, quiero recibir el Kit legal del emprendedor." href="https://wa.me/573046660777" target="_blank" rel="noopener">Pedir el kit por WhatsApp</a></div>
+  </div>
+  <form class="intake" id="intake" aria-label="Cuéntame tu caso">
+  <h3>Cuéntame tu caso en 30 segundos</h3>
+  <label>¿Sobre qué es?<select name="tema"><option>Contrato o arriendo</option><option>Deuda, letra o pagaré</option><option>Reporte en centrales</option><option>Trabajo o despido</option><option>Tutela o derecho de petición</option><option>Empresa o emprendimiento</option><option>Otro</option></select></label>
+  <label>¿Qué tan urgente es?<select name="urg"><option>Tengo un plazo esta semana</option><option>Este mes</option><option>Solo quiero orientarme</option></select></label>
+  <label>Ciudad<input name="ciudad" placeholder="Medellín"></label>
+  <label>En una frase, ¿qué pasó?<textarea name="resumen" rows="3" placeholder="Ej. me reportaron por una deuda que ya pagué"></textarea></label>
+  <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+  <small>Se abre WhatsApp con tu mensaje listo. Nada se guarda en esta página.</small>
+</form>
+  <div class="ch">
+    <a data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg><div><b>WhatsApp</b><small data-t="redes.whatsapp_visible"></small></div><i>→</i></a>
+    <a data-href="redes.instagram" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></svg><div><b>Instagram</b><small data-t="redes.instagram_usuario"></small></div><i>→</i></a>
+    <a data-href="redes.linkedin" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.5h.1a4.2 4.2 0 0 1 3.7-2c4 0 4.7 2.6 4.7 6v5.5h-4v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5H10z"/></svg><div><b>LinkedIn</b><small data-t="perfil.nombre_completo"></small></div><i>→</i></a>
+    <a data-href="redes.facebook" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg><div><b>Facebook</b><small data-t="redes.facebook_nombre"></small></div><i>→</i></a>
+    <a data-href="redes.tiktok" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.8v3.1a7.3 7.3 0 0 1-3.8-1.1v6.3a6 6 0 1 1-6-6h.6v3.2a2.9 2.9 0 1 0 2.2 2.8V3z"/></svg><div><b>TikTok</b><small data-t="redes.tiktok_usuario"></small></div><i>→</i></a>
+    <a data-href="redes.youtube" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15.1V8.9l5.2 3.1z"/></svg><div><b>YouTube</b><small data-t="redes.youtube_nombre"></small></div><i>→</i></a>
+  </div>
+</div></section>
+
+<section class="band divider" id="recursos"><div class="w"><div class="head"><span class="kicker">Gratis · sin registro</span><h2>Recursos para resolver por tu cuenta</h2><p class="sub">Buscador de jurisprudencia, calculadoras, notas de actualidad y la biblioteca en cinco diapositivas.</p></div></div></section>
 <section class="band alt" id="jurisprudencia"><div class="w">
   <div class="head"><span class="kicker">Gratis · sin registro</span><h2>Buscador de jurisprudencia</h2><p class="sub">Escribe el tema, el número de la sentencia o el radicado. Te llevo directo a las relatorías oficiales de las altas cortes, ya con la búsqueda hecha. No guardo lo que escribes.</p></div>
   <form class="jur" id="jur-form" autocomplete="off">
@@ -483,12 +539,17 @@ footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px so
   </div>
 </div></section>
 
-<section class="band alt" id="trayectoria"><div class="w">
-  <div class="head"><span class="kicker">Cargos desempeñados</span><h2>Trayectoria</h2></div>
-  <div class="tl" id="tl"></div>
-  <div class="edu" id="edu"></div>
+<section class="band alt" id="actualidad"><div class="w">
+  <div class="head"><span class="kicker">Verificado con fuente</span><h2>Actualidad</h2><p class="sub">Lo que cambió o se está discutiendo y cómo te toca. Cada nota dice de dónde sale.</p></div>
+  <div class="sols t2" id="actu"></div>
+  <p class="door-tool" style="margin-top:24px">Un video corto cada día: <a data-href="redes.tiktok" href="#" target="_blank" rel="noopener">TikTok</a> · <a data-href="redes.youtube" href="#" target="_blank" rel="noopener">YouTube Shorts</a> · <a data-href="redes.instagram" href="#" target="_blank" rel="noopener">Instagram</a> · <a data-href="redes.facebook" href="#" target="_blank" rel="noopener">Facebook</a></p>
 </div></section>
-
+<section class="band" id="biblioteca"><div class="w">
+  <div class="head"><span class="kicker" data-t="redes.instagram_usuario">@eljurisconsultor</span><h2>Biblioteca</h2><p class="sub">Temas jurídicos explicados en cinco diapositivas.</p></div>
+  <div class="chips" role="group" aria-label="Filtrar por serie" id="chips"></div>
+  <div class="lib" id="lib"></div>
+</div></section>
+<section class="band divider" id="profesionales"><div class="w"><div class="head"><span class="kicker">Para empresas, áreas legales y abogados</span><h2>Legal tech y formación</h2></div></div></section>
 <section class="band" id="soluciones"><div class="w"><div class="tech">
   <div><span class="kicker">Legal tech · Soluciones para empresas</span><h2>Automatiza el trabajo repetitivo de tu área legal</h2><p class="sub">Escribo mis propias automatizaciones. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área. Hoy lo ofrezco como servicio para tu empresa.</p></div>
   <div class="flow" aria-label="Flujo de revisión">
@@ -500,57 +561,11 @@ footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px so
   </div>
   <div class="sols" id="sols"></div>
 </div></section>
-
 <section class="band alt" id="talleres"><div class="w">
   <div class="head"><span class="kicker">Talleres y cátedra</span><h2>Para equipos y aulas</h2><p class="sub">Explico el derecho sin enredos, con ejemplos de contratos reales de empresas.</p></div>
   <div class="sols t2" id="talls"></div>
   <p class="fine" id="talls-nota"></p>
 </div></section>
-
-<section class="band alt" id="actualidad"><div class="w">
-  <div class="head"><span class="kicker">Verificado con fuente</span><h2>Actualidad</h2><p class="sub">Lo que cambió o se está discutiendo y cómo te toca. Cada nota dice de dónde sale.</p></div>
-  <div class="sols t2" id="actu"></div>
-  <p class="door-tool" style="margin-top:24px">Un video corto cada día: <a data-href="redes.tiktok" href="#" target="_blank" rel="noopener">TikTok</a> · <a data-href="redes.youtube" href="#" target="_blank" rel="noopener">YouTube Shorts</a> · <a data-href="redes.instagram" href="#" target="_blank" rel="noopener">Instagram</a> · <a data-href="redes.facebook" href="#" target="_blank" rel="noopener">Facebook</a></p>
-</div></section>
-
-<section class="band" id="biblioteca"><div class="w">
-  <div class="head"><span class="kicker" data-t="redes.instagram_usuario">@eljurisconsultor</span><h2>Biblioteca</h2><p class="sub">Temas jurídicos explicados en cinco diapositivas.</p></div>
-  <div class="chips" role="group" aria-label="Filtrar por serie" id="chips"></div>
-  <div class="lib" id="lib"></div>
-</div></section>
-
-<section class="band" id="preguntas"><div class="w">
-  <div class="head"><span class="kicker">Antes de escribirme</span><h2>Preguntas frecuentes</h2></div>
-  <div class="faq">
-    <details><summary>¿Cómo funciona un servicio de precio fijo?</summary><p>Eliges el servicio, me escribes por WhatsApp, confirmamos qué documentos necesito y el valor es el que ves publicado. Si tu caso resulta más complejo, te lo digo y te cotizo por escrito antes de empezar.</p></details>
-    <details><summary>¿Qué no incluye el precio?</summary><p>No incluye derechos notariales, de registro, de Cámara de Comercio ni certificados, ni la representación en procesos. Tampoco prometo resultados: la decisión final es de la autoridad.</p></details>
-    <details><summary>¿Mi información es confidencial?</summary><p>Sí. Como abogado tengo deber de reserva profesional y trato tus datos personales conforme a la Ley 1581 de 2012. Las herramientas gratuitas de esta página no guardan lo que escribes.</p></details>
-    <details><summary>¿Atiendes fuera de Medellín?</summary><p>Atiendo presencial en Medellín y el Oriente antioqueño, y virtual en todo Colombia. Si tu trámite es en otra ciudad, escríbeme y miramos cómo se resuelve.</p></details>
-    <details><summary>¿Mi caso no aparece en la lista de servicios?</summary><p>Escríbeme igual. La consulta inicial de 15 minutos es gratis y en ella te digo si puedo ayudarte, cómo y cuánto costaría.</p></details>
-    <details><summary>¿Las herramientas gratis reemplazan una asesoría?</summary><p>No. Son orientativas: te dan una primera respuesta y las fechas importantes. Tu caso concreto puede tener detalles que cambian el resultado.</p></details>
-  </div>
-</div></section>
-
-<section class="band alt" id="contacto"><div class="w contact">
-  <div>
-    <div class="head"><span class="kicker">Contacto</span><h2>Hablemos de tu caso</h2><p class="sub" data-t="perfil.cobertura"></p></div>
-    <div class="steps">
-      <div class="step"><div><b>Me escribes</b><span>Un resumen corto y los documentos que tengas: contrato, escritura, letra, extracto.</span></div></div>
-      <div class="step"><div><b>Reviso tu caso</b><span>Te digo qué opciones hay y qué riesgos tiene cada una.</span></div></div>
-      <div class="step"><div><b>Propuesta por escrito</b><span>Alcance y honorarios claros antes de empezar.</span></div></div>
-    </div>
-    <div class="sol" style="margin-top:28px"><span class="t">Gratis</span><h3>Kit legal del emprendedor</h3><p>Modelos de poder, derecho de petición, términos y condiciones y política de tratamiento de datos, con instrucciones para usarlos.</p><a class="btn" data-wa-msg="Hola Camilo, quiero recibir el Kit legal del emprendedor." href="https://wa.me/573046660777" target="_blank" rel="noopener">Pedir el kit por WhatsApp</a></div>
-  </div>
-  <div class="ch">
-    <a data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg><div><b>WhatsApp</b><small data-t="redes.whatsapp_visible"></small></div><i>→</i></a>
-    <a data-href="redes.instagram" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></svg><div><b>Instagram</b><small data-t="redes.instagram_usuario"></small></div><i>→</i></a>
-    <a data-href="redes.linkedin" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.5h.1a4.2 4.2 0 0 1 3.7-2c4 0 4.7 2.6 4.7 6v5.5h-4v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5H10z"/></svg><div><b>LinkedIn</b><small data-t="perfil.nombre_completo"></small></div><i>→</i></a>
-    <a data-href="redes.facebook" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg><div><b>Facebook</b><small data-t="redes.facebook_nombre"></small></div><i>→</i></a>
-    <a data-href="redes.tiktok" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.8v3.1a7.3 7.3 0 0 1-3.8-1.1v6.3a6 6 0 1 1-6-6h.6v3.2a2.9 2.9 0 1 0 2.2 2.8V3z"/></svg><div><b>TikTok</b><small data-t="redes.tiktok_usuario"></small></div><i>→</i></a>
-    <a data-href="redes.youtube" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15.1V8.9l5.2 3.1z"/></svg><div><b>YouTube</b><small data-t="redes.youtube_nombre"></small></div><i>→</i></a>
-  </div>
-</div></section>
-
 <footer><div class="w">
   <div><b data-t="perfil.nombre_completo">Camilo Salazar Zapata</b> · Abogado · T.P. <span data-t="perfil.tarjeta_profesional"></span> · <span data-t="perfil.ciudad"></span></div>
   <div class="legal">Las herramientas y publicaciones de este sitio son informativas y no constituyen asesoría jurídica para un caso concreto.</div>
@@ -744,6 +759,8 @@ footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px so
   };
   }
 
+  var fi=$('intake');if(fi)fi.onsubmit=function(e){e.preventDefault();var f=fi.elements;var m='Hola Camilo, vi tu página web. Tema: '+f.tema.value+'. Urgencia: '+f.urg.value+'. Ciudad: '+(f.ciudad.value||'no indicada')+'. '+(f.resumen.value||'');window.open(wa(m),'_blank','noopener')};
+  [].forEach.call(document.querySelectorAll('[data-go]'),function(a){a.addEventListener('click',function(){var b=document.querySelector('#pubchips [data-p="'+a.dataset.go+'"]');if(b)b.click()})});
   fetch('content/site.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(render).catch(function(){render({})});
 })();
 </script>
