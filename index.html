@@ -342,6 +342,25 @@ footer{background:linear-gradient(180deg,#EFE2BE,var(--cream));border-top:1px so
 .intake h3{margin:0 0 4px}.intake label{display:grid;gap:6px;font-size:14px;color:var(--muted)}
 .intake select,.intake input,.intake textarea{font:inherit;font-size:16px;padding:11px 12px;border-radius:9px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:var(--ink);width:100%;box-sizing:border-box}
 .intake small{color:var(--muted);font-size:12.5px}
+/* v3: texto justificado y acabado */
+p,.sub,.lede,.sol p,.faq p,.step span,.door span{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+.hero .lede{text-align:justify;text-align-last:center;margin-inline:auto}
+h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
+.head h2{position:relative;padding-bottom:14px}
+.head h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.sol{border:1px solid rgba(213,182,121,.14);border-radius:10px;box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 18px 40px -24px rgba(0,0,0,.6);transition:transform .25s,border-color .25s,box-shadow .25s}
+.sol:hover{transform:translateY(-3px);border-color:rgba(213,182,121,.45);box-shadow:0 24px 50px -24px rgba(0,0,0,.75)}
+.door{border-radius:10px;transition:transform .25s,border-color .25s}
+.door:hover{transform:translateY(-3px)}
+.btn{border-radius:999px;transition:transform .2s,box-shadow .2s}
+.btn.primary{box-shadow:0 10px 28px -10px rgba(213,182,121,.55)}
+.btn:hover{transform:translateY(-1px)}
+.band.alt{background:linear-gradient(180deg,var(--night-2),var(--night))}
+.faq details{border-radius:8px}
+.divider .head h2{font-size:clamp(30px,4vw,44px)}
+.intake{border-radius:12px;background:linear-gradient(160deg,rgba(213,182,121,.08),rgba(255,255,255,.02))}
+.intake select:focus,.intake input:focus,.intake textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(213,182,121,.2)}
+@media (prefers-reduced-motion:reduce){.sol,.door,.btn{transition:none}.sol:hover,.door:hover,.btn:hover{transform:none}}
 </style>
 </head>
 <body>
