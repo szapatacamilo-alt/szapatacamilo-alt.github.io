@@ -11,9 +11,10 @@ input{width:100%;padding:11px;border-radius:8px;border:1px solid #2a4170;backgro
 button{width:100%;margin-top:20px;padding:13px;border:0;border-radius:8px;background:var(--gold);color:#0b1d3a;font-weight:700;font-size:1rem;cursor:pointer}
 button:disabled{opacity:.5}#m{margin-top:16px;font-size:.9rem;line-height:1.5}a{color:var(--gold)}.n{font-size:.75rem;opacity:.65;margin-top:18px}
 </style></head><body><main>
-<h1>Consulta SAGRILAFT</h1><p class="s">Debida diligencia. Rama Judicial y OFAC se hacen solas; los soportes quedan en Drive y la fila en el formato FT-CON-06-V01.</p>
+<h1>Consulta SAGRILAFT</h1><p class="s">Debida diligencia. La lista OFAC se hace sola si escribes el nombre; los soportes quedan en Drive y la fila en el formato FT-CON-06-V01.</p>
 <form id="f">
 <label>Cédula</label><input id="ced" inputmode="numeric" required>
+<label>Nombre completo (opcional, para la lista OFAC)</label><input id="nom">
 <label>Consultor</label><input id="con">
 <label>Cargo</label><input id="car">
 <button id="b">Consulta SAGRILAFT</button></form>
@@ -30,10 +31,10 @@ $('f').addEventListener('submit',async e=>{
   e.preventDefault();$('b').disabled=true;$('m').textContent='Enviando...';
   ['con','car'].forEach(k=>{try{localStorage.setItem('sg_'+k,$(k).value)}catch(e){}});
   try{
-    const r=await fetch(URL_RECEPTOR,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({accion:'consultar',cedula:$('ced').value,consultor:$('con').value,cargo:$('car').value})});
+    const r=await fetch(URL_RECEPTOR,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({accion:'consultar',cedula:$('ced').value,nombre:$('nom').value,consultor:$('con').value,cargo:$('car').value})});
     const j=await r.json();
     $('m').textContent=j.ok?'Consulta en marcha. En 2 o 3 minutos aparece la fila en el formato y los PDF en la carpeta de soportes.':(j.error==='datos'?'Revisa la cédula.':j.error==='espera'?'Espera unos segundos y vuelve a intentar.':j.error==='limite'?'Límite diario alcanzado.':'No se pudo iniciar ('+(j.codigo||j.error)+').');
-    if(j.ok)$('ced').value='';
+    if(j.ok)$('ced').value=$('nom').value='';
   }catch(err){$('m').textContent='Error de conexión. Intenta de nuevo.'}
   $('b').disabled=false;
 });
