@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Consulta SAGRILAFT</title>
+<style>
+:root{--bg:#0b1d3a;--card:#13294f;--gold:#d4a84b;--tx:#f2f4f8}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--tx);font-family:system-ui,Segoe UI,Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:16px}
+main{width:100%;max-width:460px;background:var(--card);border-radius:14px;padding:28px;border:1px solid #2a4170}
+h1{margin:0 0 4px;font-size:1.4rem;color:var(--gold)}p.s{margin:0 0 20px;font-size:.9rem;opacity:.8}
+label{display:block;font-size:.8rem;margin:12px 0 4px;opacity:.85}
+input{width:100%;padding:11px;border-radius:8px;border:1px solid #2a4170;background:#0b1d3a;color:var(--tx);font-size:1rem}
+button{width:100%;margin-top:20px;padding:13px;border:0;border-radius:8px;background:var(--gold);color:#0b1d3a;font-weight:700;font-size:1rem;cursor:pointer}
+button:disabled{opacity:.5}#m{margin-top:16px;font-size:.9rem;line-height:1.5}a{color:var(--gold)}.n{font-size:.75rem;opacity:.65;margin-top:18px}
+</style></head><body><main>
+<h1>Consulta SAGRILAFT</h1><p class="s">Debida diligencia. Rama Judicial y OFAC se hacen solas; los soportes quedan en Drive y la fila en el formato FT-CON-06-V01.</p>
+<form id="f">
+<label>Cédula</label><input id="ced" inputmode="numeric" required>
+<label>Consultor</label><input id="con">
+<label>Cargo</label><input id="car">
+<button id="b">Consulta SAGRILAFT</button></form>
+<div id="m"></div>
+<p class="n">Policía, Procuraduría y Contraloría tienen captcha y se consultan aparte a mano.
+<a href="https://docs.google.com/spreadsheets/d/1Z4E0-SZZedTiT7zbxiDu4PwkodhLfwM9k4dqKc5AkVE" target="_blank" rel="noopener">Abrir formato</a> ·
+<a href="https://drive.google.com/drive/folders/12jOYty0fZDuZYopGeQsFO6kezJayBl1i" target="_blank" rel="noopener">Abrir soportes</a></p>
+</main>
+<script>
+const URL_RECEPTOR="https://script.google.com/macros/s/AKfycbxIUtSI7UocDaMjigqduYpVWhM9yHX5e2rQjAAXEBEoj_Gniyj9V-Sxf6z4-uk7WV6_/exec";
+const $=i=>document.getElementById(i);
+['con','car'].forEach(k=>{try{const v=localStorage.getItem('sg_'+k);if(v)$(k).value=v}catch(e){}});
+$('f').addEventListener('submit',async e=>{
+  e.preventDefault();$('b').disabled=true;$('m').textContent='Enviando...';
+  ['con','car'].forEach(k=>{try{localStorage.setItem('sg_'+k,$(k).value)}catch(e){}});
+  try{
+    const r=await fetch(URL_RECEPTOR,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({accion:'consultar',cedula:$('ced').value,consultor:$('con').value,cargo:$('car').value})});
+    const j=await r.json();
+    $('m').textContent=j.ok?'Consulta en marcha. En 2 o 3 minutos aparece la fila en el formato y los PDF en la carpeta de soportes.':(j.error==='datos'?'Revisa la cédula.':j.error==='espera'?'Espera unos segundos y vuelve a intentar.':j.error==='limite'?'Límite diario alcanzado.':'No se pudo iniciar ('+(j.codigo||j.error)+').');
+    if(j.ok)$('ced').value='';
+  }catch(err){$('m').textContent='Error de conexión. Intenta de nuevo.'}
+  $('b').disabled=false;
+});
+</script></body></html>
