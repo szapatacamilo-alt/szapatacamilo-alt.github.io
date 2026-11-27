@@ -375,16 +375,13 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
   .freelink,.post .rel,.post .ask,details.inc>summary,.jur-ex button{min-height:40px;display:inline-flex;align-items:center}
   .chip,.tab,.jur .cts button{min-height:42px}
 }
-.bio-card{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:center;background:linear-gradient(180deg,#2D3856,var(--night-3));border:1px solid var(--line-2);border-radius:12px;padding:24px;margin-bottom:28px;box-shadow:var(--shadow)}
-.bio-card img{width:100%;aspect-ratio:5/6;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line-2)}
-.bio-card h3{font:700 24px/1.2 var(--f-body);color:var(--cream);margin:0 0 8px}
-.bio-card p{color:var(--muted);font-size:15.5px;margin-bottom:14px}
-.bio-tags{display:flex;flex-wrap:wrap;gap:8px}
-.bio-tags span{font-size:12.5px;font-weight:600;color:var(--cream);background:rgba(213,182,121,.12);border:1px solid var(--line-2);padding:6px 12px;border-radius:999px}
-@media (max-width:680px){.bio-card{grid-template-columns:1fr;text-align:center;justify-items:center}.bio-card img{max-width:210px}.bio-card p{text-align:center}.bio-tags{justify-content:center}}
-.coach-intro{display:grid;grid-template-columns:minmax(0,1.25fr) 260px;gap:32px;align-items:center;margin-bottom:36px}
-.coach-intro img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line-2);box-shadow:var(--shadow)}
-@media (max-width:760px){.coach-intro{grid-template-columns:1fr;gap:20px}.coach-intro img{max-width:220px;margin-inline:auto}}
+.bio-card{display:flex;align-items:flex-start;gap:18px;background:linear-gradient(180deg,#2D3856,var(--night-3));border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-bottom:24px;box-shadow:var(--shadow)}
+.bio-card img{width:68px;height:68px;flex:none;object-fit:cover;object-position:top;border-radius:50%;border:1.5px solid var(--line-2)}
+.bio-card h3{font:700 20px/1.25 var(--f-body);color:var(--cream);margin:0 0 6px}
+.bio-card p{color:var(--muted);font-size:15px;margin-bottom:12px}
+.bio-tags{display:flex;flex-wrap:wrap;gap:7px}
+.bio-tags span{font-size:12px;font-weight:600;color:var(--cream);background:rgba(213,182,121,.10);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+@media (max-width:600px){.bio-card{flex-direction:column;gap:12px}.bio-card img{width:60px;height:60px}}
 .lb{position:fixed;inset:0;z-index:20;background:rgba(12,16,28,.88);backdrop-filter:blur(8px);display:grid;place-items:center;padding:20px}
 .lb-box{background:var(--night-2);border:1px solid var(--line-2);border-radius:14px;max-width:520px;width:100%;padding:20px;display:grid;gap:14px;box-shadow:0 24px 60px rgba(0,0,0,.7);max-height:92vh;overflow:auto}
 .lb-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -462,14 +459,7 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
 </div></section>
 
 <section class="band alt" id="acompanamiento"><div class="w">
-  <div class="coach-intro">
-    <div>
-      <span class="kicker">Escucha · Mentoría · Coaching ontológico</span>
-      <h2>Claridad para decisiones difíciles</h2>
-      <p class="sub">No todo problema se resuelve solo con un contrato o una demanda. También acompaño conversaciones uno a uno de escucha activa, coaching ontológico y mentoría profesional para bajar el ruido y decidir con criterio.</p>
-    </div>
-    <img src="img/camilo-coaching.jpg" alt="Camilo Zapata · Acompañamiento y coaching ontológico" loading="lazy">
-  </div>
+  <div class="head"><span class="kicker">Escucha · Mentoría · Coaching ontológico</span><h2>Claridad para decisiones difíciles</h2><p class="sub">No todo problema se resuelve solo con un contrato o una demanda. También acompaño conversaciones uno a uno de escucha activa, coaching ontológico y mentoría profesional para bajar el ruido y decidir con criterio.</p></div>
   <div class="sols t2" id="acomp"></div>
   <p class="fine" id="acomp-nota"></p>
 </div></section>
