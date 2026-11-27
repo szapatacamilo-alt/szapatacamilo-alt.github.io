@@ -414,7 +414,6 @@ footer b{color:var(--cream)}
   <div id="rp-tools" role="tabpanel" aria-labelledby="rt-tools">
     <div class="chips" role="tablist" aria-label="Herramientas">
       <button class="chip tab" role="tab" id="t-rep" aria-selected="true" aria-pressed="true" aria-controls="p-rep">Reporte en centrales</button>
-      <button class="chip tab" role="tab" id="t-cob" aria-selected="false" aria-pressed="false" aria-controls="p-cob">¿Me pueden cobrar?</button>
       <button class="chip tab" role="tab" id="t-pres" aria-selected="false" aria-pressed="false" aria-controls="p-pres">Prescripción letra/pagaré</button>
       <button class="chip tab" role="tab" id="t-proc" aria-selected="false" aria-pressed="false" aria-controls="p-proc">Consulta tu proceso</button>
       <button class="chip tab" role="tab" id="t-emp" aria-selected="false" aria-pressed="false" aria-controls="p-emp">Revisa una empresa</button>
@@ -430,17 +429,6 @@ footer b{color:var(--cream)}
           <label for="r-exig" id="r-unpaid" hidden>Fecha en que la deuda se hizo exigible<input id="r-exig" type="date"></label>
         </div></div>
       <div class="result" id="r-out" aria-live="polite"></div>
-    </div>
-    <div class="tool" role="tabpanel" id="p-cob" aria-labelledby="t-cob" hidden>
-      <div><h3>¿Te pueden llamar a esta hora?</h3><p class="law">Ley 2300 de 2023 · arts. 3 y 6</p><p class="desc">Lunes a viernes de 7:00 a. m. a 7:00 p. m. y sábados de 8:00 a. m. a 3:00 p. m. Domingos y festivos, nada.</p>
-        <div class="form" style="margin-top:16px">
-          <div class="row">
-            <label for="c-dia">Día<input id="c-dia" type="date"></label>
-            <label for="c-hora">Hora<input id="c-hora" type="time"></label>
-          </div>
-          <button type="button" class="btn ghost" id="c-now" style="justify-self:start">Usar la hora de ahora</button>
-        </div></div>
-      <div class="result" id="c-out" aria-live="polite"></div>
     </div>
     <div class="tool" role="tabpanel" id="p-pres" aria-labelledby="t-pres" hidden>
       <div><h3>¿Todavía puedes cobrar tu letra o pagaré?</h3><p class="law">Acción cambiaria directa · art. 789 del Código de Comercio</p><p class="desc">Prescribe en tres años contados desde el vencimiento. Presentar la demanda a tiempo interrumpe ese plazo.</p>
@@ -691,19 +679,6 @@ footer b{color:var(--cream)}
     $('r-si').onclick=function(){paid=true;this.setAttribute('aria-pressed','true');$('r-no').setAttribute('aria-pressed','false');$('r-paid').hidden=false;$('r-unpaid').hidden=true;rep()};
     $('r-no').onclick=function(){paid=false;this.setAttribute('aria-pressed','true');$('r-si').setAttribute('aria-pressed','false');$('r-paid').hidden=true;$('r-unpaid').hidden=false;rep()};
     ['r-meses','r-fecha','r-exig'].forEach(function(i){$(i).oninput=rep});rep();
-
-    var FEST={'2026-01-01':'Año Nuevo','2026-01-12':'Reyes Magos','2026-03-23':'San José','2026-04-02':'Jueves Santo','2026-04-03':'Viernes Santo','2026-05-01':'Día del Trabajo','2026-05-18':'Ascensión','2026-06-08':'Corpus Christi','2026-06-15':'Sagrado Corazón','2026-06-29':'San Pedro y San Pablo','2026-07-20':'Independencia','2026-08-07':'Batalla de Boyacá','2026-08-17':'Asunción','2026-10-12':'Día de la Raza','2026-11-02':'Todos los Santos','2026-11-16':'Independencia de Cartagena','2026-12-08':'Inmaculada','2026-12-25':'Navidad'};
-    function now(){var n=new Date();$('c-dia').value=iso(n);$('c-hora').value=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');cob()}
-    function cob(){
-      var d=parse($('c-dia').value),h=$('c-hora').value;if(!d||!h){$('c-out').innerHTML='<p class="note">Indica día y hora.</p>';return}
-      var p=h.split(':'),mins=+p[0]*60+ +p[1],wd=d.getDay(),key=$('c-dia').value,why,ok;
-      if(FEST[key]){ok=false;why='Es festivo: '+FEST[key]+'.'}
-      else if(wd===0){ok=false;why='Los domingos no pueden cobrarte.'}
-      else if(wd===6){ok=mins>=480&&mins<=900;why=ok?'Sábado dentro de 8:00 a. m. a 3:00 p. m.':'Sábados solo de 8:00 a. m. a 3:00 p. m.'}
-      else{ok=mins>=420&&mins<=1140;why=ok?'Entre semana dentro de 7:00 a. m. a 7:00 p. m.':'Entre semana solo de 7:00 a. m. a 7:00 p. m.'}
-      $('c-out').innerHTML='<span class="kicker">'+fd(d)+' · '+h+'</span><div class="big '+(ok?'ok':'bad')+'">'+(ok?'Sí pueden, dentro del horario':'No pueden cobrarte a esta hora')+'</div><p>'+why+'</p><p class="note">Tampoco más de una vez al día ni por varios canales en la misma semana.</p>'+(ok?'':talk('Me están acosando por una deuda'));
-    }
-    $('c-now').onclick=now;['c-dia','c-hora'].forEach(function(i){$(i).oninput=cob});now();
 
     $('p-venc').value=iso(addY(today,-2));
     function pres(){
