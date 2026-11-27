@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Mando Unificado - @eljurisconsultor</title>
+<style>
+:root {
+  --bg: #070b14;
+  --surface: #0f172a;
+  --surface2: #162033;
+  --border: rgba(148, 163, 184, 0.16);
+  --gold: #e9c46a;
+  --gold-dim: rgba(233, 196, 106, 0.14);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --ok: #22c55e;
+  --bad: #ef4444;
+  --blue: #38bdf8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+body { background: radial-gradient(circle at top right, #131f3a 0%, var(--bg) 52%); color: var(--text); min-height: 100vh; }
+.wrap { max-width: 1400px; margin: 0 auto; padding: 24px 20px 64px; }
+
+.hero {
+  background: linear-gradient(135deg, rgba(22,32,51,0.95), rgba(15,23,42,0.88));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 26px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  margin-bottom: 20px;
+}
+.brand-kicker { color: var(--gold); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 6px; }
+.hero h1 { font-size: 1.65rem; font-weight: 800; letter-spacing: -0.02em; }
+.hero-sub { color: var(--muted); font-size: 0.9rem; margin-top: 6px; max-width: 760px; line-height: 1.45; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.kpi::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); opacity: 0.65; }
+.kpi .lbl { color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.kpi .val { font-size: 1.5rem; font-weight: 800; margin-top: 6px; color: var(--text); }
+.kpi .val.gold { color: var(--gold); }
+.kpi .meta { color: var(--muted); font-size: 0.79rem; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+}
+.tab {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.86rem;
+  transition: all 0.16s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.tab:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.tab.active { background: var(--gold); color: #0b1120; font-weight: 800; }
+.pill-count { background: rgba(0,0,0,0.22); padding: 2px 7px; border-radius: 99px; font-size: 0.74rem; }
+
+.btn {
+  background: var(--gold);
+  color: #0b1120;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.83rem;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.btn:hover { transform: translateY(-1px); opacity: 0.94; }
+.btn.ok { background: var(--ok); color: #052e16; }
+.btn.bad { background: rgba(239,68,68,0.16); color: #fca5a5; border: 1px solid rgba(239,68,68,0.35); }
+.btn.bad:hover { background: var(--bad); color: #fff; }
+.btn.sec { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 16px; margin-bottom: 22px; }
+.grid-designs { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.card:hover { border-color: rgba(233, 196, 106, 0.35); }
+.card.active-card { border: 1.5px solid var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--surface2);
+  color: var(--gold);
+  border: 1px solid var(--border);
+}
+.badge.Facebook, .badge.facebook { background: rgba(37,99,235,0.22); color: #93c5fd; border-color: rgba(59,130,246,0.4); }
+.badge.Instagram, .badge.instagram { background: rgba(219,39,119,0.22); color: #f9a8d4; border-color: rgba(236,72,153,0.4); }
+.badge.TikTok, .badge.tiktok { background: rgba(13,148,136,0.22); color: #5eead4; border-color: rgba(20,184,166,0.4); }
+.badge.YouTube, .badge.youtube { background: rgba(220,38,38,0.22); color: #fca5a5; border-color: rgba(239,68,68,0.4); }
+.badge.APROBADA, .badge.ACTIVO, .badge.PRINCIPAL, .badge.CONECTADA { background: rgba(34,197,94,0.2); color: #86efac; border-color: rgba(34,197,94,0.45); }
+.badge.RECHAZADA { background: rgba(239,68,68,0.18); color: #fca5a5; border-color: rgba(239,68,68,0.35); }
+.badge.PENDIENTE { background: rgba(233,196,106,0.16); color: var(--gold); border-color: rgba(233,196,106,0.4); }
+
+.titulo { font-size: 1.02rem; font-weight: 700; line-height: 1.38; color: var(--text); }
+.section-title { font-size: 1.08rem; font-weight: 800; color: var(--gold); margin: 22px 0 12px; letter-spacing: 0.01em; }
+.gancho { font-size: 0.88rem; color: #cbd5e1; background: rgba(7,11,20,0.65); border: 1px solid var(--border); padding: 12px; border-radius: 10px; line-height: 1.5; }
+.meta { font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.stat-box { background: rgba(7,11,20,0.65); border: 1px solid var(--border); border-radius: 10px; padding: 9px 10px; }
+.stat-box .sl { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }
+.stat-box .sv { font-size: 1.05rem; font-weight: 800; color: var(--text); margin-top: 2px; }
+.stat-box .sv.gold { color: var(--gold); }
+
+.bar { height: 8px; background: #070b14; border-radius: 99px; overflow: hidden; border: 1px solid var(--border); }
+.bar > div { height: 100%; background: linear-gradient(90deg, var(--gold), #f4a261); }
+
+table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; font-size: 0.84rem; }
+th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--surface2); color: var(--gold); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+.preview-frame { width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; overflow: hidden; background: #050811; border: 1px solid var(--border); }
+.preview-frame img, .preview-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+audio { width: 100%; height: 38px; border-radius: 8px; }
+
+.form-box { background: var(--surface); border: 1px solid var(--border); border-radius: 15px; padding: 22px; display: grid; gap: 12px; max-width: 720px; }
+input, select, textarea { width: 100%; background: #070b14; color: var(--text); border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px; font-size: 0.88rem; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); }
+.hidden { display: none !important; }
+.fuentes-bar { background: rgba(233,196,106,0.07); border: 1px solid rgba(233,196,106,0.22); border-radius: 11px; padding: 10px 14px; font-size: 0.82rem; color: #e2e8f0; margin-bottom: 18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="brand-kicker">Camilo Zapata Abogado · @eljurisconsultor · Ecosistema Unificado</div>
+      <h1>Centro de Mando de Redes, Métricas y Vigía Jurídico</h1>
+      <div class="hero-sub">Fusión completa de tu Tablero de Redes conectadas (Facebook, Instagram, YouTube y TikTok) con el Vigía Jurídico sin portales de derecha, aprobador de diseños, banco de voces y motor de render.</div>
+    </div>
+    <div class="hero-actions">
+      <button class="btn" onclick="correrVigia()">Escanear fuentes jurídicas</button>
+      <button class="btn sec" onclick="cargar()">Actualizar todo</button>
+    </div>
+  </header>
+
+  <section class="kpis">
+    <div class="kpi"><div class="lbl">Sprint 1M Facebook (9-dic)</div><div class="val gold" id="k-dias">-</div><div class="meta" id="k-fb-prog">Meta 1.000.000 vistas</div></div>
+    <div class="kpi"><div class="lbl">Total programados (4 redes)</div><div class="val" id="k-total-prog">-</div><div class="meta" id="k-auditoria">Sincronizado con tablero</div></div>
+    <div class="kpi"><div class="lbl">Diseño y Voz activos</div><div class="val" style="font-size:0.98rem;" id="k-activos">-</div><div class="meta" id="k-voces-aprobadas">-</div></div>
+    <div class="kpi"><div class="lbl">Videos listos en Drive</div><div class="val gold" id="k-prod">0</div><div class="meta" id="k-render">Motor en espera</div></div>
+  </section>
+
+  <nav class="nav">
+    <button class="tab active" onclick="verTab('redes', this)">Redes Conectadas y Métricas <span class="pill-count">4</span></button>
+    <button class="tab" onclick="verTab('pendientes', this)">Vigía por aprobar <span class="pill-count" id="c-pend">0</span></button>
+    <button class="tab" onclick="verTab('aprobadas', this)">Aprobadas / Producir <span class="pill-count" id="c-apro">0</span></button>
+    <button class="tab" onclick="verTab('disenos', this)">Diseños de Reels <span class="pill-count" id="c-dis">4</span></button>
+    <button class="tab" onclick="verTab('voces', this)">Voces <span class="pill-count" id="c-voz">9</span></button>
+    <button class="tab" onclick="verTab('renderizados', this)">Videos listos <span class="pill-count" id="c-vid">0</span></button>
+    <button class="tab" onclick="verTab('historial', this)">Cola Tablero Anterior <span class="pill-count" id="c-hist">0</span></button>
+    <button class="tab" onclick="verTab('nueva', this)">+ Idea manual</button>
+  </nav>
+
+  <!-- TAB 1: REDES CONECTADAS Y METRICAS -->
+  <div id="tab-redes">
+    <div id="redes-cards" class="grid-2"></div>
+    <div class="section-title">Top piezas virales y hallazgos comprobados</div>
+    <div id="virales-grid" class="grid"></div>
+  </div>
+
+  <!-- TAB 2: VIGIA -->
+  <div id="tab-pendientes" class="hidden">
+    <div class="fuentes-bar">
+      <strong>Fuentes activas del Vigía:</strong> Corte Constitucional, Corte Suprema, Consejo de Estado, MinTrabajo, SIC, Superfinanciera, Ámbito Jurídico, Actualícese, Gerencie, Dejusticia, Razón Pública, Revista Pacto, Vorágine, Cuestión Pública y Cambio. <strong>Bloqueados:</strong> W Radio, Semana, El Tiempo, El Colombiano, Caracol, Blu, RCN, Pulzo, Infobae y portales de derecha.
+    </div>
+    <div class="row" style="margin-bottom:14px;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn sec" onclick="filtrarIdeas('TODAS')">Todas las redes</button>
+        <button class="btn sec" onclick="filtrarIdeas('Facebook')">Facebook (Laboral)</button>
+        <button class="btn sec" onclick="filtrarIdeas('Instagram')">Instagram (Pixel Art + 3D Neón)</button>
+        <button class="btn sec" onclick="filtrarIdeas('TikTok')">TikTok (Derecho Romano y Antiguo Testamento)</button>
+        <button class="btn sec" onclick="filtrarIdeas('YouTube')">YouTube (Historia de Job)</button>
+      </div>
+      <span class="meta">Ideas organizadas por plataforma</span>
+    </div>
+    <div id="grid-pendientes"></div>
+  </div>
+
+  <div id="tab-aprobadas" class="grid hidden"></div>
+  <div id="tab-disenos" class="hidden">
+    <div class="form-box" style="max-width:100%;margin-bottom:18px;">
+      <div class="row">
+        <div class="titulo">Exigir un diseño nuevo o ajuste específico</div>
+        <span class="meta">Se guarda directo en tu cola de exigencias para construirlo a tu medida</span>
+      </div>
+      <div style="display:grid;grid-template-columns:220px 1fr auto;gap:10px;">
+        <select id="ex-red"><option value="Facebook">Para Facebook</option><option value="Instagram">Para Instagram (Roma/Cristianismo)</option><option value="TikTok">Para TikTok</option><option value="YouTube">Para YouTube (Job)</option></select>
+        <input id="ex-texto" placeholder="Ej. Quiero letra más grande arriba, fondo más oscuro, o probar estilo documental tipo X...">
+        <button class="btn" onclick="enviarExigencia('Diseño')">Guardar exigencia</button>
+      </div>
+      <div id="ex-lista-dis" class="meta"></div>
+    </div>
+    <div class="row" style="margin-bottom:14px;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn sec" onclick="filtrarDisenos('TODAS')">Todas las redes</button>
+        <button class="btn sec" onclick="filtrarDisenos('Facebook')">Facebook (B-roll laboral)</button>
+        <button class="btn sec" onclick="filtrarDisenos('Instagram')">Instagram (Pixel Art + 3D Neón)</button>
+        <button class="btn sec" onclick="filtrarDisenos('TikTok')">TikTok (Derecho Romano y Antiguo Testamento)</button>
+        <button class="btn sec" onclick="filtrarDisenos('YouTube')">YouTube (Historia de Job)</button>
+        <button class="btn bad" onclick="filtrarDisenos('ARCHIVADAS')">Ver archivadas</button>
+      </div>
+      <span class="meta">Cada red mantiene su propio diseño ACTIVO independiente</span>
+    </div>
+    <div id="grid-disenos"></div>
+  </div>
+  <div id="tab-voces" class="hidden">
+    <div class="row" style="margin-bottom:14px;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn sec" onclick="filtrarVoces('TODAS')">Todas las redes</button>
+        <button class="btn sec" onclick="filtrarVoces('Facebook')">Facebook</button>
+        <button class="btn sec" onclick="filtrarVoces('Instagram')">Instagram</button>
+        <button class="btn sec" onclick="filtrarVoces('TikTok')">TikTok</button>
+        <button class="btn sec" onclick="filtrarVoces('YouTube')">YouTube</button>
+        <button class="btn sec" onclick="filtrarVoces('APROBADAS')">Solo Aprobadas</button>
+        <button class="btn bad" onclick="filtrarVoces('ARCHIVADAS')">Ver archivadas</button>
+      </div>
+      <span class="meta" id="voz-filtro-info"></span>
+    </div>
+    <div id="grid-voces"></div>
+  </div>
+  <div id="tab-renderizados" class="grid hidden"></div>
+
+  <!-- TAB HISTORIAL TABLERO ANTERIOR -->
+  <div id="tab-historial" class="hidden">
+    <div class="row" style="margin-bottom:14px;">
+      <input id="f-buscar" placeholder="Filtrar por título, norma o red (ej. facebook, instagram, youtube, tiktok)..." oninput="pintarHistorial()" style="max-width:460px;">
+      <span class="meta" id="hist-meta"></span>
+    </div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead><tr><th>Fecha</th><th>Hora</th><th>Tipo</th><th>Título</th><th>Norma</th><th>Estados por red</th></tr></thead>
+        <tbody id="hist-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB NUEVA IDEA -->
+  <div id="tab-nueva" class="form-box hidden">
+    <div class="titulo">Agregar idea manual a la cola de producción</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <select id="n-red">
+        <option value="Facebook">Facebook (Laboral con dolor)</option>
+        <option value="Instagram">Instagram (Derecho + Cristianismo + Roma)</option>
+        <option value="TikTok">TikTok (Mito rápido callejero)</option>
+        <option value="YouTube">YouTube (Historia de Job)</option>
+      </select>
+      <input id="n-tag" placeholder="Etiqueta (TRABAJO, DERECHO ROMANO, CONSUMO)" value="TRABAJO">
+    </div>
+    <input id="n-titulo" placeholder="Tema o titular corto">
+    <textarea id="n-gancho" rows="4" placeholder="Guion o gancho en estilo Camilo (sin dos puntos ni puntos seguidos, con conectores y comas)"></textarea>
+    <input id="n-fuente" placeholder="Norma o sentencia verificada (ej. Art. 62 CST, SU-003/2018)">
+    <button class="btn ok" onclick="crearManual()">Guardar como aprobada</button>
+  </div>
+</div>
+
+<script>
+const LS_KEY = 'eljurisconsultor_panel_v7';
+let DATA = { ideas: [], videos: [], disenos: [], voces: [], metricas: {}, tablero: {}, virales: [], solicitudes: [], render: {} };
+let FILTRO_VOZ = 'TODAS';
+let FILTRO_DISENO = 'TODAS';
+let FILTRO_IDEA = 'TODAS';
+
+function verTab(id, el) {
+  ['redes','pendientes','aprobadas','disenos','voces','renderizados','historial','nueva'].forEach(t => {
+    document.getElementById('tab-'+t).classList.toggle('hidden', t !== id);
+  });
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  if (el) el.classList.add('active');
+}
+
+function esc(s) { return String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+function num(n) { return Number(n || 0).toLocaleString('es-CO'); }
+function guardarLocal() { localStorage.setItem(LS_KEY, JSON.stringify({ ideas: DATA.ideas, disenos: DATA.disenos, voces: DATA.voces, metricas: DATA.metricas, solicitudes: DATA.solicitudes })); }
+
+async function cargar() {
+  const r = await fetch('./data.json?t=' + Date.now());
+  const base = await r.json();
+  DATA = base;
+  try {
+    const saved = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+    if (saved) {
+      if (saved.disenos && saved.disenos.length === base.disenos.length) DATA.disenos = saved.disenos;
+      if (saved.voces && saved.voces.length === base.voces.length) DATA.voces = saved.voces;
+      if (saved.metricas) DATA.metricas = saved.metricas;
+      if (saved.solicitudes) DATA.solicitudes = saved.solicitudes;
+      if (saved.ideas && saved.ideas.length) {
+        const byId = new Map(saved.ideas.map(i => [i.id, i]));
+        DATA.ideas = base.ideas.map(i => byId.get(i.id) || i);
+        saved.ideas.forEach(i => { if (i.origen === 'Manual' && !DATA.ideas.find(x => x.id === i.id)) DATA.ideas.unshift(i); });
+      }
+    }
+  } catch (e) {}
+  renderTodo();
+}
+
+function renderTodo() {
+  const pend = DATA.ideas.filter(i => i.estado === 'PENDIENTE');
+  const apro = DATA.ideas.filter(i => i.estado === 'APROBADA');
+
+  const hoy = new Date();
+  const meta9 = new Date('2026-12-09T00:00:00-05:00');
+  const dias = Math.max(0, Math.ceil((meta9 - hoy) / 86400000));
+  document.getElementById('k-dias').textContent = dias + ' días';
+
+  const fb = DATA.metricas.facebook || {};
+  const pctFb = Math.min(100, Math.round(((fb.vistas_mes || 0) / (fb.meta_vistas || 1000000)) * 100));
+  document.getElementById('k-fb-prog').textContent = num(fb.vistas_mes) + ' / ' + num(fb.meta_vistas) + ' vistas (' + pctFb + '%)';
+
+  const res = (DATA.tablero && DATA.tablero.resumen_redes) || {};
+  const totalProg = (res.facebook?.programados_futuros || 0) + (res.instagram?.programados_futuros || 0) + (res.youtube?.programados_futuros || 0) + (res.tiktok?.programados_futuros || 0);
+  document.getElementById('k-total-prog').textContent = totalProg + ' piezas';
+  document.getElementById('k-auditoria').textContent = 'Web 24/7 · Actualizado: ' + (DATA.generado_web || '');
+
+  const disAct = DATA.disenos.find(d => d.estado === 'ACTIVO' && d.red === 'Facebook') || DATA.disenos[0];
+  const vozPrinc = DATA.voces.find(v => v.estado === 'PRINCIPAL') || DATA.voces[0];
+  const vocesOk = DATA.voces.filter(v => v.estado === 'PRINCIPAL' || v.estado === 'APROBADA').length;
+  document.getElementById('k-activos').textContent = (disAct ? disAct.nombre.split('(')[0].trim() : 'Clásico') + ' · ' + (vozPrinc ? vozPrinc.nombre : 'Gonzalo');
+  document.getElementById('k-voces-aprobadas').textContent = vocesOk + ' voces aprobadas para rotar';
+
+  document.getElementById('k-prod').textContent = DATA.videos.length;
+  document.getElementById('k-render').textContent = 'Último Vigía: ' + (DATA.ultima_corrida_vigia || 'actualizado');
+
+  document.getElementById('c-pend').textContent = pend.length;
+  document.getElementById('c-apro').textContent = apro.length;
+  document.getElementById('c-dis').textContent = DATA.disenos.length;
+  document.getElementById('c-voz').textContent = DATA.voces.length;
+  document.getElementById('c-vid').textContent = DATA.videos.length;
+  document.getElementById('c-hist').textContent = (DATA.tablero.items || []).length;
+
+  pintarRedes();
+  pintarVirales();
+  pintarIdeas('grid-pendientes', pend, true);
+  pintarIdeas('tab-aprobadas', apro, false);
+  pintarDisenos(DATA.disenos);
+  pintarVoces(DATA.voces);
+  pintarVideos(DATA.videos);
+  pintarHistorial();
+}
+
+function pintarRedes() {
+  const el = document.getElementById('redes-cards');
+  const res = (DATA.tablero && DATA.tablero.resumen_redes) || {};
+  const keys = ['facebook', 'instagram', 'youtube', 'tiktok'];
+  el.innerHTML = keys.map(k => {
+    const m = DATA.metricas[k] || {};
+    const t = res[k] || {};
+    const pct = Math.min(100, Math.round(((m.vistas_mes || 0) / (m.meta_vistas || 1)) * 100));
+    return `
+      <div class="card">
+        <div class="row">
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span class="badge ${k}">${esc(m.nombre || k)}</span>
+            <span class="badge CONECTADA">${esc(m.estado_conexion || 'CONECTADA')}</span>
+          </div>
+          <a class="btn sec" style="padding:5px 10px;font-size:0.75rem;" href="${esc(m.url)}" target="_blank">Abrir Studio</a>
+        </div>
+        <div class="titulo">${esc(m.cuenta)}</div>
+        <div class="meta">${esc(m.linea)}</div>
+        <div class="stat-grid">
+          <div class="stat-box"><div class="sl">Visualizaciones mes</div><div class="sv gold">${num(m.vistas_mes)}</div><div class="meta">Meta ${num(m.meta_vistas)}</div></div>
+          <div class="stat-box"><div class="sl">Seguidores</div><div class="sv">${num(m.seguidores)}</div><div class="meta">Meta ${num(m.meta_seguidores)}</div></div>
+          <div class="stat-box"><div class="sl">Programados</div><div class="sv">${t.programados_futuros ?? 0}${t.tope_plataforma ? '/' + t.tope_plataforma : ''}</div><div class="meta">${t.ultima_fecha ? 'Hasta ' + t.ultima_fecha : 'Sin cola'}</div></div>
+        </div>
+        <div>
+          <div class="row"><span class="meta">Avance meta de vistas (${pct}%)</span><span class="meta">Retención: ${m.retencion_s || 0}s / ${m.meta_retencion_s || 18}s</span></div>
+          <div class="bar"><div style="width:${pct}%"></div></div>
+        </div>
+        ${t.nota ? `<div class="meta" style="color:#fca5a5;">Nota tablero: ${esc(t.nota)}</div>` : ''}
+        <div class="row"><button class="btn sec" onclick="editarMetrica('${k}')">Actualizar vistas / seguidores</button></div>
+      </div>
+    `;
+  }).join('');
+}
+
+function pintarVirales() {
+  document.getElementById('virales-grid').innerHTML = (DATA.virales || []).map(v => `
+    <div class="card">
+      <div class="row"><span class="badge ${esc(v.red)}">${esc(v.red)}</span><span class="badge APROBADA">${esc(v.vistas)} vistas</span></div>
+      <div class="titulo">${esc(v.titulo)}</div>
+      <div class="meta">${esc(v.detalle)}</div>
+    </div>
+  `).join('');
+}
+
+function editarMetrica(red) {
+  const cur = DATA.metricas[red] || {};
+  const vistas = prompt('Visualizaciones del mes en ' + cur.nombre + ':', cur.vistas_mes || 0);
+  if (vistas === null) return;
+  const segs = prompt('Seguidores actuales en ' + cur.nombre + ':', cur.seguidores || 0);
+  if (segs === null) return;
+  const ret = prompt('Retención promedio (segundos) en ' + cur.nombre + ':', cur.retencion_s || 10);
+  if (ret === null) return;
+  DATA.metricas[red].vistas_mes = Number(vistas);
+  DATA.metricas[red].seguidores = Number(segs);
+  DATA.metricas[red].retencion_s = Number(ret);
+  guardarLocal();
+  renderTodo();
+}
+
+function pintarHistorial() {
+  const q = (document.getElementById('f-buscar')?.value || '').toLowerCase().trim();
+  const items = (DATA.tablero && DATA.tablero.items) || [];
+  const filtrados = items.filter(it => !q || [it.fecha, it.tipo, it.titulo, it.norma, JSON.stringify(it.estados || {})].join(' ').toLowerCase().includes(q)).slice(-80).reverse();
+  document.getElementById('hist-meta').textContent = 'Mostrando ' + filtrados.length + ' de ' + items.length + ' registros del tablero anterior';
+  document.getElementById('hist-body').innerHTML = filtrados.map(it => {
+    const ests = Object.entries(it.estados || {}).map(([r, e]) => `<span class="badge ${esc(r)}">${esc(r)}: ${esc(e)}</span>`).join(' ');
+    return `<tr><td>${esc(it.fecha)}</td><td>${esc(it.hora)}</td><td>${esc(it.tipo)}</td><td>${esc(it.titulo)}</td><td class="meta">${esc(it.norma)}</td><td>${ests}</td></tr>`;
+  }).join('');
+}
+
+function filtrarIdeas(f) { FILTRO_IDEA = f; pintarIdeas('grid-pendientes', DATA.ideas.filter(i => i.estado === 'PENDIENTE'), true); }
+
+function _cardIdea(i, esPendiente) {
+  return `
+    <div class="card">
+      <div class="row">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;"><span class="badge ${esc(i.red)}">${esc(i.red)}</span><span class="badge">${esc(i.tag)}</span></div>
+        <span class="badge ${esc(i.estado)}">${esc(i.estado)} · ${i.puntaje_viral || 80}/100</span>
+      </div>
+      <div class="titulo">${esc(i.titulo)}</div>
+      <div class="gancho">${esc(i.gancho)}</div>
+      <div class="meta">Fuente: <strong>${esc(i.fuente)}</strong> ${i.url ? '· <a href="'+esc(i.url)+'" target="_blank">Abrir fuente</a>' : ''} · ${esc(i.fecha_detectada)}</div>
+      <div class="row">
+        ${esPendiente ? `
+          <button class="btn ok" onclick="decidirIdea('${esc(i.id)}','APROBADA')">Aprobar en ${esc(i.red)}</button>
+          <button class="btn bad" onclick="decidirIdea('${esc(i.id)}','RECHAZADA')">Rechazar</button>
+        ` : ''}
+        ${i.estado === 'APROBADA' ? `
+          <button class="btn sec" onclick="copiarResumen('${esc(i.id)}')">Copiar orden de producción</button>
+          <button class="btn bad" onclick="decidirIdea('${esc(i.id)}','RECHAZADA')">Quitar</button>
+        ` : ''}
+      </div>
+    </div>`;
+}
+
+function pintarIdeas(elId, lista, esPendiente) {
+  const el = document.getElementById(elId);
+  if (!lista.length) { el.innerHTML = '<div class="card"><div class="meta">Sin elementos en esta bandeja.</div></div>'; return; }
+  if (!esPendiente) { el.innerHTML = lista.map(i => _cardIdea(i, false)).join(''); return; }
+  const redesOrden = FILTRO_IDEA === 'TODAS' ? ['Facebook', 'Instagram', 'TikTok', 'YouTube'] : [FILTRO_IDEA];
+  const desc = {
+    Facebook: 'Derecho laboral con dolor y normativa · 3 Reels diarios',
+    Instagram: 'Contratos, consumo y vida adulta · 3 videos/semana',
+    TikTok: 'Derecho Romano, Antiguo Testamento y Pixel Art · 5 videos/semana',
+    YouTube: 'Serie La Historia de Job · Shorts diarios'
+  };
+  el.innerHTML = redesOrden.map(red => {
+    const grupo = lista.filter(i => (i.red || 'Facebook') === red);
+    if (!grupo.length) return '';
+    return `
+      <div style="margin-bottom:26px;">
+        <div class="row" style="margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span class="badge ${red}" style="font-size:0.84rem;padding:5px 12px;">${red}</span>
+            <span class="meta">${desc[red] || ''}</span>
+          </div>
+          <span class="meta">${grupo.length} ideas pendientes</span>
+        </div>
+        <div class="grid">${grupo.map(i => _cardIdea(i, true)).join('')}</div>
+      </div>`;
+  }).join('');
+}
+
+function filtrarVoces(f) { FILTRO_VOZ = f; pintarVoces(DATA.voces); }
+function filtrarDisenos(f) { FILTRO_DISENO = f; pintarDisenos(DATA.disenos); }
+
+function enviarExigencia(tipo) {
+  const texto = document.getElementById('ex-texto').value.trim();
+  const red = document.getElementById('ex-red').value;
+  if (!texto) return alert('Escribe qué diseño o cambio quieres exigir');
+  DATA.solicitudes.unshift({ fecha: new Date().toISOString().slice(0,16).replace('T',' '), tipo, red, texto });
+  document.getElementById('ex-texto').value = '';
+  guardarLocal();
+  renderTodo();
+}
+
+function pintarDisenos(lista) {
+  const sols = (DATA.solicitudes || []).filter(s => s.tipo === 'Diseño');
+  const exEl = document.getElementById('ex-lista-dis');
+  if (exEl) exEl.innerHTML = sols.length ? ('<strong>Tus exigencias guardadas:</strong> ' + sols.map(s => `[${esc(s.red)}] ${esc(s.texto)}`).join(' · ')) : '';
+  const redesOrden = (FILTRO_DISENO === 'TODAS' || FILTRO_DISENO === 'ARCHIVADAS') ? ['Facebook', 'Instagram', 'TikTok', 'YouTube'] : [FILTRO_DISENO];
+  const subtitulos = {
+    Facebook: '3 Reels diarios · B-roll real laboral (cero pixel-art ni 3D neón)',
+    Instagram: '3 videos/semana · Pixel Art y 3D Neón (los que pegaron en IG)',
+    TikTok: '5 videos/semana · Derecho Romano y Antiguo Testamento',
+    YouTube: 'Shorts diarios · Serie La Historia de Job'
+  };
+  document.getElementById('grid-disenos').innerHTML = redesOrden.map(red => {
+    const grupo = lista.filter(d => (d.red || 'Facebook') === red && (FILTRO_DISENO === 'ARCHIVADAS' ? d.estado === 'RECHAZADA' : d.estado !== 'RECHAZADA'));
+    if (!grupo.length) return '';
+    return `
+      <div style="margin-bottom:26px;">
+        <div class="row" style="margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span class="badge ${red}" style="font-size:0.84rem;padding:5px 12px;">${red}</span>
+            <span class="meta">${subtitulos[red] || ''}</span>
+          </div>
+          <span class="meta">${grupo.length} diseños</span>
+        </div>
+        <div class="grid-designs">
+          ${grupo.map(d => `
+            <div class="card ${d.estado === 'ACTIVO' ? 'active-card' : ''}">
+              <div class="row"><span class="badge ${esc(d.estado)}">${esc(d.estado)}</span><span class="badge ${esc(d.red || 'Facebook')}">${esc(d.red || 'Facebook')}</span></div>
+              <div class="preview-frame"><img src="./assets/disenos/${encodeURIComponent(d.imagen)}" alt="${esc(d.nombre)}"></div>
+              <div class="titulo">${esc(d.nombre)}</div>
+              <div class="meta">${esc(d.descripcion)}</div>
+              <div class="row">
+                <button class="btn ok" onclick="decidirDiseno('${esc(d.id)}','ACTIVO')">Fijar activo en ${esc(d.red || 'FB')}</button>
+                <button class="btn sec" onclick="decidirDiseno('${esc(d.id)}','APROBADO')">Aprobar</button>
+                <button class="btn bad" onclick="decidirDiseno('${esc(d.id)}','RECHAZADA')">Descartar</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function pintarVoces(lista) {
+  const filtradas = lista.filter(v => {
+    if (FILTRO_VOZ === 'ARCHIVADAS') return v.estado === 'RECHAZADA';
+    if (v.estado === 'RECHAZADA') return false;
+    if (FILTRO_VOZ === 'TODAS') return true;
+    if (FILTRO_VOZ === 'APROBADAS') return v.estado === 'PRINCIPAL' || v.estado === 'APROBADA';
+    return (v.red || 'Facebook') === FILTRO_VOZ;
+  });
+  const info = document.getElementById('voz-filtro-info');
+  if (info) info.textContent = 'Mostrando ' + filtradas.length + ' de ' + lista.length + ' voces · 1 voz PRINCIPAL independiente por red';
+  const redesOrden = ['Facebook', 'Instagram', 'TikTok', 'YouTube'].includes(FILTRO_VOZ) ? [FILTRO_VOZ] : ['Facebook', 'Instagram', 'TikTok', 'YouTube'];
+  const sub = {
+    Facebook: 'Tono directo, cercano y claro para Reels laborales',
+    Instagram: 'Tono documental, sobrio y clásico para Roma y Cristianismo',
+    TikTok: 'Ritmo ágil y directo para Pixel Art y mitos callejeros',
+    YouTube: 'Narración profunda y cinematográfica para La Historia de Job'
+  };
+  document.getElementById('grid-voces').innerHTML = redesOrden.map(red => {
+    const grupo = filtradas.filter(v => (v.red || 'Facebook') === red);
+    if (!grupo.length) return '';
+    return `
+      <div style="margin-bottom:26px;">
+        <div class="row" style="margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span class="badge ${red}" style="font-size:0.84rem;padding:5px 12px;">${red}</span>
+            <span class="meta">${sub[red] || ''}</span>
+          </div>
+          <span class="meta">${grupo.length} voces</span>
+        </div>
+        <div class="grid">
+          ${grupo.map(v => `
+            <div class="card ${v.estado === 'PRINCIPAL' ? 'active-card' : ''}">
+              <div class="row">
+                <div style="display:flex;gap:6px;"><span class="badge ${esc(v.red || 'Facebook')}">${esc(v.red || 'Facebook')}</span><span class="badge">${esc(v.grupo)}</span></div>
+                <span class="badge ${esc(v.estado)}">${esc(v.estado)}</span>
+              </div>
+              <div class="titulo">${esc(v.nombre)}</div>
+              <div class="meta">${esc(v.nota)}</div>
+              <audio controls preload="none" src="./assets/voces/${encodeURIComponent(v.archivo)}"></audio>
+              <div class="row">
+                <button class="btn ok" onclick="decidirVoz('${esc(v.id)}','PRINCIPAL')">Fijar principal en ${esc(v.red || 'FB')}</button>
+                <button class="btn sec" onclick="decidirVoz('${esc(v.id)}','APROBADA')">Aprobar</button>
+                <button class="btn bad" onclick="decidirVoz('${esc(v.id)}','RECHAZADA')">Descartar</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function pintarVideos(videos) {
+  const el = document.getElementById('tab-renderizados');
+  if (!videos.length) { el.innerHTML = '<div class="card"><div class="meta">Aún no hay videos renderizados.</div></div>'; return; }
+  el.innerHTML = videos.map(v => `
+    <div class="card">
+      <div class="row"><span class="badge Facebook">${esc(v.carpeta)}</span><span class="meta">${v.kb} KB</span></div>
+      <div class="gancho" style="border-color:rgba(233,196,106,0.35);"><strong>MP4 listo en Drive:</strong><br>03 CARRERA Y MARCA / Agente_Redes_ElJurisconsultor / produccion_sprint_26nov / ${esc(v.carpeta)} / ${esc(v.archivo)}</div>
+      <div class="titulo">${esc(v.archivo)}</div>
+      <div class="gancho">${esc(v.caption)}</div>
+      <div class="row">
+        <button class="btn sec" onclick="navigator.clipboard.writeText(${JSON.stringify(v.caption || '')});alert('Caption copiado')">Copiar caption</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function decidirIdea(id, estado) {
+  const it = DATA.ideas.find(i => i.id === id);
+  if (it) it.estado = estado;
+  guardarLocal(); renderTodo();
+}
+
+function decidirDiseno(id, estado) {
+  const target = DATA.disenos.find(d => d.id === id);
+  const red = target ? (target.red || 'Facebook') : 'Facebook';
+  DATA.disenos.forEach(d => {
+    if (estado === 'ACTIVO' && (d.red || 'Facebook') === red && d.estado === 'ACTIVO') d.estado = 'APROBADO';
+    if (d.id === id) d.estado = estado;
+  });
+  guardarLocal(); renderTodo();
+}
+
+function decidirVoz(id, estado) {
+  const target = DATA.voces.find(v => v.id === id);
+  const red = target ? (target.red || 'Facebook') : 'Facebook';
+  DATA.voces.forEach(v => {
+    if (estado === 'PRINCIPAL' && (v.red || 'Facebook') === red && v.estado === 'PRINCIPAL') v.estado = 'APROBADA';
+    if (v.id === id) v.estado = estado;
+  });
+  guardarLocal(); renderTodo();
+}
+
+function crearManual() {
+  const titulo = document.getElementById('n-titulo').value.trim();
+  if (!titulo) return alert('Escribe un título');
+  DATA.ideas.unshift({
+    id: 'manual-' + Date.now(),
+    fecha_detectada: new Date().toISOString().slice(0,16).replace('T',' '),
+    red: document.getElementById('n-red').value,
+    tag: document.getElementById('n-tag').value || 'TRABAJO',
+    titulo,
+    gancho: document.getElementById('n-gancho').value.trim(),
+    fuente: document.getElementById('n-fuente').value.trim() || 'Idea de Camilo',
+    url: '', puntaje_viral: 95, estado: 'APROBADA', origen: 'Manual'
+  });
+  document.getElementById('n-titulo').value = '';
+  document.getElementById('n-gancho').value = '';
+  document.getElementById('n-fuente').value = '';
+  guardarLocal();
+  verTab('aprobadas', document.querySelectorAll('.tab')[2]);
+  renderTodo();
+}
+
+function copiarResumen(id) {
+  const it = DATA.ideas.find(i => i.id === id);
+  const dis = DATA.disenos.find(d => d.estado === 'ACTIVO' && d.red === it.red) || DATA.disenos[0];
+  const voz = DATA.voces.find(v => v.estado === 'PRINCIPAL') || DATA.voces[0];
+  const txt = `Producir reel para ${it.red} | Diseño: ${dis.nombre} | Voz: ${voz.nombre} | Tema: ${it.titulo} | Guion: ${it.gancho} | Fuente: ${it.fuente}`;
+  navigator.clipboard.writeText(txt);
+  alert('Orden copiada al portapapeles');
+}
+
+function correrVigia() {
+  const resumen = {
+    disenos_activos: DATA.disenos.filter(d => d.estado === 'ACTIVO').map(d => ({red: d.red, id: d.id, nombre: d.nombre})),
+    voces_aprobadas: DATA.voces.filter(v => v.estado === 'PRINCIPAL' || v.estado === 'APROBADA').map(v => ({id: v.id, estado: v.estado})),
+    ideas_aprobadas: DATA.ideas.filter(i => i.estado === 'APROBADA'),
+    solicitudes: DATA.solicitudes,
+    metricas: DATA.metricas
+  };
+  const blob = new Blob([JSON.stringify(resumen, null, 2)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'decisiones_panel_redes.json';
+  a.click();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.hero-actions .btn');
+  if (btn) btn.textContent = 'Exportar decisiones JSON';
+});
+
+cargar();
+</script>
+</body>
+</html>
