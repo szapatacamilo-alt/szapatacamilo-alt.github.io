@@ -4,7 +4,7 @@
     "nombre_completo": "Camilo Salazar Zapata",
     "cargo": "Abogado · Especialista en Derecho Empresarial",
     "titular": "Tu tema legal, claro y con precio fijo.",
-    "presentacion": "Contratos, arriendos, estudio de títulos, medidas cautelares, software jurídico y acompañamiento estratégico. Servicios con precio publicado, herramientas gratis y respuesta directa por WhatsApp.",
+    "presentacion": "Contratos, arriendos, estudio de títulos, precautelación patrimonial, software jurídico y acompañamiento estratégico. Servicios con precio publicado, herramientas gratis y respuesta directa por WhatsApp.",
     "tarjeta_profesional": "412537",
     "ciudad": "Medellín",
     "cobertura": "Medellín y el Oriente antioqueño, presencial. Todo Colombia, virtual.",
@@ -65,14 +65,14 @@
       ]
     },
     {
-      "etiqueta": "Protección patrimonial",
-      "titulo": "Medidas cautelares y cobro estratégico",
-      "descripcion": "Estrategia cautelar para asegurar bienes antes de que el deudor se insolvente.",
+      "etiqueta": "Patrimonio y Sociedades",
+      "titulo": "Precautelación y blindaje patrimonial",
+      "descripcion": "Estructuración jurídica para proteger tus activos, separar el riesgo del negocio y ordenar el patrimonio familiar o empresarial.",
       "puntos": [
-        "Embargo y secuestro de cuentas, inmuebles y vehículos",
-        "Inscripción de demanda y medidas innominadas",
-        "Rastreo de bienes en fuentes públicas",
-        "Ejecución de letras de cambio, pagarés y contratos"
+        "Estructuras de S.A.S. holding y separación de riesgo operativo",
+        "Patrimonios autónomos, fiducias civiles y mercantiles",
+        "Acuerdos de accionistas y protocolos de familia",
+        "Planeación sucesoral y resguardo de activos inmobiliarios"
       ]
     },
     {
@@ -327,6 +327,20 @@
       "unidad": "por proyecto · según alcance"
     },
     {
+      "etiqueta": "Alto valor · Patrimonio",
+      "nombre": "Estructuración patrimonial (S.A.S. Holding y fiducia)",
+      "para": "Empresarios, inversionistas y familias que quieren blindar sus activos frente al riesgo del negocio.",
+      "descripcion": "Diseño e implementación de la arquitectura jurídica de tu patrimonio: separación entre sociedad operativa y tenedora (S.A.S. holding), fiducias, acuerdos de accionistas y protocolo patrimonial.",
+      "incluye": [
+        "Arquitectura societaria: S.A.S. holding y sociedades operativas",
+        "Separación jurídica de inmuebles, marcas e inversiones",
+        "Estructuración con patrimonios autónomos o fiducias cuando convenga",
+        "Acuerdos de accionistas, gobierno corporativo y hoja de ruta sucesoral"
+      ],
+      "precio": "Desde $3.500.000",
+      "unidad": "por estructuración · según alcance"
+    },
+    {
       "etiqueta": "Paquete",
       "nombre": "Marca protegida",
       "para": "Emprendedores y pymes que ya tienen nombre y logo.",
@@ -414,19 +428,19 @@
       "plazo": "3 días hábiles desde que recibo los documentos"
     },
     {
-      "id": "cautelares",
-      "nombre": "Medidas cautelares y precautelación",
-      "para": "Acreedores que necesitan asegurar bienes del deudor antes de que se insolvente.",
-      "descripcion": "Estructuro y redacto la solicitud de medidas cautelares (embargo, secuestro o inscripción de demanda) para proteger tu cobro desde el primer día.",
+      "id": "patrimonio",
+      "nombre": "Diagnóstico de precautelación patrimonial",
+      "para": "Empresarios, propietarios e inversionistas que quieren blindar su patrimonio antes de un riesgo.",
+      "descripcion": "Analizo cómo tienes hoy tus bienes, sociedades y contratos, y te entrego la hoja de ruta exacta para blindarlos (S.A.S. holding, fiducia, separación de activos y acuerdos societarios).",
       "incluye": [
-        "Estrategia cautelar y verificación de bienes en fuentes públicas",
-        "Redacción de la solicitud de embargo, secuestro o inscripción de demanda",
-        "Verificación de requisitos y caución cuando aplique",
-        "Guía de radicación y seguimiento ante el despacho"
+        "Sesión estratégica privada de 90 minutos sobre tu patrimonio y riesgos",
+        "Mapa de vulnerabilidades actuales (operativas, societarias y familiares)",
+        "Propuesta de arquitectura: S.A.S. holding, fiducia o reorganización de activos",
+        "Informe escrito con pasos, costos estimados y valor descontable si contratas la estructuración"
       ],
-      "precio": "$350.000",
-      "unidad": "por solicitud",
-      "plazo": "2 días hábiles"
+      "precio": "$650.000",
+      "unidad": "por diagnóstico",
+      "plazo": "4 días hábiles"
     },
     {
       "id": "arriendo",

@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Camilo Zapata · Abogado en Medellín · Legal Tech</title>
-<meta name="description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Servicios jurídicos a precio fijo, estudio de títulos ($200.000), medidas cautelares, software Legal Tech y acompañamiento ontológico.">
+<meta name="description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Servicios jurídicos a precio fijo, estudio de títulos ($200.000), precautelación patrimonial (S.A.S. Holding), software Legal Tech y acompañamiento ontológico.">
 <meta property="og:title" content="Camilo Zapata · Abogado en Medellín">
-<meta property="og:description" content="Servicios jurídicos a precio fijo, estudio de títulos ($200.000), medidas cautelares, software Legal Tech y acompañamiento ontológico.">
+<meta property="og:description" content="Servicios jurídicos a precio fijo, estudio de títulos ($200.000), precautelación patrimonial (S.A.S. Holding), software Legal Tech y acompañamiento ontológico.">
 <meta property="og:image" content="https://szapatacamilo-alt.github.io/img/og-camilo.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -334,7 +334,7 @@ footer b{color:var(--cream)}
     <div class="hc-head"><span>Precios publicados · COP</span><small>Respuesta directa</small></div>
     <div class="hc-list">
       <a class="hc-item" href="#catalogo" data-hub="servicios"><div><b>Estudio de títulos exprés</b><small>Certificado, gravámenes y riesgos · 3 días hábiles</small></div><strong>$200.000</strong></a>
-      <a class="hc-item" href="#catalogo" data-hub="servicios"><div><b>Medidas cautelares</b><small>Embargo, secuestro e inscripción de demanda</small></div><strong>$350.000</strong></a>
+      <a class="hc-item" href="#catalogo" data-hub="servicios"><div><b>Precautelación patrimonial</b><small>S.A.S. holding, fiducia y blindaje · Diagnóstico / Estructura</small></div><strong>$650k / $3.5M+</strong></a>
       <a class="hc-item" href="#catalogo" data-hub="software"><div><b>Software revisión de contratos IA</b><small>Playbook + Word con control de cambios</small></div><strong>$490.000/m</strong></a>
       <a class="hc-item" href="#catalogo" data-hub="software"><div><b>Software debida diligencia</b><small>RUES + Rama Judicial + alertas objetivas</small></div><strong>$80.000/f</strong></a>
     </div>
@@ -508,7 +508,7 @@ footer b{color:var(--cream)}
         <div>
           <h3 data-t="perfil.nombre_completo">Camilo Salazar Zapata</h3>
           <p>Abogado especialista en Derecho Empresarial en Medellín. Combino experiencia real en áreas jurídicas de empresas con programación e IA para entregar soluciones claras, rápidas y con precio publicado.</p>
-          <div class="bio-tags"><span>T.P. 412537</span><span>Derecho Empresarial</span><span>Legal Tech &amp; IA</span><span>Medidas cautelares</span><span>Coaching ontológico</span></div>
+          <div class="bio-tags"><span>T.P. 412537</span><span>Derecho Empresarial</span><span>Precautelación patrimonial</span><span>Legal Tech &amp; IA</span><span>Coaching ontológico</span></div>
         </div>
       </div>
       <div class="tl" id="tl"></div>
@@ -557,7 +557,7 @@ footer b{color:var(--cream)}
   </div>
   <form class="intake" id="intake" aria-label="Cuéntame tu caso">
     <h3>Cuéntame tu caso en 30 segundos</h3>
-    <label>¿Sobre qué es?<select name="tema"><option>Estudio de títulos o inmueble</option><option>Medidas cautelares / cobro</option><option>Software Legal Tech / automatización</option><option>Contrato o arriendo</option><option>Empresa, marca o SAS</option><option>Tutela o derecho de petición</option><option>Escucha o coaching ontológico</option><option>Otro</option></select></label>
+    <label>¿Sobre qué es?<select name="tema"><option>Precautelación patrimonial / S.A.S. Holding</option><option>Estudio de títulos o inmueble</option><option>Software Legal Tech / automatización</option><option>Contrato o arriendo</option><option>Empresa, marca o SAS</option><option>Tutela o derecho de petición</option><option>Escucha o coaching ontológico</option><option>Otro</option></select></label>
     <label>¿Qué tan urgente es?<select name="urg"><option>Tengo un plazo esta semana</option><option>Este mes</option><option>Solo quiero orientarme</option></select></label>
     <label>Ciudad<input name="ciudad" placeholder="Medellín"></label>
     <label>En una frase, ¿qué pasó?<textarea name="resumen" rows="3" placeholder="Ej. voy a comprar un lote y necesito revisar el certificado"></textarea></label>
@@ -612,7 +612,7 @@ footer b{color:var(--cream)}
     return '<div class="card"'+(idAttr?' id="'+esc(idAttr)+'"':'')+'><span class="tag">'+esc(tag)+'</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para||'')+'</span>'+pr+'<p>'+esc(x.descripcion||'')+'</p>'+inc+pl+'<a class="btn soft" href="'+esc(wa(msg))+'" target="_blank" rel="noopener">'+esc(btnText)+'</a></div>';
   }
 
-  var PUB={titulos:['personas','empresas'],cautelares:['personas','empresas'],arriendo:['empresas'],datos:['empresas'],acta:['empresas'],reforma:['empresas'],peticion:['personas'],tutela:['personas']};
+  var PUB={titulos:['personas','empresas'],patrimonio:['personas','empresas'],arriendo:['empresas'],datos:['empresas'],acta:['empresas'],reforma:['empresas'],peticion:['personas'],tutela:['personas']};
   var pubSel='todos';
   function filtroServ(p){
     pubSel=p||'todos';
