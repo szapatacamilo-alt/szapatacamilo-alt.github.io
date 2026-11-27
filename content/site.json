@@ -4,10 +4,12 @@
     "nombre_completo": "Camilo Salazar Zapata",
     "cargo": "Abogado · Especialista en Derecho Empresarial",
     "titular": "Tu tema legal, claro y con precio fijo.",
-    "presentacion": "Contratos, arriendos, deudas, tutelas y trámites explicados sin enredos. Servicios con precio publicado, herramientas gratis y respuesta directa por WhatsApp.",
+    "presentacion": "Contratos, arriendos, estudio de títulos, medidas cautelares, software jurídico y acompañamiento estratégico. Servicios con precio publicado, herramientas gratis y respuesta directa por WhatsApp.",
     "tarjeta_profesional": "412537",
     "ciudad": "Medellín",
-    "cobertura": "Medellín y el Oriente antioqueño, presencial. Todo Colombia, virtual."
+    "cobertura": "Medellín y el Oriente antioqueño, presencial. Todo Colombia, virtual.",
+    "foto": "img/camilo-perfil.jpg",
+    "foto_coaching": "img/camilo-coaching.jpg"
   },
   "redes": {
     "whatsapp": "573046660777",
@@ -61,6 +63,17 @@
         "Lotes en proindiviso en el Oriente",
         "Vivienda sobre planos y encargo fiduciario",
         "Promesas de compraventa"
+      ]
+    },
+    {
+      "etiqueta": "Protección patrimonial",
+      "titulo": "Medidas cautelares y cobro estratégico",
+      "descripcion": "Estrategia cautelar para asegurar bienes antes de que el deudor se insolvente.",
+      "puntos": [
+        "Embargo y secuestro de cuentas, inmuebles y vehículos",
+        "Inscripción de demanda y medidas innominadas",
+        "Rastreo de bienes en fuentes públicas",
+        "Ejecución de letras de cambio, pagarés y contratos"
       ]
     },
     {
@@ -230,6 +243,63 @@
   ],
   "soluciones": [
     {
+      "etiqueta": "Software · Suscripción",
+      "nombre": "Software de revisión de contratos con IA",
+      "para": "Empresas y áreas legales que reciben contratos de proveedores cada semana.",
+      "descripcion": "El contrato llega por correo, la IA lo revisa contra tu propio playbook y te devuelve un Word con control de cambios y comentarios listos para negociar.",
+      "incluye": [
+        "Playbook configurado con las reglas de tu empresa",
+        "Conexión con Gmail y Google Drive",
+        "Control de cambios y comentarios en español e inglés",
+        "Archivo ordenado y trazable por proveedor",
+        "Hasta 20 contratos al mes (plan empresa a cotizar)"
+      ],
+      "precio": "Desde $490.000",
+      "unidad": "/mes · hasta 20 contratos"
+    },
+    {
+      "etiqueta": "Software · Debida diligencia",
+      "nombre": "Software de debida diligencia (Ficha de contraparte)",
+      "para": "Quien va a contratar, vender a crédito o arrendar y necesita saber con quién negocia.",
+      "descripcion": "Cruza el registro mercantil (RUES) con procesos judiciales en la Rama Judicial y entrega una ficha estructurada con alertas objetivas.",
+      "incluye": [
+        "Estado de la matrícula, cámara y último año renovado",
+        "Procesos como demandado y como demandante",
+        "Alertas claras: matrícula cancelada, renovación atrasada o alto litigio",
+        "Disponible por ficha ($80.000) o plan mensual ($390.000/mes hasta 10 fichas)"
+      ],
+      "precio": "$80.000",
+      "unidad": "por ficha · o $390.000/mes (10 fichas)"
+    },
+    {
+      "etiqueta": "Software · Suscripción",
+      "nombre": "Vigía de procesos judiciales",
+      "para": "Abogados, firmas y empresas con procesos en la Rama Judicial.",
+      "descripcion": "Cada día revisa tus radicados en la consulta pública de la Rama Judicial y te avisa cuando hay una actuación nueva, marcando las que suelen abrir términos.",
+      "incluye": [
+        "Hasta 20 radicados con alias por cliente o caso",
+        "Alerta diaria con la actuación nueva y el despacho",
+        "Historial de actuaciones ordenado",
+        "Aviso: es alerta temprana, no reemplaza la notificación ni el conteo de términos"
+      ],
+      "precio": "$59.000",
+      "unidad": "/mes · hasta 20 radicados"
+    },
+    {
+      "etiqueta": "Software · Suscripción",
+      "nombre": "Radar de actualidad normativa",
+      "para": "Áreas jurídicas y de cumplimiento que necesitan enterarse a tiempo de lo que cambia.",
+      "descripcion": "Vigila los temas que elijas (laboral, datos, arrendamiento, SAGRILAFT, sociedades) y manda un resumen diario con enlaces oficiales verificables.",
+      "incluye": [
+        "Temas y sectores configurados a tu medida",
+        "Resumen diario por correo con enlaces oficiales",
+        "Registro de novedades y estado de verificación",
+        "Criterio jurídico para separar proyectos de normas vigentes"
+      ],
+      "precio": "$150.000",
+      "unidad": "/mes"
+    },
+    {
       "etiqueta": "Precio fijo",
       "nombre": "Diagnóstico de automatización jurídica",
       "para": "Áreas jurídicas y empresas que pierden horas en trabajo repetitivo.",
@@ -244,6 +314,20 @@
       "unidad": "diagnóstico"
     },
     {
+      "etiqueta": "Proyecto · Programación",
+      "nombre": "Automatización y programación a la medida",
+      "para": "Empresas y profesionales que quieren sacar el trabajo manual de su operación.",
+      "descripcion": "Diseño y programo scripts, flujos de IA, paneles web y automatizaciones sobre las herramientas que ya usas (Python, Google Workspace, Microsoft 365).",
+      "incluye": [
+        "Diagnóstico del proceso actual",
+        "Desarrollo a la medida en Python, Apps Script o web",
+        "Conexión con Gmail, Drive, Excel, WhatsApp o CRM",
+        "Documentación y capacitación a tu equipo"
+      ],
+      "precio": "Desde $800.000",
+      "unidad": "por proyecto · según alcance"
+    },
+    {
       "etiqueta": "Paquete",
       "nombre": "Marca protegida",
       "para": "Emprendedores y pymes que ya tienen nombre y logo.",
@@ -253,7 +337,9 @@
         "Solicitud en las clases correctas",
         "Respuesta a requerimientos y oposiciones",
         "Vigilancia de marcas parecidas durante un año"
-      ]
+      ],
+      "precio": "Desde $900.000",
+      "unidad": "+ tasa oficial SIC"
     },
     {
       "etiqueta": "Paquete",
@@ -265,34 +351,26 @@
         "Acuerdo de accionistas",
         "Registro en Cámara de Comercio y RUT",
         "Guía de obligaciones del primer año"
-      ]
+      ],
+      "precio": "Desde $1.200.000",
+      "unidad": "+ gastos de registro"
     },
     {
       "etiqueta": "Paquete",
       "nombre": "Revisión antes de firmar",
       "para": "Quien va a comprar vivienda sobre planos, un lote o firmar una promesa.",
-      "descripcion": "Reviso la promesa, el encargo fiduciario o el estudio de títulos y te digo qué riesgos tiene antes de que consignes.",
+      "descripcion": "Reviso la promesa, el encargo fiduciario o el contrato y te digo qué riesgos tiene antes de que consignes.",
       "incluye": [
         "Revisión del documento y del proyecto",
         "Informe escrito de riesgos",
         "Cláusulas a pedir o cambiar",
         "Llamada de 30 minutos para explicarte"
-      ]
+      ],
+      "precio": "$350.000",
+      "unidad": "por operación"
     },
     {
-      "etiqueta": "Suscripción",
-      "nombre": "Revisor de contratos con IA",
-      "para": "Empresas que reciben contratos de proveedores cada semana.",
-      "descripcion": "El contrato llega por correo, la IA lo revisa contra tu propio playbook y te devuelve un Word con control de cambios y comentarios listos para negociar.",
-      "incluye": [
-        "Playbook configurado con las reglas de tu empresa",
-        "Conexión con Gmail y Google Drive",
-        "Control de cambios y comentarios en español e inglés",
-        "Archivo ordenado y trazable por proveedor"
-      ]
-    },
-    {
-      "etiqueta": "Suscripción",
+      "etiqueta": "Software · Suscripción",
       "nombre": "Control de negociación",
       "para": "Áreas jurídicas y de compras que negocian varias rondas.",
       "descripcion": "Cada nueva versión del contrato se compara sola con la anterior y queda en un cuadro: qué cambió, qué pidió el proveedor y qué se decidió.",
@@ -301,22 +379,12 @@
         "Redacción anterior y nueva lado a lado",
         "Veredicto y respuesta sugerida",
         "Soporte listo para auditoría o comité"
-      ]
+      ],
+      "precio": "Desde $390.000",
+      "unidad": "/mes"
     },
     {
-      "etiqueta": "Suscripción · piloto",
-      "nombre": "Vigía de procesos judiciales",
-      "para": "Abogados, áreas jurídicas y empresas con procesos en la Rama Judicial.",
-      "descripcion": "Cada día revisa tus radicados en la consulta pública de la Rama Judicial y te avisa por correo cuando hay una actuación nueva, marcando las que suelen abrir términos.",
-      "incluye": [
-        "Lista de radicados con alias por cliente o caso",
-        "Alerta diaria con la actuación nueva y el despacho",
-        "Historial de actuaciones en una hoja ordenada",
-        "Aviso: es alerta temprana, no reemplaza la notificación ni el conteo de términos"
-      ]
-    },
-    {
-      "etiqueta": "Suscripción · piloto",
+      "etiqueta": "Software · Suscripción",
       "nombre": "Expediente de correos judiciales",
       "para": "Quien recibe notificaciones, estados y traslados por correo de decenas de despachos.",
       "descripcion": "Lee los correos de los despachos, saca el radicado, el tipo de actuación y los plazos que mencionan, guarda los adjuntos en una carpeta por proceso y etiqueta cada hilo.",
@@ -325,43 +393,9 @@
         "Tabla con fecha, despacho, tipo de actuación y plazo mencionado",
         "Etiquetas en Gmail por radicado",
         "Los radicados nuevos pasan solos a la vigilancia de procesos"
-      ]
-    },
-    {
-      "etiqueta": "Por ficha · piloto",
-      "nombre": "Ficha de contraparte",
-      "para": "Quien va a contratar, vender a crédito o arrendar y quiere saber con quién negocia.",
-      "descripcion": "Cruza el registro mercantil (RUES, datos abiertos) con la consulta de procesos de la Rama Judicial y entrega una ficha con alertas objetivas.",
-      "incluye": [
-        "Estado de la matrícula, cámara y último año renovado",
-        "Procesos como demandado y como demandante en la ciudad consultada",
-        "Alertas claras: cancelada, renovación atrasada, muchos procesos",
-        "Alcance declarado: fuentes públicas, sin listas restrictivas ni antecedentes"
-      ]
-    },
-    {
-      "etiqueta": "Suscripción · piloto",
-      "nombre": "Radar de actualidad normativa",
-      "para": "Áreas jurídicas y de cumplimiento que necesitan enterarse a tiempo de lo que cambia.",
-      "descripcion": "Vigila los temas que elijas (laboral, datos, arrendamiento, SAGRILAFT, sociedades) y manda un resumen diario con enlaces. Todo queda marcado para verificar en la fuente oficial antes de citarlo.",
-      "incluye": [
-        "Temas y áreas a tu medida",
-        "Resumen diario por correo con enlaces",
-        "Registro de lo detectado y de su estado de verificación",
-        "Verificación del texto oficial antes de usarlo, a cargo de un abogado"
-      ]
-    },
-    {
-      "etiqueta": "Proyecto",
-      "nombre": "Automatización jurídica a la medida",
-      "para": "Empresas que quieren sacar el trabajo repetitivo del área legal.",
-      "descripcion": "Diseño y programo el flujo que tu equipo hace a mano: solicitudes, minutas, vencimientos, firmas y archivo, sobre las herramientas que ya usas.",
-      "incluye": [
-        "Diagnóstico del proceso actual",
-        "Flujos en Google Workspace y Microsoft 365",
-        "Alertas de vencimientos y renovaciones",
-        "Capacitación al equipo"
-      ]
+      ],
+      "precio": "Desde $190.000",
+      "unidad": "/mes"
     }
   ],
   "servicios": [
@@ -376,9 +410,24 @@
         "Informe escrito con riesgos y qué pedir al vendedor",
         "Llamada corta para explicártelo"
       ],
-      "precio": "$450.000",
+      "precio": "$200.000",
       "unidad": "por inmueble",
       "plazo": "3 días hábiles desde que recibo los documentos"
+    },
+    {
+      "id": "cautelares",
+      "nombre": "Medidas cautelares y precautelación",
+      "para": "Acreedores que necesitan asegurar bienes del deudor antes de que se insolvente.",
+      "descripcion": "Estructuro y redacto la solicitud de medidas cautelares (embargo, secuestro o inscripción de demanda) para proteger tu cobro desde el primer día.",
+      "incluye": [
+        "Estrategia cautelar y verificación de bienes en fuentes públicas",
+        "Redacción de la solicitud de embargo, secuestro o inscripción de demanda",
+        "Verificación de requisitos y caución cuando aplique",
+        "Guía de radicación y seguimiento ante el despacho"
+      ],
+      "precio": "$350.000",
+      "unidad": "por solicitud",
+      "plazo": "2 días hábiles"
     },
     {
       "id": "arriendo",
@@ -470,6 +519,51 @@
     }
   ],
   "servicios_nota": "Los valores son honorarios por el servicio descrito. No incluyen derechos notariales, de registro, de Cámara de Comercio ni certificados, ni la representación en procesos. Si tu caso es más complejo, te lo digo y te cotizo por escrito antes de empezar. No prometo resultados: la decisión final es de la autoridad.",
+  "acompanamiento": [
+    {
+      "etiqueta": "Sesión 1 a 1",
+      "nombre": "Sesión de escucha y claridad estratégica",
+      "para": "Quien atraviesa una decisión difícil, un conflicto laboral, societario o personal y necesita bajar el ruido.",
+      "descripcion": "Un espacio confidencial de escucha activa, sin juicios y con criterio práctico para ordenar lo que estás viviendo, ver tus opciones y salir con un plan claro.",
+      "incluye": [
+        "Sesión privada de 60 minutos (virtual o presencial en Medellín)",
+        "Escucha activa sin fórmulas genéricas ni sermones",
+        "Mapa concreto de opciones, riesgos y próximos pasos",
+        "Resumen escrito con los acuerdos que definas"
+      ],
+      "precio": "$120.000",
+      "unidad": "por sesión (60 min)"
+    },
+    {
+      "etiqueta": "Coaching ontológico",
+      "nombre": "Proceso de acompañamiento (4 sesiones)",
+      "para": "Profesionales, emprendedores o líderes que quieren destrabar una etapa y tomar decisiones con coherencia.",
+      "descripcion": "Cuatro conversaciones estructuradas desde el enfoque ontológico para revisar cómo estás observando tus retos, tus conversaciones pendientes y pasar a la acción.",
+      "incluye": [
+        "4 sesiones individuales de 60 minutos (una por semana o quincenal)",
+        "Trabajo en lenguaje, límites, toma de decisiones y liderazgo",
+        "Ejercicios breves entre sesiones aplicados a tu día a día",
+        "Seguimiento puntual por WhatsApp durante el proceso"
+      ],
+      "precio": "$420.000",
+      "unidad": "proceso de 4 sesiones"
+    },
+    {
+      "etiqueta": "Mentoría profesional",
+      "nombre": "Mentoría de carrera, marca e IA para abogados",
+      "para": "Abogados y profesionales que quieren crecer, negociar mejor su rol o lanzar su práctica independiente.",
+      "descripcion": "Acompañamiento práctico basado en experiencia real in-house y legal tech: posicionamiento, hoja de vida, negociación salarial y uso real de IA en tu trabajo.",
+      "incluye": [
+        "Sesión práctica de 75 minutos sobre tu perfil y objetivos",
+        "Revisión de CV, LinkedIn o propuesta de servicios independientes",
+        "Ruta concreta para automatizar tareas con IA sin saber programar",
+        "Plan de acción a 30 días"
+      ],
+      "precio": "$180.000",
+      "unidad": "por sesión (75 min)"
+    }
+  ],
+  "acompanamiento_nota": "Las sesiones de escucha, mentoría y acompañamiento ontológico son espacios conversacionales de claridad y desarrollo personal o profesional; no sustituyen atención psicológica ni psiquiátrica clínica.",
   "talleres": [
     {
       "nombre": "Datos personales para pymes",

@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Camilo Zapata · Abogado en Medellín</title>
 <meta name="description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Contratos comerciales e internacionales, inmobiliario, proyectos de energía y consumidor financiero. Servicios a precio fijo.">
-<meta property="og:title" content="Camilo Zapata · Abogado">
-<meta property="og:description" content="Camilo Zapata, abogado especialista en Derecho Empresarial en Medellín. Contratos comerciales e internacionales, inmobiliario, proyectos de energía y consumidor financiero.">
-<meta property="og:image" content="https://szapatacamilo-alt.github.io/img/c05.jpg">
+<meta property="og:title" content="Camilo Zapata · Abogado en Medellín">
+<meta property="og:description" content="Servicios jurídicos a precio fijo, estudio de títulos ($200.000), medidas cautelares, software Legal Tech y acompañamiento ontológico.">
+<meta property="og:image" content="https://szapatacamilo-alt.github.io/img/og-camilo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://szapatacamilo-alt.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
@@ -363,6 +365,34 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
 .intake{border-radius:12px;background:linear-gradient(160deg,rgba(213,182,121,.08),rgba(255,255,255,.02))}
 .intake select:focus,.intake input:focus,.intake textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(213,182,121,.2)}
 @media (prefers-reduced-motion:reduce){.sol,.door,.btn{transition:none}.sol:hover,.door:hover,.btn:hover{transform:none}}
+/* v4: fotos editoriales, modal biblioteca, lectura limpia y móvil */
+.hero .lede{text-align:center;text-align-last:center;hyphens:none;-webkit-hyphens:none;max-width:56ch}
+@media (max-width:780px){
+  .hero .mark{display:none}
+  .hero{padding-block:28px 40px}
+  p,.sub,.lede,.sol p,.faq p,.step span,.door span{text-align:left;hyphens:none;-webkit-hyphens:none}
+  .hero .lede{text-align:center}
+  .freelink,.post .rel,.post .ask,details.inc>summary,.jur-ex button{min-height:40px;display:inline-flex;align-items:center}
+  .chip,.tab,.jur .cts button{min-height:42px}
+}
+.bio-card{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:center;background:linear-gradient(180deg,#2D3856,var(--night-3));border:1px solid var(--line-2);border-radius:12px;padding:24px;margin-bottom:28px;box-shadow:var(--shadow)}
+.bio-card img{width:100%;aspect-ratio:5/6;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line-2)}
+.bio-card h3{font:700 24px/1.2 var(--f-body);color:var(--cream);margin:0 0 8px}
+.bio-card p{color:var(--muted);font-size:15.5px;margin-bottom:14px}
+.bio-tags{display:flex;flex-wrap:wrap;gap:8px}
+.bio-tags span{font-size:12.5px;font-weight:600;color:var(--cream);background:rgba(213,182,121,.12);border:1px solid var(--line-2);padding:6px 12px;border-radius:999px}
+@media (max-width:680px){.bio-card{grid-template-columns:1fr;text-align:center;justify-items:center}.bio-card img{max-width:210px}.bio-card p{text-align:center}.bio-tags{justify-content:center}}
+.coach-intro{display:grid;grid-template-columns:minmax(0,1.25fr) 260px;gap:32px;align-items:center;margin-bottom:36px}
+.coach-intro img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line-2);box-shadow:var(--shadow)}
+@media (max-width:760px){.coach-intro{grid-template-columns:1fr;gap:20px}.coach-intro img{max-width:220px;margin-inline:auto}}
+.lb{position:fixed;inset:0;z-index:20;background:rgba(12,16,28,.88);backdrop-filter:blur(8px);display:grid;place-items:center;padding:20px}
+.lb-box{background:var(--night-2);border:1px solid var(--line-2);border-radius:14px;max-width:520px;width:100%;padding:20px;display:grid;gap:14px;box-shadow:0 24px 60px rgba(0,0,0,.7);max-height:92vh;overflow:auto}
+.lb-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lb-head b{color:var(--cream);font-size:16px}
+.lb-close{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);background:var(--night-3);color:var(--cream);font-size:20px;cursor:pointer;display:grid;place-items:center}
+.lb-box img{width:100%;border-radius:10px;border:1px solid var(--line)}
+.lb-acts{display:flex;flex-wrap:wrap;gap:10px}
+.lb-acts .btn{flex:1 1 180px;justify-content:center}
 </style>
 </head>
 <body>
@@ -370,7 +400,7 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
 <nav class="nav" aria-label="Principal"><div class="w">
   <a class="brand" href="#inicio"><img src="img/cz-logo.png" alt=""><span data-t="perfil.nombre">Camilo Zapata</span></a>
   <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  <div class="links" id="links"><a href="#servicios" data-go="personas">Personas</a><a href="#servicios" data-go="empresas">Empresas</a><a href="#trayectoria">Quién soy</a><a href="#recursos">Herramientas gratis</a><a href="#contacto">Contacto</a></div>
+  <div class="links" id="links"><a href="#servicios" data-go="personas">Personas</a><a href="#servicios" data-go="empresas">Empresas</a><a href="#soluciones">Software</a><a href="#acompanamiento">Coaching</a><a href="#trayectoria">Quién soy</a><a href="#recursos">Herramientas</a><a href="#contacto">Contacto</a></div>
   <a class="navcta" data-wa href="https://wa.me/573046660777" target="_blank" rel="noopener">WhatsApp</a>
 </div></nav>
 
@@ -401,9 +431,10 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
 <section class="band doors" id="necesito" aria-label="¿Qué necesitas hoy?"><div class="w">
   <div class="head"><span class="kicker">Empieza por aquí</span><h2>¿Qué necesitas hoy?</h2><p class="sub">Elige lo que más se parece a tu situación y te llevo a lo que te sirve.</p></div>
   <div class="door-grid">
-    <a class="door" href="#servicios" data-pub="personas"><span class="n">01</span><b>Tengo un problema personal</b><span>Derecho de petición, tutela, reportes en centrales, deudas y compras con riesgo.</span><i>Ver servicios para personas →</i></a>
-    <a class="door" href="#servicios" data-pub="empresas"><span class="n">02</span><b>Tengo una empresa o un emprendimiento</b><span>Arriendos comerciales, datos personales, actas, estatutos y estudio de títulos.</span><i>Ver servicios para empresas →</i></a>
-    <a class="door" href="#soluciones"><span class="n">03</span><b>Soy abogado o llevo un área legal</b><span>Vigía de procesos, revisor de contratos con IA y automatización a la medida.</span><i>Ver soluciones legal tech →</i></a>
+    <a class="door" href="#servicios" data-pub="personas"><span class="n">01</span><b>Tengo un problema personal</b><span>Estudio de títulos ($200.000), medidas cautelares, derecho de petición, tutela y deudas.</span><i>Ver servicios para personas →</i></a>
+    <a class="door" href="#servicios" data-pub="empresas"><span class="n">02</span><b>Tengo una empresa o un emprendimiento</b><span>Arriendos comerciales, datos personales, actas, estatutos, marcas y estudio de títulos.</span><i>Ver servicios para empresas →</i></a>
+    <a class="door" href="#soluciones"><span class="n">03</span><b>Busco software legal tech o automatización</b><span>Revisor de contratos con IA, debida diligencia, Vigía de procesos y programación a la medida.</span><i>Ver software y precios →</i></a>
+    <a class="door" href="#acompanamiento"><span class="n">04</span><b>Busco escucha, claridad o coaching</b><span>Sesiones 1 a 1, acompañamiento ontológico y mentoría para tomar decisiones sin ruido.</span><i>Ver sesiones de acompañamiento →</i></a>
   </div>
   <p class="door-tool">¿Solo quieres revisar un proceso? <a href="vigia.html">Abre el Panel Vigía</a>: guarda tus radicados en tu celular y te muestra qué cambió.</p>
 </div></section>
@@ -418,14 +449,47 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
   <p class="fine" id="servs-nota"></p>
 </div></section>
 
+<section class="band" id="soluciones"><div class="w"><div class="tech">
+  <div><span class="kicker">Software legal tech · Automatización y paquetes</span><h2>Software jurídico y automatización con precio claro</h2><p class="sub">Escribo mis propias automatizaciones y herramientas. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área. Hoy ofrezco software de debida diligencia, revisión de contratos con IA y desarrollos a la medida.</p></div>
+  <div class="flow" aria-label="Flujo de revisión">
+    <div><span>Llega el contrato o consulta y se clasifica automáticamente</span></div>
+    <div><span>La IA lo analiza contra tu playbook o fuentes públicas (RUES / Rama)</span></div>
+    <div><span>Sale un Word con control de cambios o una ficha con alertas objetivas</span></div>
+    <div><span>El abogado o gerente decide, y todo queda archivado y trazable</span></div>
+  </div>
+  </div>
+  <div class="sols" id="sols"></div>
+</div></section>
 
+<section class="band alt" id="acompanamiento"><div class="w">
+  <div class="coach-intro">
+    <div>
+      <span class="kicker">Escucha · Mentoría · Coaching ontológico</span>
+      <h2>Claridad para decisiones difíciles</h2>
+      <p class="sub">No todo problema se resuelve solo con un contrato o una demanda. También acompaño conversaciones uno a uno de escucha activa, coaching ontológico y mentoría profesional para bajar el ruido y decidir con criterio.</p>
+    </div>
+    <img src="img/camilo-coaching.jpg" alt="Camilo Zapata · Acompañamiento y coaching ontológico" loading="lazy">
+  </div>
+  <div class="sols t2" id="acomp"></div>
+  <p class="fine" id="acomp-nota"></p>
+</div></section>
 
-
-
-
-
-<section class="band alt" id="trayectoria"><div class="w">
+<section class="band" id="trayectoria"><div class="w">
   <div class="head"><span class="kicker">Cargos desempeñados</span><h2>Quién te atiende</h2></div>
+  <div class="bio-card">
+    <img src="img/camilo-perfil.jpg" alt="Camilo Salazar Zapata, abogado especialista en Derecho Empresarial en Medellín" loading="lazy">
+    <div>
+      <h3 data-t="perfil.nombre_completo">Camilo Salazar Zapata</h3>
+      <p>Abogado especialista en Derecho Empresarial en Medellín. Combino experiencia real en áreas jurídicas de empresas (juego en línea, energía solar, construcción e inmobiliario) con programación e inteligencia artificial para ofrecer soluciones legales claras, rápidas y con precio publicado.</p>
+      <div class="bio-tags">
+        <span>T.P. 412537</span>
+        <span>Derecho Empresarial</span>
+        <span>Legal Tech &amp; IA</span>
+        <span>Medidas cautelares</span>
+        <span>Coaching ontológico</span>
+      </div>
+    </div>
+  </div>
   <div class="tl" id="tl"></div>
   <div class="edu" id="edu"></div>
 </div></section>
@@ -570,18 +634,6 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
   <div class="chips" role="group" aria-label="Filtrar por serie" id="chips"></div>
   <div class="lib" id="lib"></div>
 </div></section>
-<section class="band divider" id="profesionales"><div class="w"><div class="head"><span class="kicker">Para empresas, áreas legales y abogados</span><h2>Legal tech y formación</h2></div></div></section>
-<section class="band" id="soluciones"><div class="w"><div class="tech">
-  <div><span class="kicker">Legal tech · Soluciones para empresas</span><h2>Automatiza el trabajo repetitivo de tu área legal</h2><p class="sub">Escribo mis propias automatizaciones. En mi último cargo programé el flujo que recibía, revisaba, marcaba cambios y archivaba los contratos del área. Hoy lo ofrezco como servicio para tu empresa.</p></div>
-  <div class="flow" aria-label="Flujo de revisión">
-    <div><span>Llega el contrato por correo y se clasifica solo</span></div>
-    <div><span>La IA lo revisa contra el playbook y la normativa vigente</span></div>
-    <div><span>Sale un documento con control de cambios y comentarios</span></div>
-    <div><span>El abogado decide, y todo queda archivado y trazable</span></div>
-  </div>
-  </div>
-  <div class="sols" id="sols"></div>
-</div></section>
 <section class="band alt" id="talleres"><div class="w">
   <div class="head"><span class="kicker">Talleres y cátedra</span><h2>Para equipos y aulas</h2><p class="sub">Explico el derecho sin enredos, con ejemplos de contratos reales de empresas.</p></div>
   <div class="sols t2" id="talls"></div>
@@ -610,12 +662,14 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
     [].forEach.call(document.querySelectorAll('[data-wa-msg]'),function(el){el.href=wa(el.dataset.waMsg)});
     [].forEach.call(document.querySelectorAll('[data-wa]'),function(el){el.href=wa('Hola Camilo, vi tu página web y quiero consultarte sobre ')});
     var priceHtml=function(x){return x.precio?'<div class="price">'+esc(x.precio)+'<small>COP · '+esc(x.unidad||'')+'</small></div>':''};
-    $('sols').innerHTML=(D.soluciones||[]).map(function(x){var btn=x.precio?'<a class="btn" href="'+esc(wa('Hola Camilo, quiero contratar: '+x.nombre+'.'))+'" target="_blank" rel="noopener">Contratar por WhatsApp</a>':(x.etiqueta==='Paquete'?'<a class="btn" href="'+esc(wa('Hola Camilo, quiero cotizar el paquete '+x.nombre+'.'))+'" target="_blank" rel="noopener">Cotizar por WhatsApp</a>':'<a class="btn" href="'+esc(wa('Hola Camilo, quiero una demo de '+x.nombre+' para mi empresa.'))+'" target="_blank" rel="noopener">Pedir una demo</a>');return '<div class="sol"><span class="t">'+esc(x.etiqueta)+'</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span>'+priceHtml(x)+'<p>'+esc(x.descripcion)+'</p><ul>'+(x.incluye||[]).map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul>'+btn+'</div>'}).join('');
+    $('sols').innerHTML=(D.soluciones||[]).map(function(x){var esSw=/software|proyecto/i.test(x.etiqueta||'');var lbl=esSw?'Pedir demo o contratar':'Contratar por WhatsApp';var msg=esSw?'Hola Camilo, me interesa '+x.nombre+' ('+(x.precio||'')+'). Quiero una demo o activarlo.':'Hola Camilo, quiero contratar: '+x.nombre+'.';return '<div class="sol"><span class="t">'+esc(x.etiqueta)+'</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span>'+priceHtml(x)+'<p>'+esc(x.descripcion)+'</p><ul>'+(x.incluye||[]).map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul><a class="btn" href="'+esc(wa(msg))+'" target="_blank" rel="noopener">'+lbl+'</a></div>'}).join('');
     $('servs').innerHTML=(D.servicios||[]).map(function(x){return '<div class="sol" id="s-'+esc(x.id)+'"><span class="t">Precio fijo</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span>'+priceHtml(x)+'<p>'+esc(x.descripcion)+'</p><ul>'+(x.incluye||[]).map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul>'+(x.plazo?'<span class="plazo">Entrega: '+esc(x.plazo)+'</span>':'')+'<a class="btn" href="'+esc(wa('Hola Camilo, quiero contratar: '+x.nombre+'.'))+'" target="_blank" rel="noopener">Contratar por WhatsApp</a></div>'}).join('');
     $('servs-nota').textContent=D.servicios_nota||'';
+    if($('acomp')){$('acomp').innerHTML=(D.acompanamiento||[]).map(function(x){return '<div class="sol"><span class="t">'+esc(x.etiqueta)+'</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span>'+priceHtml(x)+'<p>'+esc(x.descripcion)+'</p><ul>'+(x.incluye||[]).map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul><a class="btn" href="'+esc(wa('Hola Camilo, quiero agendar: '+x.nombre+'.'))+'" target="_blank" rel="noopener">Agendar por WhatsApp</a></div>'}).join('');}
+    if($('acomp-nota')){$('acomp-nota').textContent=D.acompanamiento_nota||'';}
     $('talls').innerHTML=(D.talleres||[]).map(function(x){return '<div class="sol"><span class="t">Taller</span><h3>'+esc(x.nombre)+'</h3><span class="para">'+esc(x.para)+'</span><p>'+esc(x.descripcion)+'</p><span class="plazo">'+esc(x.formato||'')+'</span><a class="btn" href="'+esc(wa('Hola Camilo, quiero cotizar el taller: '+x.nombre+'.'))+'" target="_blank" rel="noopener">Cotizar taller</a></div>'}).join('');
     $('talls-nota').textContent=D.talleres_nota||'';
-    $('actu').innerHTML=(D.actualidad||[]).map(function(x){return '<div class="sol"><span class="t">'+esc(x.tema)+' · '+esc(x.fecha)+'</span><h3>'+esc(x.titulo)+'</h3><p>'+esc(x.resumen)+'</p><span class="plazo">Fuente: '+esc(x.fuente)+'</span><a class="btn ghost" href="'+esc(x.enlace||get(D,'redes.facebook'))+'" target="_blank" rel="noopener">Ver el video en Facebook</a></div>'}).join('');
+    $('actu').innerHTML=(D.actualidad||[]).map(function(x){return '<div class="sol"><span class="t">'+esc(x.tema)+' · '+esc(x.fecha)+'</span><h3>'+esc(x.titulo)+'</h3><p>'+esc(x.resumen)+'</p><span class="plazo">Fuente: '+esc(x.fuente)+'</span><a class="btn ghost" href="'+esc(wa('Hola Camilo, leí tu nota «'+x.titulo+'» y quiero saber cómo aplica a mi caso.'))+'" target="_blank" rel="noopener">Consultar cómo te aplica</a></div>'}).join('');
     $('cifras').innerHTML=(D.cifras||[]).map(function(c){return '<div class="num"><b>'+esc(c.valor)+'</b><span>'+esc(c.texto)+'</span></div>'}).join('');
     $('areas-list').innerHTML=(D.areas||[]).map(function(a){return '<div class="area"><span class="t">'+esc(a.etiqueta)+'</span><h3>'+esc(a.titulo)+'</h3><p>'+esc(a.descripcion)+'</p><ul>'+(a.puntos||[]).map(function(p){return '<li>'+esc(p)+'</li>'}).join('')+'</ul></div>'}).join('');
     $('tl').innerHTML=(D.trayectoria||[]).map(function(j){return '<div class="job"><div class="when">'+esc(j.anio)+'<div class="co">'+esc(j.periodo)+'</div></div><div><h3>'+esc(j.cargo)+'</h3><ul>'+(j.logros||[]).map(function(l){return '<li>'+esc(l)+'</li>'}).join('')+'</ul></div></div>'}).join('');
@@ -623,13 +677,24 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
     var SERIE_SERV={'Contratos comerciales':'arriendo','Datos y tecnología':'datos','Inmuebles':'titulos','Consumidor financiero':'peticion'};
     var POSTS=D.publicaciones||[],cur='Todas';
     var series=['Todas'].concat(POSTS.map(function(p){return p.serie}).filter(function(s,i,a){return s&&a.indexOf(s)===i}));
+    function openLb(p){
+      var lb=$('lb');if(!lb)return;
+      $('lb-title').textContent=p.titulo||'';
+      $('lb-img').src=String(p.imagen||'').replace(/^\//,'');
+      $('lb-img').alt='Portada: '+(p.titulo||'');
+      $('lb-wa').href=wa('Hola Camilo, vi tu publicación «'+p.titulo+'» y quiero consultarte mi caso.');
+      $('lb-ig').href=p.enlace||get(D,'redes.instagram');
+      lb.hidden=false;
+    }
     function lib(){
-      $('lib').innerHTML=POSTS.filter(function(p){return cur==='Todas'||p.serie===cur}).map(function(p){
+      var list=POSTS.filter(function(p){return cur==='Todas'||p.serie===cur});
+      $('lib').innerHTML=list.map(function(p,idx){
         var sid=SERIE_SERV[p.serie],sv=sid&&(D.servicios||[]).filter(function(s){return s.id===sid})[0];
-        return '<div class="post"><a class="pimg" href="'+esc(p.enlace||get(D,'redes.instagram'))+'" target="_blank" rel="noopener"><img src="'+esc(String(p.imagen||'').replace(/^\//,''))+'" alt="Portada: '+esc(p.titulo)+'" loading="lazy"><span>'+esc(p.serie)+'</span><b>'+esc(p.titulo)+'</b></a>'+
+        return '<div class="post"><a class="pimg" href="#biblioteca" data-lb="'+idx+'"><img src="'+esc(String(p.imagen||'').replace(/^\//,''))+'" alt="Portada: '+esc(p.titulo)+'" loading="lazy"><span>'+esc(p.serie)+'</span><b>'+esc(p.titulo)+'</b></a>'+
           (sv?'<a class="rel" href="#s-'+esc(sv.id)+'">Servicio relacionado: '+esc(sv.nombre)+' · '+esc(sv.precio)+'</a>':'')+
           '<a class="ask" href="'+esc(wa('Hola Camilo, vi tu publicación «'+p.titulo+'» y quiero consultarte mi caso.'))+'" target="_blank" rel="noopener">Consultar este tema por WhatsApp</a></div>'}).join('');
-      [].forEach.call(document.querySelectorAll('.chip'),function(c){c.setAttribute('aria-pressed',c.dataset.s===cur)});
+      [].forEach.call($('lib').querySelectorAll('[data-lb]'),function(a){a.onclick=function(e){e.preventDefault();openLb(list[+a.dataset.lb])}});
+      [].forEach.call(document.querySelectorAll('#chips .chip'),function(c){c.setAttribute('aria-pressed',c.dataset.s===cur)});
     }
     $('chips').innerHTML=series.map(function(s){return '<button type="button" class="chip" data-s="'+esc(s)+'" aria-pressed="false">'+esc(s)+'</button>'}).join('');
     $('chips').onclick=function(e){var b=e.target.closest('.chip');if(b){cur=b.dataset.s;lib()}};
@@ -638,8 +703,8 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
     mejoras();
   }
 
-  /* Servicios: filtro por público, "qué incluye" plegable en celular, entrada suave al hacer scroll y menú activo */
-  var PUB={titulos:['personas','empresas'],arriendo:['empresas'],datos:['empresas'],acta:['empresas'],reforma:['empresas'],peticion:['personas'],tutela:['personas']};
+  /* Servicios: filtro por público, "qué incluye" plegable por defecto, entrada suave al hacer scroll y menú activo */
+  var PUB={titulos:['personas','empresas'],cautelares:['personas','empresas'],arriendo:['empresas'],datos:['empresas'],acta:['empresas'],reforma:['empresas'],peticion:['personas'],tutela:['personas']};
   var pubSel='todos';
   function filtroServ(p){
     pubSel=p||'todos';
@@ -648,12 +713,12 @@ h1,h2,h3{text-wrap:balance;letter-spacing:.005em}
   }
   $('pubchips').onclick=function(e){var b=e.target.closest('.chip');if(b)filtroServ(b.dataset.p)};
   [].forEach.call(document.querySelectorAll('.door[data-pub]'),function(a){a.addEventListener('click',function(){filtroServ(a.dataset.pub)})});
+  var lbEl=$('lb');if(lbEl){$('lb-close').onclick=function(){lbEl.hidden=true};lbEl.onclick=function(e){if(e.target===lbEl)lbEl.hidden=true};document.addEventListener('keydown',function(e){if(e.key==='Escape')lbEl.hidden=true})}
   var revealed=false;
   function mejoras(){
-    var ancho=window.matchMedia('(min-width:781px)').matches;
-    [].forEach.call(document.querySelectorAll('#servs .sol,#sols .sol'),function(c){
+    [].forEach.call(document.querySelectorAll('#servs .sol,#sols .sol,#acomp .sol'),function(c){
       var ul=c.querySelector('ul');if(!ul||ul.parentNode.tagName==='DETAILS')return;
-      var d=document.createElement('details');d.className='inc';d.innerHTML='<summary>Qué incluye</summary>';ul.parentNode.replaceChild(d,ul);d.appendChild(ul);if(ancho)d.open=true});
+      var d=document.createElement('details');d.className='inc';d.innerHTML='<summary>Qué incluye</summary>';ul.parentNode.replaceChild(d,ul);d.appendChild(ul)});
     filtroServ(pubSel);
     document.documentElement.classList.add('js');
     var els=[].slice.call(document.querySelectorAll('.door,.sol,.area,.num,.job,.post,.tool,.faq details'));
@@ -819,5 +884,6 @@ f.addEventListener('submit',function(e){e.preventDefault();
 });
 })();
 </script>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title"><div class="lb-box"><div class="lb-head"><b id="lb-title"></b><button type="button" class="lb-close" id="lb-close" aria-label="Cerrar">×</button></div><img id="lb-img" src="" alt=""><div class="lb-acts"><a class="btn primary" id="lb-wa" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a><a class="btn ghost" id="lb-ig" href="#" target="_blank" rel="noopener">Ver en Instagram</a></div></div></div>
 </body>
 </html>
